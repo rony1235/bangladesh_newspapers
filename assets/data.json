@@ -1,0 +1,152 @@
+[
+  {
+    "Category": "Bangla",
+    "CategoryFullName": "Bangla Newspaper",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "Daily Prothom alo",
+        "Url": "https://www.prothomalo.com/",
+        "Icon": "prothomalo.png"
+      },
+      {
+        "Name": "Ittefaq",
+        "Url": "https://ittefaq.com.bd/",
+        "Icon": "ittefaq.png"
+      },
+      {
+        "Name": "Bangladesh Pratidin",
+        "Url": "https://www.bd-pratidin.com/",
+        "Icon": "bangladeshpratidin.png"
+      },
+      {
+        "Name": "Daily kaler kantho",
+        "Url": "https://www.kalerkantho.com/",
+        "Icon": "kalerkantho.png"
+      },
+      {
+        "Name": "Daily Naya Diganta",
+        "Url": "https://dailynayadiganta.com/",
+        "Icon": "dailynayadiganta.png"
+      },
+      {
+        "Name": "Jugantor",
+        "Url": "https://www.jugantor.com/",
+        "Icon": "jugantor.png"
+      }
+    ,
+      {
+        "Name": "Daily Sangram",
+        "Url": "https://dailysangram.com/",
+        "Icon": "dailysangram.png"
+      }
+
+
+    ]
+  },
+  {
+    "Category": "English",
+    "CategoryFullName": "English Newspaper",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "Daily Star",
+        "Url": "https://www.thedailystar.net/",
+        "Icon": "dailystar.png"
+      }
+    ]
+  },{
+  "Category": "EPaper",
+  "CategoryFullName": "E Paper",
+  "Icon": "prothomalo.png",
+  "NewspaperList": [
+    {
+      "Name": "Daily Star",
+      "Url": "https://www.thedailystar.net/",
+      "Icon": "dailystar.png"
+    }
+  ]
+},{
+  "Category": "International",
+  "CategoryFullName": "International Newspaper",
+  "Icon": "prothomalo.png",
+  "NewspaperList": [
+    {
+      "Name": "Daily Star",
+      "Url": "https://www.thedailystar.net/",
+      "Icon": "dailystar.png"
+    }
+  ]
+},{
+  "Category": "English",
+  "CategoryFullName": "English Newspaper",
+  "Icon": "prothomalo.png",
+  "NewspaperList": [
+    {
+      "Name": "Daily Star",
+      "Url": "https://www.thedailystar.net/",
+      "Icon": "dailystar.png"
+    }
+  ]
+}
+,{
+  "Category": "English",
+  "CategoryFullName": "English Newspaper",
+  "Icon": "prothomalo.png",
+  "NewspaperList": [
+    {
+      "Name": "Daily Star",
+      "Url": "https://www.thedailystar.net/",
+      "Icon": "dailystar.png"
+    }
+  ]
+},{
+  "Category": "fff",
+  "CategoryFullName": "English Newspaper",
+  "Icon": "prothomalo.png",
+  "NewspaperList": [
+    {
+      "Name": "Daily Star",
+      "Url": "https://www.thedailystar.net/",
+      "Icon": "dailystar.png"
+    }
+  ]
+}
+,{
+  "Category": "dd",
+  "Icon": "prothomalo.png",
+  "CategoryFullName": "English Newspaper",
+  "NewspaperList": [
+    {
+      "Name": "Daily Star",
+      "Url": "https://www.thedailystar.net/",
+      "Icon": "dailystar.png"
+    }
+  ]
+}
+,{
+  "Category": "Most",
+  "Icon": "prothomalo.png",
+  "CategoryFullName": "English Newspaper",
+  "NewspaperList": [
+    {
+      "Name": "Daily Star",
+      "Url": "https://www.thedailystar.net/",
+      "Icon": "dailystar.png"
+    }
+  ]
+}
+,{
+  "Category": "Test",
+  "CategoryFullName": "English Newspaper",
+  "Icon": "prothomalo.png",
+  "NewspaperList": [
+    {
+      "Name": "Daily Star",
+      "Url": "https://www.thedailystar.net/",
+      "Icon": "dailystar.png"
+    }
+  ]
+}
+
+]
