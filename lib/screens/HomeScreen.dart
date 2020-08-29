@@ -3,6 +3,7 @@ import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/services/DataProvider.dart';
 import 'package:bangladesh_newspapers/screens/web.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
@@ -19,6 +20,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   double fontSize;
   double boderWidth;
   double gridItemSpacing;
+  double heartFontSize;
 
   @override
   void initState() {
@@ -38,29 +40,28 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       childAspectItem = 2;
       boderWidth = 15;
       gridItemSpacing = 10;
+      heartFontSize = 30;
     }
     if (gridItem == 2) {
       fontSize = 20;
       childAspectItem = 1;
       boderWidth = 7;
       gridItemSpacing = 10;
+      heartFontSize = 30;
     }
     if (gridItem == 3) {
       fontSize = 13;
       childAspectItem = 1;
       boderWidth = 3;
       gridItemSpacing = 4;
+      heartFontSize = 19;
     }
   }
 
   Future<void> doSomeAsyncStuff() async {
     myList = await DataProvider().getAll();
-    myList.forEach((data) {
-      data.newspaperList.forEach((element) {
-        element.isFavorite = false;
-      });
-    });
-    print(myList[0].category);
+
+    //print(myList[0].category);
     setState(() {
       tabController = new TabController(vsync: this, length: myList.length);
     });
@@ -82,118 +83,115 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               return MainTabBarWidget(category);
             }).toList(),
       controller: tabController,
-      indicatorColor: Color(0xff407473),
+      indicatorColor: kMainColor,
     );
 
     return DefaultTabController(
       length: myList.length,
-      child: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: tabBarItem,
-            shadowColor: Color(0xff407473),
-            title: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Bangladesh Newspaper",
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 35),
-              ),
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: tabBarItem,
+          shadowColor: kMainColor,
+          title: Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Text(
+              "Bangladesh Newspaper",
+              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 35),
             ),
-            centerTitle: true,
           ),
-          body: Container(
-            child: Column(
-              children: [
-                Expanded(
-                  child: TabBarView(
-                    controller: tabController,
-                    children: myList.isEmpty
-                        ? <Widget>[]
-                        : myList.map((category) {
-                            return Container(
-                              child: Column(
-                                children: [
-                                  Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      margin: const EdgeInsets.fromLTRB(
-                                          15, 5, 15, 5),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            category.categoryFullName,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w800,
-                                                fontSize: 20),
-                                          ),
-                                          ToggleButtons(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(15.0)),
-                                            children: <Widget>[
-                                              Icon(FontAwesomeIcons.bars),
-                                              Icon(FontAwesomeIcons
-                                                  .gripVertical),
-                                              Icon(FontAwesomeIcons.th),
-                                            ],
-                                            onPressed: (int index) {
-                                              setState(() {
-                                                gridItem = index + 1;
-                                                changeGrid();
-                                                for (int buttonIndex = 0;
-                                                    buttonIndex <
-                                                        isSelected.length;
-                                                    buttonIndex++) {
-                                                  if (buttonIndex == index) {
-                                                    isSelected[buttonIndex] =
-                                                        true;
-                                                  } else {
-                                                    isSelected[buttonIndex] =
-                                                        false;
-                                                  }
+          centerTitle: true,
+        ),
+        body: Container(
+          child: Column(
+            children: [
+              Expanded(
+                child: TabBarView(
+                  controller: tabController,
+                  children: myList.isEmpty
+                      ? <Widget>[]
+                      : myList.map((category) {
+                          return Container(
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    margin:
+                                        const EdgeInsets.fromLTRB(15, 5, 15, 5),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          category.categoryFullName,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w800,
+                                              fontSize: 20),
+                                        ),
+                                        ToggleButtons(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(15.0)),
+                                          children: <Widget>[
+                                            Icon(FontAwesomeIcons.bars),
+                                            Icon(FontAwesomeIcons.gripVertical),
+                                            Icon(FontAwesomeIcons.th),
+                                          ],
+                                          onPressed: (int index) {
+                                            setState(() {
+                                              gridItem = index + 1;
+                                              changeGrid();
+                                              for (int buttonIndex = 0;
+                                                  buttonIndex <
+                                                      isSelected.length;
+                                                  buttonIndex++) {
+                                                if (buttonIndex == index) {
+                                                  isSelected[buttonIndex] =
+                                                      true;
+                                                } else {
+                                                  isSelected[buttonIndex] =
+                                                      false;
                                                 }
-                                              });
-                                            },
-                                            isSelected: isSelected,
-                                          ),
-                                        ],
-                                      ),
+                                              }
+                                            });
+                                          },
+                                          isSelected: isSelected,
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  Expanded(
-                                    flex: 10,
-                                    child: GridView.builder(
-                                        padding: const EdgeInsets.all(10.0),
-                                        itemCount:
-                                            category.newspaperList.length,
-                                        gridDelegate:
-                                            SliverGridDelegateWithFixedCrossAxisCount(
-                                          crossAxisCount: gridItem,
-                                          crossAxisSpacing: gridItemSpacing,
-                                          mainAxisSpacing: gridItemSpacing,
-                                          childAspectRatio: childAspectItem,
-                                        ),
-                                        itemBuilder:
-                                            (BuildContext context, int index) {
-                                          return BoxNewsPaper(
-                                              fontSize,
-                                              category.newspaperList[index],
-                                              boderWidth);
-                                        }),
-                                  ),
-                                ],
-                              ),
-                            );
-                          }).toList(),
-                  ),
+                                ),
+                                Expanded(
+                                  flex: 10,
+                                  child: GridView.builder(
+                                      padding: const EdgeInsets.all(10.0),
+                                      itemCount: category.newspaperList.length,
+                                      gridDelegate:
+                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisCount: gridItem,
+                                        crossAxisSpacing: gridItemSpacing,
+                                        mainAxisSpacing: gridItemSpacing,
+                                        childAspectRatio: childAspectItem,
+                                      ),
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        return BoxNewsPaper(
+                                            fontSize,
+                                            category.newspaperList[index],
+                                            boderWidth,
+                                            heartFontSize);
+                                      }),
+                                ),
+                              ],
+                            ),
+                          );
+                        }).toList(),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          backgroundColor: Colors.white,
         ),
+        backgroundColor: Colors.white,
       ),
     );
   }
@@ -203,8 +201,10 @@ class BoxNewsPaper extends StatefulWidget {
   final NewspaperList newspaper;
   final double fontSize;
   final double boderWidth;
+  final double heartFontSize;
+
   BoxNewsPaper(@required this.fontSize, @required this.newspaper,
-      @required this.boderWidth);
+      @required this.boderWidth, this.heartFontSize);
 
   @override
   _BoxNewsPaperState createState() => _BoxNewsPaperState();
@@ -227,7 +227,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper> {
             decoration: BoxDecoration(
                 border: Border(
                     right: BorderSide(
-                        color: Color(0xff407473), width: widget.boderWidth))),
+                        color: kMainColor, width: widget.boderWidth))),
             alignment: Alignment.center,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -245,7 +245,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper> {
                   ),
                 ),
                 Expanded(
-                  flex: 10,
+                  flex: 15,
                   child: Column(
                     children: [
                       Expanded(
@@ -265,14 +265,32 @@ class _BoxNewsPaperState extends State<BoxNewsPaper> {
                           children: [
                             IconButton(
                               icon: Icon(FontAwesomeIcons.solidHeart,
+                                  size: widget.heartFontSize,
                                   color: widget.newspaper.isFavorite
-                                      ? _iconColor
-                                      : Colors.redAccent),
-                              onPressed: () {
+                                      ? Colors.redAccent
+                                      : _iconColor),
+                              onPressed: () async {
                                 setState(() {
                                   widget.newspaper.isFavorite =
                                       !widget.newspaper.isFavorite;
                                 });
+                                SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
+                                var favoriteList =
+                                    prefs.getStringList("Favorite");
+                                if (favoriteList == null) {
+                                  favoriteList = List();
+                                }
+                                if (widget.newspaper.isFavorite) {
+                                  favoriteList.add(widget.newspaper.url);
+                                } else {
+                                  favoriteList.remove(widget.newspaper.url);
+                                }
+                                //favoriteList = List();
+                                prefs.setStringList("Favorite", favoriteList);
+                                // favoriteList.forEach((element) {
+                                //   print("test ---" + element);
+                                // });
                               },
                             ),
                           ],

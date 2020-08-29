@@ -17,28 +17,31 @@ class MyWebView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-          appBar: AppBar(
-            flexibleSpace: Hero(
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          flexibleSpace: SafeArea(
+            child: Hero(
               tag: 'imageHero${newspaper.icon}',
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  "images/${newspaper.icon}",
+                child: Container(
+                  child: Image.asset(
+                    "images/${newspaper.icon}",
+                  ),
                 ),
               ),
             ),
-            centerTitle: true,
-            leading: BackButton(color: Colors.black),
           ),
-          body: WebView(
-            initialUrl: newspaper.url,
-            javascriptMode: JavascriptMode.unrestricted,
-            onWebViewCreated: (WebViewController webViewController) {
-              _controller.complete(webViewController);
-            },
-          )),
-    );
+          centerTitle: true,
+          leading: BackButton(color: Colors.black),
+        ),
+        body: WebView(
+          initialUrl: newspaper.url,
+          javascriptMode: JavascriptMode.unrestricted,
+          onWebViewCreated: (WebViewController webViewController) {
+            _controller.complete(webViewController);
+          },
+        ));
   }
 }

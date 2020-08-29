@@ -11,3 +11,5 @@ const kIconColor = Color(0xFFF48A37);
 const kProgressIndicator = Color(0xFFBE7066);
 
 final kShadowColor = Color(0xFFD3D3D3).withOpacity(.84);
+
+const kMainColor = Color(0xff407473);

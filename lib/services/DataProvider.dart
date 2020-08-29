@@ -15,8 +15,23 @@ class DataProvider {
         .map((i) => DataCategoryModel.fromJson(i))
         .toList();
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    //prefs.setString(, json.encode());
-    var favorite = prefs.get("Favorite");
+
+    var favoriteList = prefs.getStringList("Favorite");
+    // favorite.forEach((element) {
+    //   print("test ---" + element);
+    // });
+    if (favoriteList == null) {
+      favoriteList = List();
+    }
+    myModels.forEach((data) {
+      data.newspaperList.forEach((element) {
+        if (favoriteList.contains(element.url)) {
+          element.isFavorite = true;
+        } else {
+          element.isFavorite = false;
+        }
+      });
+    });
 
     return myModels;
   }
