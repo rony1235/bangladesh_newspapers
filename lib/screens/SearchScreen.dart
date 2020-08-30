@@ -117,22 +117,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       borderSide: BorderSide(color: kPrimaryColor, width: 2),
                     ),
                   ),
-                )
-
-                // decoration: InputDecoration(
-                //     contentPadding:
-                //         EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                //     prefixIcon: Icon(Icons.search),
-                //     hintText: "Search",
-                //     border: OutlineInputBorder(
-                //         borderSide:
-                //             BorderSide(color: kPrimaryColor, width: 32.0),
-                //         borderRadius: BorderRadius.circular(25.0)),
-                //     focusedBorder: OutlineInputBorder(
-                //         borderSide:
-                //             BorderSide(color: kPrimaryColor, width: 32.0),
-                //         borderRadius: BorderRadius.circular(25.0)))),
-                ),
+                )),
           ),
           Expanded(
             flex: 10,
@@ -166,7 +151,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     }
                     //favoriteList = List();
                     prefs.setStringList("Favorite", favoriteList);
-                    newspaperList.removeAt(index);
+                    //newspaperList.removeAt(index);
                     // favoriteList.forEach((element) {
                     //   print("test ---" + element);
                     // });

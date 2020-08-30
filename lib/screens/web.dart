@@ -22,7 +22,7 @@ class MyWebView extends StatelessWidget {
           backgroundColor: Colors.white,
           flexibleSpace: SafeArea(
             child: Hero(
-              tag: 'imageHero${newspaper.icon}',
+              tag: 'imageHero${newspaper.url}',
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(

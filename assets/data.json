@@ -46,8 +46,96 @@
         "Name": "Daily Sangram",
         "Url": "https://dailysangram.com/",
         "Icon": "dailysangram.png"
+      },
+      {
+        "Name": "Manab Zamin",
+        "Url": "https://www.mzamin.com/",
+        "Icon": "mzamin.png"
       }
+    ,
+      {
+        "Name": "Dainik Amader Shomoy",
+        "Url": "https://www.dainikamadershomoy.com/",
+        "Icon": "dainikamadershomoy.png"
+      } ,
+      {
+        "Name": "Dainik Janakantha",
+        "Url": "https://www.dailyjanakantha.com/",
+        "Icon": "dailyjanakantha.png"
+      }
+    ,
+      {
+        "Name": "Bhorer Kagoj",
+        "Url": "https://www.bhorerkagoj.com/",
+        "Icon": "bhorerkagoj.png"
+      }
+    ,
+      {
+        "Name": "Sangbad",
+        "Url": "https://thesangbad.net/",
+        "Icon": "thesangbad.png"
+      }
+    ,
+      {
+        "Name": "Jai Jai Din",
+        "Url": "https://www.jaijaidinbd.com/",
+        "Icon": "jaijaidinbd.png"
+      }
+    ,
+      {
+        "Name": "Manob kantha",
+        "Url": "https://www.manobkantha.com.bd/",
+        "Icon": "manobkantha.png"
+      }
+    ,
+      {
+        "Name": "Ajkaler Khobor",
+        "Url": "http://www.ajkalerkhobor.com/",
+        "Icon": "ajkalerkhobor.png"
+      }
+    ,
+      {
+        "Name": "Daily Suprobhat",
+        "Url": "https://suprobhat.com/",
+        "Icon": "alokitobangladesh.png"
+      },
+      {
+        "Name": "Dainik Destiny",
+        "Url": "https://www.kholakagojbd.com/",
+        "Icon": "kholakagojbd.png"
+      },
+      {
+        "Name": "Daily Vorerpata",
+        "Url": "http://www.dailyvorerpata.com/",
+        "Icon": "dailyvorerpata.png"
+      },
+      {
+        "Name": "Amar Desh 24",
+        "Url": "https://amar-desh24.com/bangla/",
+        "Icon": "amardesh24.png"
+      },
+      {
+        "Name": "Amar Sangbad",
+        "Url": "https://www.dailyamarsangbad.com/",
+        "Icon": "dailyamarsangbad.png"
+      }
+    ,
+      {
+        "Name": "Protidiner Sangbad",
+        "Url": "https://www.protidinersangbad.com/",
+        "Icon": "protidinersangbad.png"
+      },
+      {
+        "Name": "Dainik Odhikar News",
+        "Url": "https://www.odhikar.news/",
+        "Icon": "odhikarnews.png"
+      },
 
+      {
+        "Name": "Dainik Odhikar News",
+        "Url": "https://bhorer-dak.com/",
+        "Icon": "bhorerdak.png"
+      }
 
     ]
   },
@@ -62,7 +150,8 @@
         "Icon": "dailystar.png"
       }
     ]
-  },{
+  },
+  {
   "Category": "Epaper",
   "CategoryFullName": "EPaper",
   "Icon": "prothomalo.png",
@@ -85,7 +174,7 @@
     }
   ]
 },{
-  "Category": "English",
+  "Category": "TV Channel",
   "CategoryFullName": "English Newspaper",
   "Icon": "prothomalo.png",
   "NewspaperList": [

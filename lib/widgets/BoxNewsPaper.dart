@@ -55,7 +55,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Hero(
-                      tag: 'imageHero${widget.newspaper.icon}',
+                      tag: 'imageHero${widget.newspaper.url}',
                       child: Image.asset(
                         "images/${widget.newspaper.icon}",
                       ),
