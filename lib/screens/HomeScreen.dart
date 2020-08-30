@@ -1,17 +1,18 @@
+import 'package:bangladesh_newspapers/widgets/BoxNewsPaper.dart';
+import 'package:bangladesh_newspapers/widgets/MainTabBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/services/DataProvider.dart';
-import 'package:bangladesh_newspapers/screens/web.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Home extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
   _HomeState createState() => new _HomeState();
 }
 
-class _HomeState extends State<Home> with TickerProviderStateMixin {
+class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
   TabController tabController;
   List<DataCategoryModel> myList = List();
   List<bool> isSelected = List();
@@ -21,6 +22,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   double boderWidth;
   double gridItemSpacing;
   double heartFontSize;
+  Color _iconColor = Colors.white;
 
   @override
   void initState() {
@@ -47,7 +49,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       childAspectItem = 1;
       boderWidth = 7;
       gridItemSpacing = 10;
-      heartFontSize = 30;
+      heartFontSize = 25;
     }
     if (gridItem == 3) {
       fontSize = 13;
@@ -72,9 +74,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     var tabBarItem = TabBar(
       labelPadding: EdgeInsets.fromLTRB(10.0, 5, 10, 2),
       labelStyle: TextStyle(
-          color: Colors.black87, fontWeight: FontWeight.w900, fontSize: 20),
+          color: kPrimaryTextColor, fontWeight: FontWeight.w900, fontSize: 20),
       unselectedLabelStyle:
-          TextStyle(color: Color(0xffacb3bf), fontWeight: FontWeight.w500),
+          TextStyle(color: kPrimaryTextColor, fontWeight: FontWeight.w500),
       indicatorWeight: 4.0,
       isScrollable: true,
       tabs: myList.isEmpty
@@ -83,24 +85,15 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               return MainTabBarWidget(category);
             }).toList(),
       controller: tabController,
-      indicatorColor: kMainColor,
+      indicatorColor: kPrimaryColor,
     );
 
     return DefaultTabController(
       length: myList.length,
       child: Scaffold(
-        appBar: AppBar(
-          bottom: tabBarItem,
-          shadowColor: kMainColor,
-          title: Padding(
-            padding: const EdgeInsets.all(2.0),
-            child: Text(
-              "Bangladesh Newspaper",
-              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 35),
-            ),
-          ),
-          centerTitle: true,
-        ),
+        appBar: PreferredSize(
+            preferredSize: Size.fromHeight(kToolbarHeight),
+            child: Container(color: kPrimaryColor, child: tabBarItem)),
         body: Container(
           child: Column(
             children: [
@@ -179,7 +172,41 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                             fontSize,
                                             category.newspaperList[index],
                                             boderWidth,
-                                            heartFontSize);
+                                            heartFontSize, () async {
+                                          setState(() {
+                                            category.newspaperList[index]
+                                                    .isFavorite =
+                                                !category.newspaperList[index]
+                                                    .isFavorite;
+                                          });
+                                          SharedPreferences prefs =
+                                              await SharedPreferences
+                                                  .getInstance();
+                                          var favoriteList =
+                                              prefs.getStringList("Favorite");
+                                          if (favoriteList == null) {
+                                            favoriteList = List();
+                                          }
+                                          if (category.newspaperList[index]
+                                              .isFavorite) {
+                                            favoriteList.add(category
+                                                .newspaperList[index].url);
+                                          } else {
+                                            favoriteList.remove(category
+                                                .newspaperList[index].url);
+                                          }
+                                          //favoriteList = List();
+                                          prefs.setStringList(
+                                              "Favorite", favoriteList);
+                                          //category.newspaperList.removeAt(index);
+                                          // favoriteList.forEach((element) {
+                                          //   print("test ---" + element);
+                                          // });
+                                        },
+                                            category.newspaperList[index]
+                                                    .isFavorite
+                                                ? Colors.redAccent
+                                                : _iconColor);
                                       }),
                                 ),
                               ],
@@ -191,156 +218,30 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             ],
           ),
         ),
-        backgroundColor: Colors.white,
-      ),
-    );
-  }
-}
-
-class BoxNewsPaper extends StatefulWidget {
-  final NewspaperList newspaper;
-  final double fontSize;
-  final double boderWidth;
-  final double heartFontSize;
-
-  BoxNewsPaper(@required this.fontSize, @required this.newspaper,
-      @required this.boderWidth, this.heartFontSize);
-
-  @override
-  _BoxNewsPaperState createState() => _BoxNewsPaperState();
-}
-
-class _BoxNewsPaperState extends State<BoxNewsPaper> {
-  Color _iconColor = Colors.white;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Card(
-        elevation: 2.0,
-        color: Color(0xffE6FCFC),
-        child: ClipPath(
-          clipper: ShapeBorderClipper(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5))),
-          child: Container(
-            decoration: BoxDecoration(
-                border: Border(
-                    right: BorderSide(
-                        color: kMainColor, width: widget.boderWidth))),
-            alignment: Alignment.center,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  flex: 15,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Hero(
-                      tag: 'imageHero${widget.newspaper.icon}',
-                      child: Image.asset(
-                        "images/${widget.newspaper.icon}",
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 15,
-                  child: Column(
-                    children: [
-                      Expanded(
-                        flex: 10,
-                        child: Text(
-                          widget.newspaper.name,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              fontSize: widget.fontSize,
-                              fontWeight: FontWeight.w800),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 10,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            IconButton(
-                              icon: Icon(FontAwesomeIcons.solidHeart,
-                                  size: widget.heartFontSize,
-                                  color: widget.newspaper.isFavorite
-                                      ? Colors.redAccent
-                                      : _iconColor),
-                              onPressed: () async {
-                                setState(() {
-                                  widget.newspaper.isFavorite =
-                                      !widget.newspaper.isFavorite;
-                                });
-                                SharedPreferences prefs =
-                                    await SharedPreferences.getInstance();
-                                var favoriteList =
-                                    prefs.getStringList("Favorite");
-                                if (favoriteList == null) {
-                                  favoriteList = List();
-                                }
-                                if (widget.newspaper.isFavorite) {
-                                  favoriteList.add(widget.newspaper.url);
-                                } else {
-                                  favoriteList.remove(widget.newspaper.url);
-                                }
-                                //favoriteList = List();
-                                prefs.setStringList("Favorite", favoriteList);
-                                // favoriteList.forEach((element) {
-                                //   print("test ---" + element);
-                                // });
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      onTap: () {
-        Navigator.of(context).push(
-          PageRouteBuilder(
-            transitionDuration: Duration(milliseconds: 1000),
-            pageBuilder: (BuildContext context, Animation<double> animation,
-                Animation<double> secondaryAnimation) {
-              return MyWebView(widget.newspaper);
-            },
-            transitionsBuilder: (BuildContext context,
-                Animation<double> animation,
-                Animation<double> secondaryAnimation,
-                Widget child) {
-              return Align(
-                child: FadeTransition(
-                  opacity: animation,
-                  child: child,
-                ),
-              );
-            },
-          ),
-        );
-      },
-    );
-  }
-}
-
-class MainTabBarWidget extends StatelessWidget {
-  final DataCategoryModel category;
-  MainTabBarWidget(
-    this.category,
-  );
-
-  @override
-  Widget build(BuildContext context) {
-    return Tab(
-      child: Container(
-        child: Text(category.category),
+        // bottomNavigationBar: CurvedNavigationBar(
+        //   key: _bottomNavigationKey,
+        //   index: 0,
+        //   height: 50.0,
+        //   items: <Widget>[
+        //     NavButton(_page, Icons.home, 0, "Home"),
+        //     NavButton(_page, Icons.search, 1, "Search"),
+        //     NavButton(_page, Icons.favorite, 2, "Favorite"),
+        //     NavButton(_page, Icons.settings, 3, "Settings"),
+        //     NavButton(_page, Icons.info_outline, 4, "Info"),
+        //   ],
+        //   color: Colors.white,
+        //   buttonBackgroundColor: kPrimaryColor,
+        //   backgroundColor: Colors.white,
+        //   animationCurve: Curves.easeInOut,
+        //   animationDuration: Duration(milliseconds: 600),
+        //   onTap: (index) {
+        //     setState(() {
+        //       _page = index;
+        //       print(index);
+        //     });
+        //   },
+        // ),
+        backgroundColor: kPrimaryTextColor,
       ),
     );
   }

@@ -12,4 +12,9 @@ const kProgressIndicator = Color(0xFFBE7066);
 
 final kShadowColor = Color(0xFFD3D3D3).withOpacity(.84);
 
-const kMainColor = Color(0xff407473);
+const kPrimaryColor = Color(0xff407473);
+const kPrimaryLightColor = Color(0xff6ea3a2);
+const kPrimaryDarkColor = Color(0xff104848);
+const kPrimaryTextColor = Color(0xffffffff);
+
+const kPrimaryCardColor = Color(0xffE6FCFC);

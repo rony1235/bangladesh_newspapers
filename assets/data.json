@@ -10,15 +10,22 @@
         "Icon": "prothomalo.png"
       },
       {
-        "Name": "Ittefaq",
-        "Url": "https://ittefaq.com.bd/",
-        "Icon": "ittefaq.png"
-      },
-      {
         "Name": "Bangladesh Pratidin",
         "Url": "https://www.bd-pratidin.com/",
         "Icon": "bangladeshpratidin.png"
       },
+      {
+        "Name": "Samakal",
+        "Url": "https://samakal.com/",
+        "Icon": "samakal.png"
+      },
+
+      {
+        "Name": "Ittefaq",
+        "Url": "https://ittefaq.com.bd/",
+        "Icon": "ittefaq.png"
+      },
+
       {
         "Name": "Daily kaler kantho",
         "Url": "https://www.kalerkantho.com/",
@@ -56,8 +63,8 @@
       }
     ]
   },{
-  "Category": "EPaper",
-  "CategoryFullName": "E Paper",
+  "Category": "Epaper",
+  "CategoryFullName": "EPaper",
   "Icon": "prothomalo.png",
   "NewspaperList": [
     {

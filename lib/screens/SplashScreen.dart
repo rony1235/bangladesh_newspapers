@@ -70,7 +70,7 @@ class SplashScreenState extends State<SplashScreen>
                   Padding(
                     padding: EdgeInsets.only(bottom: 30.0),
                     child: new Image.asset(
-                      'images/ittefaq.png',
+                      'images/logo.png',
                       width: animation.value * 250,
                       height: animation.value * 250,
                     ),

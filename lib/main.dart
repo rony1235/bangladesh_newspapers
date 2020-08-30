@@ -1,10 +1,7 @@
+import 'package:bangladesh_newspapers/screens/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
-
-import 'package:bangladesh_newspapers/screens/GridItemDetails.dart';
-import 'package:bangladesh_newspapers/screens/HomeScreen.dart';
 import 'package:bangladesh_newspapers/screens/SplashScreen.dart';
-import 'package:bangladesh_newspapers/screens/test.dart';
 
 void main() => runApp(MaterialApp(
       title: 'GridView Demo',
@@ -12,23 +9,23 @@ void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: MaterialColor(0xff407473, const {
-            50: kMainColor,
-            100: kMainColor,
-            200: kMainColor,
-            300: kMainColor,
-            400: kMainColor,
-            500: kMainColor,
-            600: kMainColor,
-            700: kMainColor,
-            800: kMainColor,
-            900: kMainColor
+            50: kPrimaryColor,
+            100: kPrimaryColor,
+            200: kPrimaryColor,
+            300: kPrimaryColor,
+            400: kPrimaryColor,
+            500: kPrimaryColor,
+            600: kPrimaryColor,
+            700: kPrimaryColor,
+            800: kPrimaryColor,
+            900: kPrimaryColor
           }),
-          accentColor: kMainColor,
-          primaryColor: kMainColor,
+          accentColor: kPrimaryTextColor,
+          primaryColor: kPrimaryColor,
           fontFamily: 'Sansnarrow'),
       routes: <String, WidgetBuilder>{
         SPLASH_SCREEN: (BuildContext context) => SplashScreen(),
-        HOME_SCREEN: (BuildContext context) => Home(),
+        HOME_SCREEN: (BuildContext context) => Dashboard(),
         //GRID_ITEM_DETAILS_SCREEN: (BuildContext context) => GridItemDetails(),
       },
     ));
