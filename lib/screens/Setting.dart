@@ -1,12 +1,5 @@
-import 'package:bangladesh_newspapers/widgets/BoxNewsPaper.dart';
-import 'package:bangladesh_newspapers/widgets/MainTabBarWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
-import 'package:bangladesh_newspapers/services/DataProvider.dart';
-import 'package:bangladesh_newspapers/screens/web.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingScreen extends StatefulWidget {
   @override

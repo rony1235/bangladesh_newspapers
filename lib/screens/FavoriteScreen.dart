@@ -1,9 +1,7 @@
 import 'package:bangladesh_newspapers/widgets/BoxNewsPaper.dart';
-import 'package:bangladesh_newspapers/widgets/MainTabBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/services/DataProvider.dart';
-import 'package:bangladesh_newspapers/screens/web.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -56,7 +54,7 @@ class _FavoriteScreenState extends State<FavoriteScreen>
       heartFontSize = 25;
     }
     if (gridItem == 3) {
-      fontSize = 13;
+      fontSize = 15;
       childAspectItem = 1;
       boderWidth = 3;
       gridItemSpacing = 4;
@@ -66,7 +64,22 @@ class _FavoriteScreenState extends State<FavoriteScreen>
 
   Future<void> doSomeAsyncStuff() async {
     newspaperList = await DataProvider().getAllFavorite();
-    setState(() {});
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var number = prefs.getInt("gridItem");
+    setState(() {
+      print(number);
+      if (number == null || number == 0) {
+        gridItem = 2;
+      } else {
+        gridItem = number;
+      }
+      isSelected = List();
+      isSelected.add(gridItem == 1);
+      isSelected.add(gridItem == 2);
+      isSelected.add(gridItem == 3);
+      changeGrid();
+    });
+
     //print(newspaperList[0].name);
   }
 
@@ -97,9 +110,13 @@ class _FavoriteScreenState extends State<FavoriteScreen>
                         Icon(FontAwesomeIcons.gripVertical),
                         Icon(FontAwesomeIcons.th),
                       ],
-                      onPressed: (int index) {
+                      onPressed: (int index) async {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        var number = prefs.setInt("gridItem", index + 1);
                         setState(() {
                           gridItem = index + 1;
+
                           changeGrid();
                           for (int buttonIndex = 0;
                               buttonIndex < isSelected.length;

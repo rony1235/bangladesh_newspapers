@@ -30,6 +30,7 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
     gridItem = 2;
     changeGrid();
     tabController = new TabController(vsync: this, length: myList.length);
+
     isSelected.add(gridItem == 1);
     isSelected.add(gridItem == 2);
     isSelected.add(gridItem == 3);
@@ -52,7 +53,7 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
       heartFontSize = 25;
     }
     if (gridItem == 3) {
-      fontSize = 13;
+      fontSize = 14;
       childAspectItem = 1;
       boderWidth = 3;
       gridItemSpacing = 4;
@@ -62,10 +63,23 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
 
   Future<void> doSomeAsyncStuff() async {
     myList = await DataProvider().getAll();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var number = prefs.getInt("gridItem");
 
     //print(myList[0].category);
     setState(() {
       tabController = new TabController(vsync: this, length: myList.length);
+      //print(number);
+      if (number == null || number == 0) {
+        gridItem = 2;
+      } else {
+        gridItem = number;
+      }
+      isSelected = List();
+      isSelected.add(gridItem == 1);
+      isSelected.add(gridItem == 2);
+      isSelected.add(gridItem == 3);
+      changeGrid();
     });
   }
 
@@ -74,9 +88,9 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
     var tabBarItem = TabBar(
       labelPadding: EdgeInsets.fromLTRB(10.0, 5, 10, 2),
       labelStyle: TextStyle(
-          color: kPrimaryTextColor, fontWeight: FontWeight.w900, fontSize: 20),
-      unselectedLabelStyle:
-          TextStyle(color: kPrimaryTextColor, fontWeight: FontWeight.w500),
+          color: Colors.black, fontWeight: FontWeight.w900, fontSize: 20),
+      unselectedLabelStyle: TextStyle(
+          color: kPrimaryColor, fontWeight: FontWeight.w500, fontSize: 20),
       indicatorWeight: 4.0,
       isScrollable: true,
       tabs: myList.isEmpty
@@ -85,7 +99,7 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
               return MainTabBarWidget(category);
             }).toList(),
       controller: tabController,
-      indicatorColor: kPrimaryColor,
+      indicatorColor: kPrimaryLightColor,
     );
 
     return DefaultTabController(
@@ -130,9 +144,15 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
                                             Icon(FontAwesomeIcons.gripVertical),
                                             Icon(FontAwesomeIcons.th),
                                           ],
-                                          onPressed: (int index) {
+                                          onPressed: (int index) async {
+                                            SharedPreferences prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            var number = prefs.setInt(
+                                                "gridItem", index + 1);
                                             setState(() {
                                               gridItem = index + 1;
+
                                               changeGrid();
                                               for (int buttonIndex = 0;
                                                   buttonIndex <

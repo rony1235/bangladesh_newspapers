@@ -168,9 +168,99 @@
   "Icon": "prothomalo.png",
   "NewspaperList": [
     {
-      "Name": "Daily Star",
-      "Url": "https://www.thedailystar.net/",
-      "Icon": "dailystar.png"
+      "Name": "The Gurdian",
+      "Url": "https://www.theguardian.com/international",
+      "Icon": "theguardian.png"
+    },
+    {
+      "Name": "The Wall Street Journal",
+      "Url": "https://www.wsj.com/",
+      "Icon": "wsj.png"
+    },
+    {
+      "Name": "The New Work Times",
+      "Url": "https://www.nytimes.com/section/world",
+      "Icon": "TNWT.png"
+    },
+    {
+      "Name": "The Washington Post",
+      "Url": "https://www.washingtonpost.com/",
+      "Icon": "TWP.png"
+    },
+    {
+      "Name": "China Daily",
+      "Url": "http://www.chinadaily.com.cn/",
+      "Icon": "CD.png"
+    },
+    {
+      "Name": "The Times Of India",
+      "Url": "https://timesofindia.indiatimes.com/",
+      "Icon": "TTOI.png"
+    },
+    {
+      "Name": "Sydney Morning Herald",
+      "Url": "https://www.smh.com.au/",
+      "Icon": "smh.png"
+    },
+    {
+      "Name": "The Asahi Shimbun",
+      "Url": "http://www.asahi.com/ajw/",
+      "Icon": "Asahi-Shimbun.png"
+    },
+    {
+      "Name": "DAWN",
+      "Url": "https://epaper.dawn.com/",
+      "Icon": "dawn.png"
+    },
+    {
+      "Name": "Liberty Times",
+      "Url": "https://www.ltn.com.tw/",
+      "Icon": "LT.png"
+    },
+    {
+      "Name": "Telegraph",
+      "Url": "https://www.telegraph.co.uk/news/",
+      "Icon": "telegraph.png"
+    },
+    {
+      "Name": "The Independent",
+      "Url": "http://www.theindependentbd.com/",
+      "Icon": "indipendent.png"
+    },
+    {
+      "Name": "The Sun",
+      "Url": "https://www.thesun.co.uk/news/",
+      "Icon": "sun.png"
+    },
+    {
+      "Name": "The Daily Mirror",
+      "Url": "https://www.mirror.co.uk/news/",
+      "Icon": "mirror.png"
+    },
+    {
+      "Name": "Daily Express",
+      "Url": "https://www.express.co.uk/news",
+      "Icon": "DX.png"
+    },
+    {
+      "Name": "Chicago Tribune",
+      "Url": "https://www.chicagotribune.com/news/breaking/",
+      "Icon": "tribune.png"
+    },
+    {
+      "Name": "The Indian Express",
+      "Url": "https://indianexpress.com/latest-news/",
+      "Icon": "indian-express.png"
+    },
+    {
+      "Name": "The Japan Times",
+      "Url": "https://www.japantimes.co.jp/news/",
+      "Icon": "JT.png"
+    },
+    {
+      "Name": "China Economic Net",
+      "Url": "http://en.ce.cn/World/",
+      "Icon": "CEN.png"
     }
   ]
 },{

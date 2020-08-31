@@ -1,5 +1,4 @@
 ﻿import 'package:flutter/material.dart';
-import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/models/Item.dart';
 import 'package:bangladesh_newspapers/screens/GetRatings.dart';
 
