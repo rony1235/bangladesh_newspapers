@@ -1,6 +1,6 @@
+import 'package:bangladesh_newspapers/screens/webTest.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
-import 'package:bangladesh_newspapers/screens/web.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 
@@ -99,12 +99,13 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
         ),
       ),
       onTap: () {
+        //showAds();
         Navigator.of(context).push(
           PageRouteBuilder(
             transitionDuration: Duration(milliseconds: 1000),
             pageBuilder: (BuildContext context, Animation<double> animation,
                 Animation<double> secondaryAnimation) {
-              return MyWebView(widget.newspaper);
+              return MyWebTestView(widget.newspaper);
             },
             transitionsBuilder: (BuildContext context,
                 Animation<double> animation,

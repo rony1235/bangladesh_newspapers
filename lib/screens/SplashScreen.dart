@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/screens/HomeScreen.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -17,6 +18,8 @@ class SplashScreenState extends State<SplashScreen>
   Animation<double> animation;
 
   startTime() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setInt("paperVisit", 0);
     var _duration = new Duration(seconds: 3);
     return new Timer(_duration, navigationPage);
   }

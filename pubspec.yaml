@@ -32,6 +32,8 @@ dependencies:
   font_awesome_flutter: ^8.8.1
   shared_preferences: ^0.5.10
   curved_navigation_bar: ^0.3.3
+  firebase_admob: ^0.10.0-dev.1
+
 
 
 
