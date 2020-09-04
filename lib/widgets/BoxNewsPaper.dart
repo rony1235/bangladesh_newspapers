@@ -1,6 +1,7 @@
 import 'package:bangladesh_newspapers/screens/webTest.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 
@@ -56,9 +57,13 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                     padding: const EdgeInsets.all(8.0),
                     child: Hero(
                       tag: 'imageHero${widget.newspaper.url}',
-                      child: Image.asset(
-                        "images/${widget.newspaper.icon}",
-                      ),
+                      child: widget.newspaper.icon.contains("svg")
+                          ? SvgPicture.asset(
+                              "images/${widget.newspaper.icon}",
+                            )
+                          : Image.asset(
+                              "images/${widget.newspaper.icon}",
+                            ),
                     ),
                   ),
                 ),

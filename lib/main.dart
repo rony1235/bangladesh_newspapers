@@ -6,7 +6,7 @@ import 'package:bangladesh_newspapers/screens/SplashScreen.dart';
 void main() => runApp(MaterialApp(
       title: 'GridView Demo',
       home: SplashScreen(),
-      debugShowCheckedModeBanner: false,
+      //debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: MaterialColor(0xff407473, const {
             50: kPrimaryColor,

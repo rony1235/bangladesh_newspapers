@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
@@ -14,17 +15,21 @@ const int ShowAdsNumber = 3;
 class MyWebTestView extends StatelessWidget {
   final NewspaperList newspaper;
 
-  final Completer<WebViewController> _controller =
+  WebViewController _controller;
+
+  final Completer<WebViewController> _controllerCompleter =
       Completer<WebViewController>();
 
   MyWebTestView(this.newspaper) {
-    print("http://foo.com/bar.html");
+    //print("http://foo.com/bar.html");
     showAds();
   }
   @override
   void initState() {
     //super.initState();
-    FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
+    //FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
+    FirebaseAdMob.instance
+        .initialize(appId: "ca-app-pub-2877215416565320~1401213050");
 
     RewardedVideoAd.instance.listener =
         (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
@@ -57,18 +62,22 @@ class MyWebTestView extends StatelessWidget {
   }
 
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
-    testDevices: testDevice != null ? <String>[testDevice] : null,
-    keywords: <String>['foo', 'bar'],
-    contentUrl: 'http://foo.com/bar.html',
-    childDirected: true,
-    nonPersonalizedAds: true,
-  );
+      testDevices: testDevice != null ? <String>[testDevice] : null,
+      keywords: <String>['game', 'newspaper'],
+      contentUrl: 'https://flutter.io',
+      //birthday: DateTime.now(),
+      childDirected: false,
+      nonPersonalizedAds: false
+      //designedForFamilies: false,
+      //gender: MobileAdGender.male,
+      );
   BannerAd myBanner = BannerAd(
     // Replace the testAdUnitId with an ad unit id from the AdMob dash.
     // https://developers.google.com/admob/android/test-ads
     // https://developers.google.com/admob/ios/test-ads
-    adUnitId: BannerAd.testAdUnitId,
-    size: AdSize.banner,
+    adUnitId: BannerAd
+        .testAdUnitId, // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
+    size: AdSize.smartBanner,
     targetingInfo: targetingInfo,
 
     listener: (MobileAdEvent event) {
@@ -83,6 +92,7 @@ class MyWebTestView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //controllerGlobal = _controller;
     myBanner
       // typically this happens well before the ad is shown
       ..load()
@@ -96,8 +106,31 @@ class MyWebTestView extends StatelessWidget {
       );
     return WillPopScope(
       onWillPop: () async {
-        myBanner?.dispose();
-        return true;
+        print("bef");
+        var status = await _controller.canGoBack();
+        print(status);
+        if (status) {
+          _controller.goBack();
+          return false;
+        } else {
+          if (!await myBanner.isLoaded()) {
+            print("working");
+            Timer(const Duration(seconds: 2), () async {
+              if (!await myBanner.isLoaded()) {
+                Timer(const Duration(seconds: 6), () {
+                  myBanner?.dispose();
+                });
+              } else {
+                myBanner?.dispose();
+              }
+            });
+            print("dsd");
+          } else {
+            myBanner?.dispose();
+          }
+
+          return true;
+        }
       },
       child: Scaffold(
           appBar: AppBar(
@@ -108,26 +141,54 @@ class MyWebTestView extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    child: Image.asset(
-                      "images/${newspaper.icon}",
-                    ),
-                  ),
+                      child: newspaper.icon.contains("svg")
+                          ? SvgPicture.asset(
+                              "images/${newspaper.icon}",
+                            )
+                          : Image.asset(
+                              "images/${newspaper.icon}",
+                            )),
                 ),
               ),
             ),
             centerTitle: true,
             leading: BackButton(
                 color: Colors.black,
-                onPressed: () {
-                  myBanner?.dispose();
-                  Navigator.pop(context, true);
+                onPressed: () async {
+                  print("bef");
+                  var status = await _controller.canGoBack();
+                  print(status);
+                  if (status) {
+                    _controller.goBack();
+                  } else {
+                    if (!await myBanner.isLoaded()) {
+                      print("working");
+                      Timer(const Duration(seconds: 2), () async {
+                        if (!await myBanner.isLoaded()) {
+                          Timer(const Duration(seconds: 6), () {
+                            myBanner?.dispose();
+                          });
+                        } else {
+                          myBanner?.dispose();
+                        }
+                      });
+                      print("dsd");
+                    } else {
+                      myBanner?.dispose();
+                    }
+
+                    Navigator.pop(context, true);
+                  }
+                  //myBanner?.dispose();
                 }),
           ),
           body: WebView(
             initialUrl: newspaper.url,
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (WebViewController webViewController) {
-              _controller.complete(webViewController);
+              _controllerCompleter.future.then((value) => _controller = value);
+              _controllerCompleter.complete(webViewController);
+              //_controller.complete(webViewController);
             },
           )),
     );

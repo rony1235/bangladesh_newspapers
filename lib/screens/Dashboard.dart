@@ -88,17 +88,19 @@ class _DashboardState extends State<Dashboard> {
   Future<bool> _onWillPop() async {
     return (await showDialog(
           context: context,
-          builder: (context) => new AlertDialog(
-            title: new Text('Are you sure?'),
-            content: new Text('Do you want to exit an App'),
+          builder: (context) => AlertDialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20.0))),
+            title: Text('Are you sure?'),
+            content: Text('Do you want to exit an App'),
             actions: <Widget>[
-              new FlatButton(
+              FlatButton(
                 onPressed: () => Navigator.of(context).pop(false),
-                child: new Text('No'),
+                child: Text('No'),
               ),
               new FlatButton(
                 onPressed: () => Navigator.of(context).pop(true),
-                child: new Text('Yes'),
+                child: Text('Yes'),
               ),
             ],
           ),

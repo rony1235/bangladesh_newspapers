@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "194210394212",
+    "firebase_url": "https://test-8ea0a.firebaseio.com",
+    "project_id": "test-8ea0a",
+    "storage_bucket": "test-8ea0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194210394212:android:22f76a03d60324671d6f71",
+        "android_client_info": {
+          "package_name": "keya.rony.bangladesh_newspapers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194210394212-285qh377lfk4kh70qmnu2154o8mhsfb0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU8Erf-h3-mCtFRprXKEvGlCRU41Jl6qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194210394212-285qh377lfk4kh70qmnu2154o8mhsfb0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194210394212:android:1a79571845f4b8051d6f71",
+        "android_client_info": {
+          "package_name": "keya.rony.flutter_app_ads_test_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194210394212-285qh377lfk4kh70qmnu2154o8mhsfb0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU8Erf-h3-mCtFRprXKEvGlCRU41Jl6qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194210394212-285qh377lfk4kh70qmnu2154o8mhsfb0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "admob_app_id": "ca-app-pub-2877215416565320~1401213050",
+  "configuration_version": "1"
+}

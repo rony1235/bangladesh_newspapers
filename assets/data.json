@@ -7,7 +7,7 @@
       {
         "Name": "Daily Prothom alo",
         "Url": "https://www.prothomalo.com/",
-        "Icon": "prothomalo.png"
+        "Icon": "prothomalo.svg"
       },
       {
         "Name": "Bangladesh Pratidin",
@@ -38,7 +38,7 @@
       },
       {
         "Name": "Jugantor",
-        "Url": "https://www.jugantor.com/",
+        "Url": "https://www.jugantor.com/m",
         "Icon": "jugantor.png"
       }
     ,
@@ -100,6 +100,16 @@
         "Icon": "alokitobangladesh.png"
       },
       {
+        "Name": "Deshrupantor",
+        "Url": "https://www.deshrupantor.com/",
+        "Icon": "deshrupantor.png"
+      },
+      {
+        "Name": "Shomoyer Alo",
+        "Url": "https://shomoyeralo.com/",
+        "Icon": "shomoyeralo.png"
+      },
+      {
         "Name": "Dainik Destiny",
         "Url": "https://www.kholakagojbd.com/",
         "Icon": "kholakagojbd.png"
@@ -110,6 +120,11 @@
         "Icon": "dailyvorerpata.png"
       },
       {
+        "Name": "Dainik Azadi",
+        "Url": "https://dainikazadi.net/",
+        "Icon": "azadi.png"
+      },
+      {
         "Name": "Amar Desh 24",
         "Url": "https://amar-desh24.com/bangla/",
         "Icon": "amardesh24.png"
@@ -118,8 +133,7 @@
         "Name": "Amar Sangbad",
         "Url": "https://www.dailyamarsangbad.com/",
         "Icon": "dailyamarsangbad.png"
-      }
-    ,
+      },
       {
         "Name": "Protidiner Sangbad",
         "Url": "https://www.protidinersangbad.com/",
@@ -130,13 +144,11 @@
         "Url": "https://www.odhikar.news/",
         "Icon": "odhikarnews.png"
       },
-
       {
         "Name": "Dainik Odhikar News",
         "Url": "https://bhorer-dak.com/",
         "Icon": "bhorerdak.png"
       }
-
     ]
   },
   {
@@ -145,24 +157,292 @@
     "Icon": "prothomalo.png",
     "NewspaperList": [
       {
-        "Name": "Daily Star",
+        "Name": "The Daily Star",
         "Url": "https://www.thedailystar.net/",
-        "Icon": "dailystar.png"
+        "Icon": "thedailystar.png",
+        "BDRank": "32"
+      },
+      {
+        "Name": "Dhaka Tribune ",
+        "Url": "https://www.dhakatribune.com/",
+        "Icon": "dhakatribune.png",
+        "BDRank": "88"
+      },
+      {
+        "Name": "bangla news 24",
+        "Url": "https://www.banglanews24.com/english/",
+        "Icon": "banglanews24.png",
+        "BDRank": "100"
+      },
+      {
+        "Name": "BD News24",
+        "Url": "https://bdnews24.com/",
+        "Icon": "bdnews24.png",
+        "BDRank": "15101"
+      },
+      {
+        "Name": "Daily Prothom-alo",
+        "Url": "https://en.prothomalo.com/",
+        "Icon": "enprothomalo.png",
+        "BDRank": "100"
+      },
+      {
+        "Name": "Somoynews TV English",
+        "Url": "https://en.somoynews.tv/",
+        "Icon": "somoynewstv.png",
+        "BDRank": "5"
+      },
+      {
+        "Name": "BSS News",
+        "Url": "http://www.bssnews.net/",
+        "Icon": "bssnews.png",
+        "BDRank": "190"
+      },
+      {
+        "Name": "NTVBD",
+        "Url": "https://en.ntvbd.com/",
+        "Icon": "ntvbd.png",
+        "BDRank": "200"
+      },
+      {
+        "Name": "The Financial Expres",
+        "Url": "https://thefinancialexpress.com.bd/",
+        "Icon": "thefinancialexpress.png",
+        "BDRank": "319"
+      },
+      {
+        "Name": "The Daily Observer",
+        "Url": "https://www.observerbd.com/",
+        "Icon": "observerbd.png",
+        "BDRank": "491"
+      },
+      {
+        "Name": "New Age",
+        "Url": "https://www.newagebd.net/",
+        "Icon": "newagebd.png",
+        "BDRank": "587"
+      },
+      {
+        "Name": "Daily Sun",
+        "Url": "https://www.daily-sun.com/",
+        "Icon": "dailysun.png",
+        "BDRank": "804 "
+      },
+      {
+        "Name": "The Independent",
+        "Url": "http://www.theindependentbd.com/",
+        "Icon": "theindependentbd.png",
+        "BDRank": "1142"
+      },
+      {
+        "Name": "Bangladesh Post",
+        "Url": "https://bangladeshpost.net/",
+        "Icon": "bangladeshpost.png",
+        "BDRank": "2278"
+      },
+      {
+        "Name": "The Dhaka Post",
+        "Url": "https://thedhakapost.com/",
+        "Icon": "thedhakapost.png",
+        "BDRank": "2480"
+      },
+      {
+        "Name": "The New Nation",
+        "Url": "http://thedailynewnation.com/",
+        "Icon": "thedailynewnation.png",
+        "BDRank": "3314"
+      },
+      {
+        "Name": "Daily Asian Age",
+        "Url": "https://dailyasianage.com/",
+        "Icon": "dailyasianage.png",
+        "BDRank": "3477"
+      },
+      {
+        "Name": "Bangladesh Today",
+        "Url": "https://thebangladeshtoday.com/",
+        "Icon": "thebangladeshtoday.png",
+        "BDRank": "8565"
+      },
+      {
+        "Name": "The People's Time",
+        "Url": "https://www.dailypeoplestime.com/",
+        "Icon": "dailypeoplestime.png",
+        "BDRank": "30000"
       }
     ]
   },
   {
   "Category": "Epaper",
-  "CategoryFullName": "EPaper",
+  "CategoryFullName": "E Paper",
   "Icon": "prothomalo.png",
   "NewspaperList": [
     {
-      "Name": "Daily Star",
-      "Url": "https://www.thedailystar.net/",
-      "Icon": "dailystar.png"
+      "Name": "Daily e Prothom Alo",
+      "Url": "https://epaper.prothomalo.com/",
+      "Icon": "eprothomalo.png",
+      "BDRank": "4"
+    },
+    {
+      "Name": "Daily e Jugantor",
+      "Url": "https://epaper.jugantor.com/",
+      "Icon": "jugantor.png",
+      "BDRank": "13"
+    },
+    {
+      "Name": "Daily e Samakal",
+      "Url": "http://epaper.samakal.com/",
+      "Icon": "epapersamakal.png",
+      "BDRank": "27"
+    },
+    {
+      "Name": "Daily e Ittefaq",
+      "Url": "https://epaper.ittefaq.com.bd/",
+      "Icon": "epaperittefaq.png",
+      "BDRank": "30"
+    },
+    {
+      "Name": "e Daily Star",
+      "Url": "http://epaper.thedailystar.net/",
+      "Icon": "dailystar.png",
+      "BDRank": "32"
+    },
+    {
+      "Name": "Daily e Inqilab",
+      "Url": "https://www.dailyinqilab.com/epaper/",
+      "Icon": "ittefaq.png",
+      "BDRank": "45"
+    },
+    {
+      "Name": "e Amader Shamoy",
+      "Url": "https://epaper.dainikamadershomoy.com/",
+      "Icon": "dainikamadershomoy.png",
+      "BDRank": "49"
+    },
+    {
+      "Name": "E paper Bonik barta",
+      "Url": "http://epaper.bonikbarta.net/",
+      "Icon": "ebonik.png",
+      "BDRank": "163"
+    },
+    {
+      "Name": "e Manab Kantha",
+      "Url": "https://epaper.manobkantha.com.bd/",
+      "Icon": "emanabkantha.png",
+      "BDRank": "199"
+    },
+    {
+      "Name": "E Deshrupantor",
+      "Url": "https://www.deshrupantor.com/epaper/",
+      "Icon": "deshrupantor.png",
+      "BDRank": "222"
+    },
+    {
+      "Name": "e Bangladesh Protidin",
+      "Url": "http://www.ebdpratidin.com/",
+      "Icon": "bangladeshpratidin.png",
+      "BDRank": "223"
+    },
+    {
+      "Name": "E Financial Express",
+      "Url": "https://epaper.thefinancialexpress.com.bd/",
+      "Icon": "thefinancialexpress.png",
+      "BDRank": "315"
+    },
+    {
+      "Name": "E Daily Observer",
+      "Url": "https://epaper.observerbd.com/",
+      "Icon": "observerbd.png",
+      "BDRank": "494"
+    },
+    {
+      "Name": "Daily e Kalerkantho",
+      "Url": "http://www.ekalerkantho.com/",
+      "Icon": "ekalerkantho.png",
+      "BDRank": "532"
+    },
+    {
+      "Name": "Shomoyer Alo",
+      "Url": "https://epaper.shomoyeralo.com/",
+      "Icon": "shomoyeralo.png",
+      "BDRank": "534"
+    },
+    {
+      "Name": "E Jai Jai Din",
+      "Url": "http://ejjdin.com/",
+      "Icon": "jaijaidinbd.png",
+      "BDRank": "2193"
+    },
+    {
+      "Name": "Daily e Janakantha",
+      "Url": "http://www.edailyjanakantha.com/",
+      "Icon": "ejanakantha.png",
+      "BDRank": "2555"
+    },
+    {
+      "Name": "e Daily Sun",
+      "Url": "http://www.edailysun.com/",
+      "Icon": "edailysun.png",
+      "BDRank": "2973"
+    },
+    {
+      "Name": "Daily e Naya Digonta",
+      "Url": "http://www.enayadiganta.com/",
+      "Icon": "dailynayadiganta.png",
+      "BDRank": "3007"
+    },
+    {
+      "Name": "e New Nation",
+      "Url": "https://thedailynewnation.com/ep/",
+      "Icon": "thedailynewnation.png",
+      "BDRank": "3308"
+    },
+    {
+      "Name": "Dainik e-Azadi",
+      "Url": "http://www.edainikazadi.net/",
+      "Icon": "azadi.png",
+      "BDRank": "3490"
+    },
+    {
+      "Name": "e-Suprobhat Bangladesh",
+      "Url": "http://www.esuprobhat.com/",
+      "Icon": "suprobhat.png",
+      "BDRank": "4435"
+    },
+    {
+      "Name": "Bhorer Kagoj",
+      "Url": "https://ebhorerkagoj.com/",
+      "Icon": "bhorerkagoj.png",
+      "BDRank": "5117"
+    },
+    {
+      "Name": "Bhorer Dak",
+      "Url": "http://ebhorerdak.com/",
+      "Icon": "bhorerdak.png",
+      "BDRank": "8036"
+    },
+    {
+      "Name": "Dainik e Karatoa",
+      "Url": "http://www.ekaratoa.com/",
+      "Icon": "ekaratoa.png",
+      "BDRank": "12562"
+    },
+    {
+      "Name": "Daily e Gonokantho",
+      "Url": "http://www.egonokantho.com/",
+      "Icon": "egonokantho.png",
+      "BDRank": "14180"
+    },
+    {
+      "Name": "e Dainik Bangla",
+      "Url": "http://www.edainikbangla.com/",
+      "Icon": "edainikbangla.png",
+      "BDRank": "17179"
     }
   ]
-},{
+},
+
+  {
   "Category": "International",
   "CategoryFullName": "International Newspaper",
   "Icon": "prothomalo.png",
@@ -263,62 +543,422 @@
       "Icon": "CEN.png"
     }
   ]
-},{
+},
+  {
   "Category": "TV Channel",
   "CategoryFullName": "English Newspaper",
   "Icon": "prothomalo.png",
   "NewspaperList": [
     {
+      "Name": "Somoynews TV",
+      "Url": "https://www.somoynews.tv/",
+      "Icon": "somoynewstv.png",
+      "BDRank": "5"
+    },
+    {
+      "Name": "Channel i",
+      "Url": "https://www.channelionline.com/",
+      "Icon": "channeli.png",
+      "BDRank": "42"
+    },
+    {
+      "Name": "RTV",
+      "Url": "https://www.rtvonline.com/",
+      "Icon": "rtv.png",
+      "BDRank": "77"
+    },
+    {
+      "Name": "Jamuna TV",
+      "Url": "https://jamuna.tv/",
+      "Icon": "jamunatv.png",
+      "BDRank": "89"
+    },
+    {
+      "Name": "Ekushey TV",
+      "Url": "https://www.ekushey-tv.com/",
+      "Icon": "ekusheytv.png",
+      "BDRank": "111"
+    },
+    {
+      "Name": "Channel 24",
+      "Url": "https://www.channel24bd.tv/",
+      "Icon": "channel24.png",
+      "BDRank": "331"
+    },
+    {
+      "Name": "Boishakhi TV",
+      "Url": "https://boishakhionline.com/",
+      "Icon": "boishakhi.png",
+      "BDRank": "1311"
+    },
+    {
+      "Name": "DeshTV",
+      "Url": "https://www.desh.tv/",
+      "Icon": "deshtv.png",
+      "BDRank": "2864"
+    },
+    {
+      "Name": "Banglavision TV",
+      "Url": "https://banglavision.tv/",
+      "Icon": "banglavisiontv.png",
+      "BDRank": "3016"
+    },
+    {
+      "Name": "SATV",
+      "Url": "https://www.satv.tv/",
+      "Icon": "satv.png",
+      "BDRank": "4652"
+    },
+    {
+      "Name": "BTV",
+      "Url": "http://btv.gov.bd/",
+      "Icon": "btvgov.png",
+      "BDRank": "7623"
+    },
+    {
+      "Name": "Mohona TV",
+      "Url": "https://www.mohona.tv/",
+      "Icon": "mohonatv.png",
+      "BDRank": "7875"
+    }
+  ]
+}
+,
+  {
+  "Category": "Sports",
+  "CategoryFullName": "English Newspaper",
+  "Icon": "prothomalo.png",
+  "NewspaperList": [
+    {
       "Name": "Daily Star",
       "Url": "https://www.thedailystar.net/",
       "Icon": "dailystar.png"
+    }
+  ]
+},
+  {
+  "Category": "Education",
+  "CategoryFullName": "Education",
+  "Icon": "prothomalo.png",
+  "NewspaperList":[
+    {
+      "Name": "BD news 24",
+      "Url": "https://bdnews24.com/education/",
+      "Icon": "bdnews.png"
+    },
+    {
+      "Name": "Dhaka Tribune",
+      "Url": "https://www.dhakatribune.com/articles/bangladesh/education/",
+      "Icon": "Dt.png"
+    },
+    {
+      "Name": "The Daily Star",
+      "Url": "https://www.thedailystar.net/tags/education",
+      "Icon": "DS.png"
+    },
+    {
+      "Name": "Education Bangla",
+      "Url": "http://www.educationbangla.com/",
+      "Icon": "EB.png"
+    },
+    {
+      "Name": "Online BanglaNewsBD",
+      "Url": "https://www.onlinebanglanewsbd.com/category/%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE/",
+      "Icon": "banglanews.png"
+    },
+    {
+      "Name": "Dainik Shiksha",
+      "Url": "http://www.dainikshiksha.com/",
+      "Icon": "dainik shiksha.png"
+    },
+    {
+      "Name": "Amar Pathshala",
+      "Url": "https://amarpathshala.com/",
+      "Icon": "ap.png"
+    },
+    {
+      "Name": "Lekha Pora BD",
+      "Url": "http://www.en.lekhaporabd.com/",
+      "Icon": "Lekhapora-BD.png"
+    },
+    {
+      "Name": "10 Minutes School",
+      "Url": "https://10minuteschool.com/",
+      "Icon": "10m.png"
+    },
+    {
+      "Name": "Teachers GOV BD",
+      "Url": "https://www.teachers.gov.bd/",
+      "Icon": "govbd.png"
+    },
+    {
+      "Name": "Teaching BD 24",
+      "Url": "https://teachingbd24.com/",
+      "Icon": "tbd.png"
+    },
+    {
+      "Name": "EDPD BD",
+      "Url": "http://edpdbd.org/",
+      "Icon": "edpd.png"
+    },
+    {
+      "Name": "Ministry Of Education",
+      "Url": "https://moedu.gov.bd/",
+      "Icon": "logoedu.png"
+    },
+    {
+      "Name": "Study Press",
+      "Url": "https://studypress.org/",
+      "Icon": "Sp.png"
+    },
+    {
+      "Name": "Result BD",
+      "Url": "http://www.educationboardresults.gov.bd/",
+      "Icon": "result.png"
+    },
+    {
+      "Name": "BdRen",
+      "Url": "http://www.bdren.net.bd/",
+      "Icon": "bdren.png"
+    },
+    {
+      "Name": "Shikkhok",
+      "Url": "http://shikkhok.com/",
+      "Icon": "shikkhok.png"
+    },
+    {
+      "Name": "Bd eBook",
+      "Url": "https://bdebooks.com/",
+      "Icon": "bdb.png"
+    },
+    {
+      "Name": "Amar Books",
+      "Url": "https://www.amarbooks.org/",
+      "Icon": "amarb.png"
+    },
+    {
+      "Name": "All Bangla Boi",
+      "Url": "https://allbanglaboi.com/",
+      "Icon": "abb.png"
+    },
+    {
+      "Name": "Repto Bd",
+      "Url": "https://repto.com.bd/",
+      "Icon": "repto.png"
+    },
+    {
+      "Name": "Exam Result BD",
+      "Url": "https://examresultbd.com/",
+      "Icon": "ex.png"
+    },
+    {
+      "Name": "EDU Tube",
+      "Url": "https://edutubebd.com/",
+      "Icon": "edutubeLogo.png"
+    },
+    {
+      "Name": "Srijonshil",
+      "Url": "https://www.srijonshil.com/",
+      "Icon": "sri.png"
+    },
+    {
+      "Name": "Pre-Test BD",
+      "Url": "https://pre-testbd.com/",
+      "Icon": "pre-testbd.png"
+    },
+    {
+      "Name": "Pakhi Tottho",
+      "Url": "https://pakhi.tottho.com/",
+      "Icon": "pakhitottho.png"
     }
   ]
 }
 ,{
-  "Category": "English",
-  "CategoryFullName": "English Newspaper",
+  "Category": "Blog",
   "Icon": "prothomalo.png",
+  "CategoryFullName": "Blog",
   "NewspaperList": [
     {
-      "Name": "Daily Star",
-      "Url": "https://www.thedailystar.net/",
-      "Icon": "dailystar.png"
-    }
-  ]
-},{
-  "Category": "fff",
-  "CategoryFullName": "English Newspaper",
-  "Icon": "prothomalo.png",
-  "NewspaperList": [
+      "Name": "Priyo",
+      "Url": "https://m.priyo.com/",
+      "Icon": "priyo.png",
+      "BDRank": "166"
+    },
     {
-      "Name": "Daily Star",
-      "Url": "https://www.thedailystar.net/",
-      "Icon": "dailystar.png"
+      "Name": "Somewhere in... blog",
+      "Url": "https://www.somewhereinblog.net/",
+      "Icon": "somewhereinblog.png",
+      "BDRank": "532"
+    },
+    {
+      "Name": "hadith bd",
+      "Url": "https://www.hadithbd.com/",
+      "Icon": "hadithbd.png",
+      "BDRank": "702"
+    },
+    {
+      "Name": "bd news blog",
+      "Url": "https://blog.bdnews24.com/",
+      "Icon": "blogbdnews24.png",
+      "BDRank": "1500"
+    },
+    {
+      "Name": "Islamic Online Media",
+      "Url": "https://i-onlinemedia.net/",
+      "Icon": "ionlinemedia.png",
+      "BDRank": "1853"
+    },
+    {
+      "Name": "islamqa Bangla",
+      "Url": "https://islamqa.info/bn",
+      "Icon": "islamqa.svg",
+      "BDRank": "5000"
+    },
+    {
+      "Name": "Sachalayatan",
+      "Url": "http://www.sachalayatan.com/",
+      "Icon": "Sachalayatan.png",
+      "BDRank": "5465"
+    },
+    {
+      "Name": "Biggan Projukti",
+      "Url": "http://www.bigganprojukti.com/",
+      "Icon": "bigganprojukti.png",
+      "BDRank": "17394"
+    },
+    {
+      "Name": "sabuj bangla blog",
+      "Url": "https://shobujbanglablog.net/",
+      "Icon": "shobujbanglablog.png",
+      "BDRank": "18131"
+    },
+    {
+      "Name": "quraner alo",
+      "Url": "https://quraneralo.net/",
+      "Icon": "quraneralo.png",
+      "BDRank": "25330"
+    },
+    {
+      "Name": "choturmatrik",
+      "Url": "http://www.choturmatrik.com/",
+      "Icon": "choturmatrik.png",
+      "BDRank": "1888852"
+    },
+    {
+      "Name": "pnachforon",
+      "Url": "http://www.panchforon.in/",
+      "Icon": "panchforon.png",
+      "BDRank": "1888852"
+    },
+    {
+      "Name": "Shoncharon",
+      "Url": "https://shoncharon.com/",
+      "Icon": "shoncharon.png",
+      "BDRank": "1888882"
+    },
+    {
+      "Name": "quraner kotha",
+      "Url": "https://quranerkotha.com/",
+      "Icon": "quranerkotha.png",
+      "BDRank": "10969"
+    },
+    {
+      "Name": "Mukto Mona",
+      "Url": "http://home.mukto-mona.com/",
+      "Icon": "muktomona.png",
+      "BDRank": "5768"
     }
   ]
 }
 ,{
-  "Category": "dd",
+  "Category": "Indian",
   "Icon": "prothomalo.png",
-  "CategoryFullName": "English Newspaper",
+  "CategoryFullName": "Indian Newspapers",
   "NewspaperList": [
     {
-      "Name": "Daily Star",
-      "Url": "https://www.thedailystar.net/",
-      "Icon": "dailystar.png"
-    }
-  ]
-}
-,{
-  "Category": "Most",
-  "Icon": "prothomalo.png",
-  "CategoryFullName": "English Newspaper",
-  "NewspaperList": [
+      "Name": "Ananda Bazar",
+      "Url": "https://www.anandabazar.com/",
+      "Icon": "anandabazar.png"
+    },
     {
-      "Name": "Daily Star",
-      "Url": "https://www.thedailystar.net/",
-      "Icon": "dailystar.png"
+      "Name": "Aaj Kaal",
+      "Url": "https://aajkaal.in/",
+      "Icon": "aajkaal.png"
+    },
+    {
+      "Name": "Kolkata24x7",
+      "Url": "https://www.kolkata24x7.com/",
+      "Icon": "kolkata24x7.png"
+    },
+    {
+      "Name": "Zee 24 Ghanta",
+      "Url": "https://zeenews.india.com/bengali",
+      "Icon": "zeenews.png"
+    },
+    {
+      "Name": "ABP Ananda",
+      "Url": "https://bengali.abplive.com/",
+      "Icon": "abpananda.png"
+    },
+    {
+      "Name": "Syandan Patrika",
+      "Url": "https://syandanpatrika.com/",
+      "Icon": "syandanpatrika.png"
+    },
+    {
+      "Name": "Sangbad Pratidin",
+      "Url": "https://www.sangbadpratidin.in/",
+      "Icon": "sangbadpratidin.png"
+    },
+    {
+      "Name": "Bartaman Patrika",
+      "Url": "https://bartamanpatrika.com/",
+      "Icon": "bartamanpatrika.png"
+    },
+    {
+      "Name": "Ganashakti",
+      "Url": "http://ganashakti.com/bengali/",
+      "Icon": "ganashakti.png"
+    },
+    {
+      "Name": "Asomiya Pratidin",
+      "Url": "https://www.asomiyapratidin.in/",
+      "Icon": "asomiyapratidin.png"
+    },
+    {
+      "Name": "Nababarta Prasanga",
+      "Url": "http://www.nababartaprasanga.com/Archives/Classic.aspx?page=p1",
+      "Icon": "nababartaprasanga.png"
+    },
+    {
+      "Name": "Eisamay",
+      "Url": "https://eisamay.indiatimes.com/",
+      "Icon": "eisamay.png"
+    },
+    {
+      "Name": "Uttarbanga Sambad",
+      "Url": "https://www.uttarbangasambad.com/",
+      "Icon": "uttarbangasambad.png"
+    },
+    {
+      "Name": "Ebela",
+      "Url": "https://ebela.in/",
+      "Icon": "ebela.png"
+    },
+    {
+      "Name": "Dainik Sambad",
+      "Url": "http://dainiksambad.net/",
+      "Icon": "dainiksambad.png"
+    },
+    {
+      "Name": "Aamader Malda",
+      "Url": "https://www.aamadermalda.in/",
+      "Icon": "aamadermalda.png"
+    },
+    {
+      "Name": "Ganashakti",
+      "Url": "http://bangla.ganashakti.co.in/",
+      "Icon": "indganashakti.png"
     }
   ]
 }
