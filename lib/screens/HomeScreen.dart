@@ -226,7 +226,11 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
                                             category.newspaperList[index]
                                                     .isFavorite
                                                 ? Colors.redAccent
-                                                : _iconColor);
+                                                : Colors.black,
+                                            category.newspaperList[index]
+                                                    .isFavorite
+                                                ? Icons.favorite
+                                                : Icons.favorite_border);
                                       }),
                                 ),
                               ],

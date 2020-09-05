@@ -1,8 +1,8 @@
 import 'package:bangladesh_newspapers/screens/webTest.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 
 class BoxNewsPaper extends StatefulWidget {
@@ -12,14 +12,16 @@ class BoxNewsPaper extends StatefulWidget {
   final double heartFontSize;
   final Function onPress;
   final Color iconColor;
+  final IconData heartIcon;
 
   BoxNewsPaper(
       @required this.fontSize,
       @required this.newspaper,
       @required this.boderWidth,
-      this.heartFontSize,
-      this.onPress,
-      this.iconColor);
+      @required this.heartFontSize,
+      @required this.onPress,
+      @required this.iconColor,
+      @required this.heartIcon);
 
   @override
   _BoxNewsPaperState createState() => _BoxNewsPaperState();
@@ -36,7 +38,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Card(
-        elevation: 2.0,
+        elevation: 1,
         color: kPrimaryCardColor,
         child: ClipPath(
           clipper: ShapeBorderClipper(
@@ -48,58 +50,55 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                     right: BorderSide(
                         color: kPrimaryColor, width: widget.boderWidth))),
             alignment: Alignment.center,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  flex: 15,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Hero(
-                      tag: 'imageHero${widget.newspaper.url}',
-                      child: widget.newspaper.icon.contains("svg")
-                          ? SvgPicture.asset(
-                              "images/${widget.newspaper.icon}",
-                            )
-                          : Image.asset(
-                              "images/${widget.newspaper.icon}",
-                            ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 15,
-                  child: Column(
+            child: Stack(
+                alignment: Alignment.topRight,
+                fit: StackFit.expand,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Expanded(
-                        flex: 10,
-                        child: Text(
-                          widget.newspaper.name,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              fontSize: widget.fontSize,
-                              fontWeight: FontWeight.w800),
+                        flex: 15,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Hero(
+                            tag: 'imageHero${widget.newspaper.url}',
+                            child: widget.newspaper.icon.contains("svg")
+                                ? SvgPicture.asset(
+                                    "images/${widget.newspaper.icon}",
+                                  )
+                                : Image.asset(
+                                    "images/${widget.newspaper.icon}",
+                                  ),
+                          ),
                         ),
                       ),
                       Expanded(
                         flex: 10,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+                        child: Column(
                           children: [
-                            IconButton(
-                              icon: Icon(FontAwesomeIcons.solidHeart,
-                                  size: widget.heartFontSize,
-                                  color: widget.iconColor),
-                              onPressed: widget.onPress,
+                            Text(
+                              widget.newspaper.name,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  fontSize: widget.fontSize,
+                                  fontWeight: FontWeight.w800),
                             ),
                           ],
                         ),
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
+                  Positioned(
+                    right: 0,
+                    bottom: 0,
+                    child: IconButton(
+                      icon: Icon(widget.heartIcon,
+                          size: widget.heartFontSize, color: widget.iconColor),
+                      onPressed: widget.onPress,
+                    ),
+                  )
+                ]),
           ),
         ),
       ),

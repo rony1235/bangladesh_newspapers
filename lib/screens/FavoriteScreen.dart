@@ -173,7 +173,10 @@ class _FavoriteScreenState extends State<FavoriteScreen>
                     },
                         newspaperList[index].isFavorite
                             ? Colors.redAccent
-                            : _iconColor);
+                            : Colors.black,
+                        newspaperList[index].isFavorite
+                            ? Icons.favorite
+                            : Icons.favorite_border);
                   }),
             ),
           ],

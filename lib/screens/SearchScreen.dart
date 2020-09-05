@@ -157,7 +157,10 @@ class _SearchScreenState extends State<SearchScreen> {
                   },
                       newspaperList[index].isFavorite
                           ? Colors.redAccent
-                          : _iconColor);
+                          : Colors.black,
+                      newspaperList[index].isFavorite
+                          ? Icons.favorite
+                          : Icons.favorite_border);
                 }),
           ),
         ],

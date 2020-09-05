@@ -66,6 +66,9 @@ flutter:
         - asset: fonts/PTSansNarrow-Bold.ttf
         - asset: fonts/PTSansNarrow-Regular.ttf
           style: italic
+    - family: HelveticaNow
+      fonts:
+        - asset: fonts/HelveticaNowDisplayXBlk.ttf
   # To add assets to your application, add an assets section, like this:
 
   #   - images/a_dot_ham.jpeg

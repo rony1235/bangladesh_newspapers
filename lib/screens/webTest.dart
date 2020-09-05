@@ -64,7 +64,7 @@ class MyWebTestView extends StatelessWidget {
   static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
       testDevices: testDevice != null ? <String>[testDevice] : null,
       keywords: <String>['game', 'newspaper'],
-      contentUrl: 'https://flutter.io',
+      //contentUrl: 'https://flutter.io',
       //birthday: DateTime.now(),
       childDirected: false,
       nonPersonalizedAds: false
@@ -75,8 +75,8 @@ class MyWebTestView extends StatelessWidget {
     // Replace the testAdUnitId with an ad unit id from the AdMob dash.
     // https://developers.google.com/admob/android/test-ads
     // https://developers.google.com/admob/ios/test-ads
-    adUnitId: BannerAd
-        .testAdUnitId, // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
+    adUnitId:
+        "ca-app-pub-2877215416565320/1305026042", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
     size: AdSize.smartBanner,
     targetingInfo: targetingInfo,
 
@@ -106,7 +106,7 @@ class MyWebTestView extends StatelessWidget {
       );
     return WillPopScope(
       onWillPop: () async {
-        print("bef");
+        //print("bef");
         var status = await _controller.canGoBack();
         print(status);
         if (status) {
@@ -114,7 +114,7 @@ class MyWebTestView extends StatelessWidget {
           return false;
         } else {
           if (!await myBanner.isLoaded()) {
-            print("working");
+            //print("working");
             Timer(const Duration(seconds: 2), () async {
               if (!await myBanner.isLoaded()) {
                 Timer(const Duration(seconds: 6), () {
@@ -124,7 +124,7 @@ class MyWebTestView extends StatelessWidget {
                 myBanner?.dispose();
               }
             });
-            print("dsd");
+            //print("dsd");
           } else {
             myBanner?.dispose();
           }
@@ -134,35 +134,62 @@ class MyWebTestView extends StatelessWidget {
       },
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.white,
-            flexibleSpace: SafeArea(
-              child: Hero(
-                tag: 'imageHero${newspaper.url}',
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                      child: newspaper.icon.contains("svg")
-                          ? SvgPicture.asset(
-                              "images/${newspaper.icon}",
-                            )
-                          : Image.asset(
-                              "images/${newspaper.icon}",
-                            )),
+              backgroundColor: Colors.white,
+              flexibleSpace: SafeArea(
+                child: Hero(
+                  tag: 'imageHero${newspaper.url}',
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                        child: newspaper.icon.contains("svg")
+                            ? SvgPicture.asset(
+                                "images/${newspaper.icon}",
+                              )
+                            : Image.asset(
+                                "images/${newspaper.icon}",
+                              )),
+                  ),
                 ),
               ),
-            ),
-            centerTitle: true,
-            leading: BackButton(
-                color: Colors.black,
-                onPressed: () async {
-                  print("bef");
-                  var status = await _controller.canGoBack();
-                  print(status);
-                  if (status) {
-                    _controller.goBack();
-                  } else {
+              centerTitle: true,
+              leading: BackButton(
+                  color: Colors.black,
+                  onPressed: () async {
+                    //print("bef");
+                    var status = await _controller.canGoBack();
+                    print(status);
+                    if (status) {
+                      _controller.goBack();
+                    } else {
+                      if (!await myBanner.isLoaded()) {
+                        //print("working");
+                        Timer(const Duration(seconds: 2), () async {
+                          if (!await myBanner.isLoaded()) {
+                            Timer(const Duration(seconds: 6), () {
+                              myBanner?.dispose();
+                            });
+                          } else {
+                            myBanner?.dispose();
+                          }
+                        });
+                        //print("dsd");
+                      } else {
+                        myBanner?.dispose();
+                      }
+
+                      Navigator.pop(context, true);
+                    }
+                    //myBanner?.dispose();
+                  }),
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(
+                    Icons.home,
+                    color: Colors.black,
+                  ),
+                  onPressed: () async {
                     if (!await myBanner.isLoaded()) {
-                      print("working");
+                      //print("working");
                       Timer(const Duration(seconds: 2), () async {
                         if (!await myBanner.isLoaded()) {
                           Timer(const Duration(seconds: 6), () {
@@ -172,16 +199,14 @@ class MyWebTestView extends StatelessWidget {
                           myBanner?.dispose();
                         }
                       });
-                      print("dsd");
+                      //print("dsd");
                     } else {
                       myBanner?.dispose();
                     }
-
                     Navigator.pop(context, true);
-                  }
-                  //myBanner?.dispose();
-                }),
-          ),
+                  },
+                )
+              ]),
           body: WebView(
             initialUrl: newspaper.url,
             javascriptMode: JavascriptMode.unrestricted,
