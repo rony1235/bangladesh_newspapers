@@ -111,7 +111,7 @@
       },
       {
         "Name": "Dainik Destiny",
-        "Url": "https://www.kholakagojbd.com/",
+        "Url": "https://www.dainik-destiny.com/",
         "Icon": "kholakagojbd.png"
       },
       {
@@ -771,9 +771,112 @@
   "Icon": "prothomalo.png",
   "NewspaperList": [
     {
-      "Name": "Daily Star",
-      "Url": "https://www.thedailystar.net/",
-      "Icon": "dailystar.png"
+      "Name": "BBC Sport",
+      "Url": "https://www.bbc.com/sport",
+      "Icon": "bbcsport.png",
+      "BDRank": "89"
+    },
+    {
+      "Name": "Prothomalo English",
+      "Url": "https://en.prothomalo.com/sports",
+      "Icon": "prothomalo.svg",
+      "BDRank": "104"
+    },
+    {
+      "Name": "Prothomalo Bangla",
+      "Url": "https://www.prothomalo.com/sports",
+      "Icon": "prothomalo.svg",
+      "BDRank": "104"
+    },
+    {
+      "Name": "Jugantor",
+      "Url": "https://www.jugantor.com/sports",
+      "Icon": "jugantor.png",
+      "BDRank": "114"
+    },
+    {
+      "Name": "BDnews24 Cricket",
+      "Url": "https://bangla.bdnews24.com/cricket/",
+      "Icon": "bdnews24.png",
+      "BDRank": "115"
+    },
+    {
+      "Name": "NTV ",
+      "Url": "https://www.ntvbd.com/sports",
+      "Icon": "ntvbd.png",
+      "BDRank": "118"
+    },
+    {
+      "Name": "The Daily Star",
+      "Url": "https://www.thedailystar.net/sports",
+      "Icon": "thedailystar.png",
+      "BDRank": "130"
+    },
+    {
+      "Name": "Dhaka Tribune",
+      "Url": "https://bangla.dhakatribune.com/articles/sports",
+      "Icon": "dhakatribune.png",
+      "BDRank": "186"
+    },
+    {
+      "Name": "Live Score",
+      "Url": "https://www.livescore.com/",
+      "Icon": "livescore.png",
+      "BDRank": "775"
+    },
+    {
+      "Name": "BD Crictime",
+      "Url": "https://bn.bdcrictime.com/",
+      "Icon": "bdcrictime.png",
+      "BDRank": "788"
+    },
+    {
+      "Name": "Goal ",
+      "Url": "https://www.goal.com/",
+      "Icon": "goal.png",
+      "BDRank": "898"
+    },
+    {
+      "Name": "espncricinfo",
+      "Url": "https://www.espncricinfo.com/",
+      "Icon": "espncricinfo.png",
+      "BDRank": "1315"
+    },
+    {
+      "Name": "Sky Sports football",
+      "Url": "https://www.skysports.com/football/news",
+      "Icon": "skysports.svg",
+      "BDRank": "1426"
+    },
+    {
+      "Name": "Tiger Cricket",
+      "Url": "http://www.tigercricket.com.bd/",
+      "Icon": "tigercricket.png",
+      "BDRank": "6764"
+    },
+    {
+      "Name": "Cricbuzz",
+      "Url": "https://www.cricbuzz.com/",
+      "Icon": "cricbuzz.png",
+      "BDRank": "1801"
+    },
+    {
+      "Name": "icc",
+      "Url": "https://www.icc-cricket.com/",
+      "Icon": "icc.png",
+      "BDRank": "28033"
+    },
+    {
+      "Name": "khelar Jagat",
+      "Url": "https://www.khelarjagat.com/",
+      "Icon": "khelarjagat.png",
+      "BDRank": "65454564"
+    },
+    {
+      "Name": "bdsportsnews",
+      "Url": "https://bdsportsnews.com/",
+      "Icon": "bdsportsnews.png",
+      "BDRank": "65454564"
     }
   ]
 },
