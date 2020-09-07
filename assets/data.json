@@ -766,6 +766,350 @@
   ]
 },
   {
+    "Category": "Local",
+    "CategoryFullName": "Local Newspapers",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "Chandpur Times",
+        "Url": "https://chandpurtimes.com/",
+        "Icon": "chandpurtimes.jpeg",
+        "BDRank": "356"
+      },
+      {
+        "Name": "Coxsbazar News",
+        "Url": "http://www.coxsbazarnews.com/",
+        "Icon": "coxsbazarnews.png",
+        "BDRank": "466"
+      },
+      {
+        "Name": "Dainik Purbokone",
+        "Url": "https://dainikazadi.net/",
+        "Icon": "dainikpurbokone.png",
+        "BDRank": "1094"
+      },
+      {
+        "Name": "Cumillar Barta",
+        "Url": "http://cumillarbarta.com/",
+        "Icon": "cumillarbarta.png",
+        "BDRank": "1625"
+      },
+      {
+        "Name": "Dainik Azadi",
+        "Url": "http://www.bdallbanglanewspaper.com/dainik-azadi/",
+        "Icon": "azadi.png",
+        "BDRank": "1688"
+      },
+      {
+        "Name": "Suprobhat",
+        "Url": "http://suprobhat.com/",
+        "Icon": "suprobhat.png",
+        "BDRank": "3072"
+      },
+      {
+        "Name": "Barishal Times",
+        "Url": "https://www.barishaltimes.com/",
+        "Icon": "barishaltimes.png",
+        "BDRank": "3417"
+      },
+      {
+        "Name": "Daily Purbanchal",
+        "Url": "https://purbanchal.com/",
+        "Icon": "purbanchal.png",
+        "BDRank": "3616"
+      },
+      {
+        "Name": "Daily Sylhet",
+        "Url": "https://dailysylhet.com/",
+        "Icon": "dailysylhet.png",
+        "BDRank": "5858"
+      },
+      {
+        "Name": "Noakhali Times",
+        "Url": "https://www.noakhalitimes.com/",
+        "Icon": "noakhalitimes.png",
+        "BDRank": "5911"
+      },
+      {
+        "Name": "Padma News 24",
+        "Url": "https://padmanews24.com/",
+        "Icon": "padmanews24.png",
+        "BDRank": "6342"
+      },
+      {
+        "Name": "Gramer Kagoj",
+        "Url": "http://www.gramerkagoj.com/",
+        "Icon": "gramerkagoj.jpeg",
+        "BDRank": "6393"
+      },
+      {
+        "Name": "Meherpur Pratidin",
+        "Url": "https://www.meherpurpratidin.com/",
+        "Icon": "meherpurpratidin.png",
+        "BDRank": "6921"
+      },
+      {
+        "Name": "Teknaf News",
+        "Url": "http://www.teknafnews.com/",
+        "Icon": "teknafnews.png",
+        "BDRank": "7047"
+      },
+      {
+        "Name": "Rajshahi News 24",
+        "Url": "https://rajshahinews24.com/",
+        "Icon": "rajshahinews24.png",
+        "BDRank": "7330"
+      },
+      {
+        "Name": "Mymensingh Pratidin",
+        "Url": "http://www.mymensinghpratidin.com/",
+        "Icon": "mymensinghpratidin.png",
+        "BDRank": "7713"
+      },
+      {
+        "Name": "Comillar Kagoj",
+        "Url": "http://www.comillarkagoj.com/#",
+        "Icon": "comillarkagoj.jpeg",
+        "BDRank": "7802"
+      },
+      {
+        "Name": "Dainik Sylhet",
+        "Url": "https://dainiksylhet.com/",
+        "Icon": "dainiksylhet.png",
+        "BDRank": "8422"
+      },
+      {
+        "Name": "Sylheter Dinkal",
+        "Url": "https://www.dailysylheterdinkal.com/",
+        "Icon": "dailysylheterdinkal.png",
+        "BDRank": "10544"
+      },
+      {
+        "Name": "Daily Sylhet Mirror",
+        "Url": "https://dailysylhetmirror.com/",
+        "Icon": "dailysylhetmirror.png",
+        "BDRank": "11607"
+      },
+      {
+        "Name": "Amader Barisal",
+        "Url": "http://www.amaderbarisal.com/",
+        "Icon": "amaderbarisal.jpeg",
+        "BDRank": "13679"
+      },
+      {
+        "Name": "Satkhira News",
+        "Url": "http://www.satkhiranews.com/",
+        "Icon": "satkhiranews.png",
+        "BDRank": "16418"
+      },
+      {
+        "Name": "Ajker Bhola",
+        "Url": "http://www.ajkerbhola.com/",
+        "Icon": "ajkerbhola.jpeg",
+        "BDRank": "56584564564"
+      }
+    ]
+  },
+  {
+  "Category": "Business",
+  "CategoryFullName": "Business",
+  "Icon": "prothomalo.png",
+  "NewspaperList": [
+    {
+      "Name": "DSE BD",
+      "Url": "https://www.dsebd.org/",
+      "Icon": "dsebd.png",
+      "BDRank": "55"
+    },
+    {
+      "Name": "The Bonik Barta",
+      "Url": "https://bonikbarta.net/",
+      "Icon": "bonikbarta.png",
+      "BDRank": "151"
+    },
+    {
+      "Name": "Arthosuchak",
+      "Url": "http://www.arthosuchak.com/",
+      "Icon": "arthosuchak.png",
+      "BDRank": "285"
+    },
+    {
+      "Name": "The Financial Express",
+      "Url": "https://thefinancialexpress.com.bd/",
+      "Icon": "thefinancialexpress.png",
+      "BDRank": "289"
+    },
+    {
+      "Name": "Stock Bangladesh",
+      "Url": "https://stockbangladesh.com/",
+      "Icon": "stockbangladesh.png",
+      "BDRank": "496"
+    },
+    {
+      "Name": "Share News 24",
+      "Url": "http://sharenews24.com/",
+      "Icon": "sharenews24.png",
+      "BDRank": "500"
+    },
+    {
+      "Name": "Business Hour 24",
+      "Url": "https://businesshour24.com/",
+      "Icon": "businesshour24.png",
+      "BDRank": "646"
+    },
+    {
+      "Name": "Sunbd24",
+      "Url": "http://sunbd24.com/",
+      "Icon": "sunbd24.png",
+      "BDRank": "710"
+    },
+    {
+      "Name": "Share Bazar News",
+      "Url": "http://www.sharebazarnews.com/",
+      "Icon": "sharebazarnews.png",
+      "BDRank": "1039"
+    },
+    {
+      "Name": "Share Biz",
+      "Url": "https://sharebiz.net/",
+      "Icon": "sharebiz.png",
+      "BDRank": "1124"
+    },
+    {
+      "Name": "Biniog Barta",
+      "Url": "https://www.biniogbarta.com/",
+      "Icon": "biniogbarta.png",
+      "BDRank": "1459"
+    },
+    {
+      "Name": "Daily Stock Bangladesh",
+      "Url": "https://www.dailystockbangladesh.com/",
+      "Icon": "dailystockbangladesh.png",
+      "BDRank": "1466"
+    },
+    {
+      "Name": "CSE",
+      "Url": "https://www.cse.com.bd/",
+      "Icon": "cse.png",
+      "BDRank": "1726"
+    },
+    {
+      "Name": "Corporate Sangbad",
+      "Url": "https://www.corporatesangbad.com/",
+      "Icon": "corporatesangbad.png",
+      "BDRank": "1842"
+    },
+    {
+      "Name": "Banking News BD",
+      "Url": "https://www.bankingnewsbd.com/",
+      "Icon": "bankingnewsbd.png",
+      "BDRank": "1892"
+    },
+    {
+      "Name": "Biz Bangladesh",
+      "Url": "https://bizbangladesh.com/",
+      "Icon": "bizbangladesh.png",
+      "BDRank": "2028"
+    },
+    {
+      "Name": "Amader Orthoneeti",
+      "Url": "http://amaderorthoneeti.com/",
+      "Icon": "amaderorthoneeti.png",
+      "BDRank": "2472"
+    },
+    {
+      "Name": "Ajker Bazar",
+      "Url": "http://www.ajkerbazzar.com/",
+      "Icon": "ajkerbazzar.png",
+      "BDRank": "2982"
+    },
+    {
+      "Name": "Safollo",
+      "Url": "https://www.safollo.com/",
+      "Icon": "safollo.png",
+      "BDRank": "5364"
+    },
+    {
+      "Name": "Pujibazar",
+      "Url": "http://pujibazar.com/",
+      "Icon": "pujibazar.png",
+      "BDRank": "6749"
+    },
+    {
+      "Name": "Desh Prothikhon",
+      "Url": "http://www.deshprotikhon.com/",
+      "Icon": "deshprotikhon.png",
+      "BDRank": "9486"
+    },
+    {
+      "Name": "Corporate News",
+      "Url": "http://corporatenews.com.bd/",
+      "Icon": "corporatenews.png",
+      "BDRank": "9835"
+    },
+    {
+      "Name": "Share Business 24",
+      "Url": "http://www.sharebusiness24.com/",
+      "Icon": "sharebusiness24.png",
+      "BDRank": "13521"
+    },
+    {
+      "Name": "Share Barta 24",
+      "Url": "http://www.sharebarta24.com/",
+      "Icon": "sharebarta24.png",
+      "BDRank": "17690"
+    },
+    {
+      "Name": "Arthoniteer Kagoj",
+      "Url": "https://arthoniteerkagoj.com/",
+      "Icon": "arthoniteerkagoj.png",
+      "BDRank": "20140"
+    },
+    {
+      "Name": "Share Market BD",
+      "Url": "http://www.sharemarketbd.com/",
+      "Icon": "sharemarketbd.png",
+      "BDRank": "26329"
+    },
+    {
+      "Name": "Biniyoug Barta",
+      "Url": "http://biniyougbarta.com/",
+      "Icon": "biniyougbarta.png",
+      "BDRank": "30926"
+    },
+    {
+      "Name": "BD Capital 24",
+      "Url": "https://bdcapitalbarta24.blogspot.com/",
+      "Icon": "bdcapitalbarta24.png",
+      "BDRank": "55555"
+    },
+    {
+      "Name": "BD Business News",
+      "Url": "https://businessnews-bd.net/",
+      "Icon": "businessnews.png",
+      "BDRank": "55555"
+    },
+    {
+      "Name": "Business News 24 BD",
+      "Url": "http://businessnews24bd.com/",
+      "Icon": "businessnews24bd.png",
+      "BDRank": "55555"
+    },
+    {
+      "Name": "BIASL",
+      "Url": "http://www.biasl.net/",
+      "Icon": "biasl.png",
+      "BDRank": "55555"
+    },
+    {
+      "Name": "Energy Bangla",
+      "Url": "https://energybangla.com/",
+      "Icon": "energybangla.png",
+      "BDRank": "55555"
+    }
+  ]
+},
+  {
   "Category": "Sports",
   "CategoryFullName": "English Newspapers",
   "Icon": "prothomalo.png",
@@ -886,13 +1230,115 @@
     "Icon": "prothomalo.png",
     "NewspaperList": [
       {
-        "Name": "Daily Star",
-        "Url": "https://www.thedailystar.net/",
-        "Icon": "dailystar.png"
+        "Name": "Techtunes",
+        "Url": "https://www.techtunes.co/",
+        "Icon": "techtunes.png",
+        "BDRank": "279"
+      },
+      {
+        "Name": "Somewhere In Blog",
+        "Url": "https://www.somewhereinblog.net/",
+        "Icon": "somewhereinblog.png",
+        "BDRank": "549"
+      },
+      {
+        "Name": "Tech Shohor",
+        "Url": "https://techshohor.com/",
+        "Icon": "techshohor.png",
+        "BDRank": "586"
+      },
+      {
+        "Name": "Tech Zoom",
+        "Url": "https://techzoom.tv/",
+        "Icon": "techzoom.png",
+        "BDRank": "651"
+      },
+      {
+        "Name": "Bangla Tech 24",
+        "Url": "https://banglatech24.com/",
+        "Icon": "banglatech24.png",
+        "BDRank": "1088"
+      },
+      {
+        "Name": "Hoicoi Bangla",
+        "Url": "https://hoicoibangla.com/",
+        "Icon": "hoicoibangla.png",
+        "BDRank": "1124"
+      },
+      {
+        "Name": "Tuner Page",
+        "Url": "https://tunerpage.com/",
+        "Icon": "tunerpage.png",
+        "BDRank": "1722"
+      },
+      {
+        "Name": "Web Coach BD",
+        "Url": "http://www.webcoachbd.com/",
+        "Icon": "webcoachbd.png",
+        "BDRank": "3330"
+      },
+      {
+        "Name": "Techtunes BD",
+        "Url": "https://techtunes.com.bd/",
+        "Icon": "techtunesbd.png",
+        "BDRank": "3880"
+      },
+      {
+        "Name": "Tech Jano",
+        "Url": "https://www.techjano.com/",
+        "Icon": "techjano.png",
+        "BDRank": "5665"
+      },
+      {
+        "Name": "Comjagat",
+        "Url": "http://www.comjagat.com/",
+        "Icon": "comjagat.png",
+        "BDRank": "8676"
+      },
+      {
+        "Name": "Comilla IT",
+        "Url": "http://www.comillait.com/",
+        "Icon": "comillait.png",
+        "BDRank": "9361"
+      },
+      {
+        "Name": "tech master blog",
+        "Url": "https://techmasterblog.com/",
+        "Icon": "techmasterblog.png",
+        "BDRank": "9376"
+      },
+      {
+        "Name": "Tutorial BD",
+        "Url": "https://tutorialbd.com/",
+        "Icon": "tutorialbd.png",
+        "BDRank": "9617"
+      },
+      {
+        "Name": "PC Helpline BD",
+        "Url": "https://www.pchelplinebd.com/",
+        "Icon": "pchelplinebd.png",
+        "BDRank": "22361"
+      },
+      {
+        "Name": "ICT News",
+        "Url": "http://www.dailyictnews.com/",
+        "Icon": "dailyictnews.png",
+        "BDRank": "9565656565"
+      },
+      {
+        "Name": "EarnTricks",
+        "Url": "https://earntricks.com/",
+        "Icon": "earntricks.png",
+        "BDRank": "9565656565"
+      },
+      {
+        "Name": "Android Kothon",
+        "Url": "http://www.androidkothon.com/",
+        "Icon": "androidkothon.png",
+        "BDRank": "9565656565"
       }
     ]
   },
-
   {
     "Category": "Magazine",
     "CategoryFullName": "Magazine",
@@ -1321,217 +1767,8 @@
     }
   ]
 }
-,{
-  "Category": "Business",
-  "CategoryFullName": "Business",
-  "Icon": "prothomalo.png",
-  "NewspaperList": [
-    {
-      "Name": "DSE BD",
-      "Url": "https://www.dsebd.org/",
-      "Icon": "dsebd.png",
-      "BDRank": "55"
-    },
-    {
-      "Name": "The Bonik Barta",
-      "Url": "https://bonikbarta.net/",
-      "Icon": "bonikbarta.png",
-      "BDRank": "151"
-    },
-    {
-      "Name": "Arthosuchak",
-      "Url": "http://www.arthosuchak.com/",
-      "Icon": "arthosuchak.png",
-      "BDRank": "285"
-    },
-    {
-      "Name": "The Financial Express",
-      "Url": "https://thefinancialexpress.com.bd/",
-      "Icon": "thefinancialexpress.png",
-      "BDRank": "289"
-    },
-    {
-      "Name": "Stock Bangladesh",
-      "Url": "https://stockbangladesh.com/",
-      "Icon": "stockbangladesh.png",
-      "BDRank": "496"
-    },
-    {
-      "Name": "Share News 24",
-      "Url": "http://sharenews24.com/",
-      "Icon": "sharenews24.png",
-      "BDRank": "500"
-    },
-    {
-      "Name": "Business Hour 24",
-      "Url": "https://businesshour24.com/",
-      "Icon": "businesshour24.png",
-      "BDRank": "646"
-    },
-    {
-      "Name": "Sunbd24",
-      "Url": "http://sunbd24.com/",
-      "Icon": "sunbd24.png",
-      "BDRank": "710"
-    },
-    {
-      "Name": "Share Bazar News",
-      "Url": "http://www.sharebazarnews.com/",
-      "Icon": "sharebazarnews.png",
-      "BDRank": "1039"
-    },
-    {
-      "Name": "Share Biz",
-      "Url": "https://sharebiz.net/",
-      "Icon": "sharebiz.png",
-      "BDRank": "1124"
-    },
-    {
-      "Name": "Biniog Barta",
-      "Url": "https://www.biniogbarta.com/",
-      "Icon": "biniogbarta.png",
-      "BDRank": "1459"
-    },
-    {
-      "Name": "Daily Stock Bangladesh",
-      "Url": "https://www.dailystockbangladesh.com/",
-      "Icon": "dailystockbangladesh.png",
-      "BDRank": "1466"
-    },
-    {
-      "Name": "CSE",
-      "Url": "https://www.cse.com.bd/",
-      "Icon": "cse.png",
-      "BDRank": "1726"
-    },
-    {
-      "Name": "Corporate Sangbad",
-      "Url": "https://www.corporatesangbad.com/",
-      "Icon": "corporatesangbad.png",
-      "BDRank": "1842"
-    },
-    {
-      "Name": "Banking News BD",
-      "Url": "https://www.bankingnewsbd.com/",
-      "Icon": "bankingnewsbd.png",
-      "BDRank": "1892"
-    },
-    {
-      "Name": "Biz Bangladesh",
-      "Url": "https://bizbangladesh.com/",
-      "Icon": "bizbangladesh.png",
-      "BDRank": "2028"
-    },
-    {
-      "Name": "Amader Orthoneeti",
-      "Url": "http://amaderorthoneeti.com/",
-      "Icon": "amaderorthoneeti.png",
-      "BDRank": "2472"
-    },
-    {
-      "Name": "Ajker Bazar",
-      "Url": "http://www.ajkerbazzar.com/",
-      "Icon": "ajkerbazzar.png",
-      "BDRank": "2982"
-    },
-    {
-      "Name": "Safollo",
-      "Url": "https://www.safollo.com/",
-      "Icon": "safollo.png",
-      "BDRank": "5364"
-    },
-    {
-      "Name": "Pujibazar",
-      "Url": "http://pujibazar.com/",
-      "Icon": "pujibazar.png",
-      "BDRank": "6749"
-    },
-    {
-      "Name": "Desh Prothikhon",
-      "Url": "http://www.deshprotikhon.com/",
-      "Icon": "deshprotikhon.png",
-      "BDRank": "9486"
-    },
-    {
-      "Name": "Corporate News",
-      "Url": "http://corporatenews.com.bd/",
-      "Icon": "corporatenews.png",
-      "BDRank": "9835"
-    },
-    {
-      "Name": "Share Business 24",
-      "Url": "http://www.sharebusiness24.com/",
-      "Icon": "sharebusiness24.png",
-      "BDRank": "13521"
-    },
-    {
-      "Name": "Share Barta 24",
-      "Url": "http://www.sharebarta24.com/",
-      "Icon": "sharebarta24.png",
-      "BDRank": "17690"
-    },
-    {
-      "Name": "Arthoniteer Kagoj",
-      "Url": "https://arthoniteerkagoj.com/",
-      "Icon": "arthoniteerkagoj.png",
-      "BDRank": "20140"
-    },
-    {
-      "Name": "Share Market BD",
-      "Url": "http://www.sharemarketbd.com/",
-      "Icon": "sharemarketbd.png",
-      "BDRank": "26329"
-    },
-    {
-      "Name": "Biniyoug Barta",
-      "Url": "http://biniyougbarta.com/",
-      "Icon": "biniyougbarta.png",
-      "BDRank": "30926"
-    },
-    {
-      "Name": "BD Capital 24",
-      "Url": "https://bdcapitalbarta24.blogspot.com/",
-      "Icon": "bdcapitalbarta24.png",
-      "BDRank": "55555"
-    },
-    {
-      "Name": "BD Business News",
-      "Url": "https://businessnews-bd.net/",
-      "Icon": "businessnews.png",
-      "BDRank": "55555"
-    },
-    {
-      "Name": "Business News 24 BD",
-      "Url": "http://businessnews24bd.com/",
-      "Icon": "businessnews24bd.png",
-      "BDRank": "55555"
-    },
-    {
-      "Name": "BIASL",
-      "Url": "http://www.biasl.net/",
-      "Icon": "biasl.png",
-      "BDRank": "55555"
-    },
-    {
-      "Name": "Energy Bangla",
-      "Url": "https://energybangla.com/",
-      "Icon": "energybangla.png",
-      "BDRank": "55555"
-    }
-  ]
-},
 
-  {
-    "Category": "Local",
-    "CategoryFullName": "Local Newspapers",
-    "Icon": "prothomalo.png",
-    "NewspaperList": [
-      {
-        "Name": "Daily Star",
-        "Url": "https://www.thedailystar.net/",
-        "Icon": "dailystar.png"
-      }
-    ]
-  }
+
+
 
 ]
