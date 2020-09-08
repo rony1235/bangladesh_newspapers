@@ -22,7 +22,6 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
   double boderWidth;
   double gridItemSpacing;
   double heartFontSize;
-  Color _iconColor = Colors.white;
 
   @override
   void initState() {
@@ -148,8 +147,7 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
                                             SharedPreferences prefs =
                                                 await SharedPreferences
                                                     .getInstance();
-                                            var number = prefs.setInt(
-                                                "gridItem", index + 1);
+                                            prefs.setInt("gridItem", index + 1);
                                             setState(() {
                                               gridItem = index + 1;
 

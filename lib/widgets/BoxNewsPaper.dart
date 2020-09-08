@@ -14,14 +14,8 @@ class BoxNewsPaper extends StatefulWidget {
   final Color iconColor;
   final IconData heartIcon;
 
-  BoxNewsPaper(
-      @required this.fontSize,
-      @required this.newspaper,
-      @required this.boderWidth,
-      @required this.heartFontSize,
-      @required this.onPress,
-      @required this.iconColor,
-      @required this.heartIcon);
+  BoxNewsPaper(this.fontSize, this.newspaper, this.boderWidth,
+      this.heartFontSize, this.onPress, this.iconColor, this.heartIcon);
 
   @override
   _BoxNewsPaperState createState() => _BoxNewsPaperState();
@@ -92,10 +86,16 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                   Positioned(
                     right: 0,
                     bottom: 0,
-                    child: IconButton(
-                      icon: Icon(widget.heartIcon,
-                          size: widget.heartFontSize, color: widget.iconColor),
-                      onPressed: widget.onPress,
+                    child: GestureDetector(
+                      //padding: EdgeInsets.all(0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(widget.heartIcon,
+                            size: widget.heartFontSize,
+                            color: widget.iconColor),
+                      ),
+                      onTap: widget.onPress,
+                      //onPressed: ,
                     ),
                   )
                 ]),

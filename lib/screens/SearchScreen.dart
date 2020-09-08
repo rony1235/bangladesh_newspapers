@@ -22,9 +22,9 @@ class _SearchScreenState extends State<SearchScreen> {
   double gridItemSpacing;
   double heartFontSize;
   String textSearch;
-  Color _iconColor = Colors.white;
-  int _page = 0;
-  GlobalKey _bottomNavigationKey = GlobalKey();
+  // Color _iconColor = Colors.white;
+  // int _page = 0;
+  // GlobalKey _bottomNavigationKey = GlobalKey();
 
   @override
   void initState() {

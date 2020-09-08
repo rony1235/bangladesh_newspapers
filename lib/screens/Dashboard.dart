@@ -19,6 +19,7 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   PageController _pageController;
 
+  // ignore: non_constant_identifier_names
   int _Page = 0;
 
   @override

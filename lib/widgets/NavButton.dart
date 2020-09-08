@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 
 class NavButton extends StatelessWidget {
-  NavButton(@required this._page, @required this._icons,
-      @required this.owoNumber, @required this.text);
+  NavButton(this._page, this._icons, this.owoNumber, this.text);
 
   final int _page;
   final IconData _icons;

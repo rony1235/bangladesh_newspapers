@@ -23,7 +23,7 @@ class MyWebTestView extends StatelessWidget {
     //print("http://foo.com/bar.html");
     showAds();
   }
-  @override
+
   void initState() {
     //super.initState();
     //FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
@@ -84,7 +84,7 @@ class MyWebTestView extends StatelessWidget {
       print("BannerAd event is $event");
     },
   );
-  @override
+
   void dispose() {
     print("myBanner?.dispose()");
     myBanner?.dispose();
@@ -108,7 +108,7 @@ class MyWebTestView extends StatelessWidget {
       onWillPop: () async {
         //print("bef");
         var status = await _controller.canGoBack();
-        print(status);
+        //print(status);
         if (status) {
           _controller.goBack();
           return false;

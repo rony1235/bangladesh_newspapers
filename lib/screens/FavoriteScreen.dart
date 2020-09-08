@@ -22,9 +22,9 @@ class _FavoriteScreenState extends State<FavoriteScreen>
   double boderWidth;
   double gridItemSpacing;
   double heartFontSize;
-  Color _iconColor = Colors.white;
-  int _page = 0;
-  GlobalKey _bottomNavigationKey = GlobalKey();
+  // Color _iconColor = Colors.white;
+  // int _page = 0;
+  // GlobalKey _bottomNavigationKey = GlobalKey();
 
   @override
   void initState() {
@@ -113,7 +113,7 @@ class _FavoriteScreenState extends State<FavoriteScreen>
                       onPressed: (int index) async {
                         SharedPreferences prefs =
                             await SharedPreferences.getInstance();
-                        var number = prefs.setInt("gridItem", index + 1);
+                        prefs.setInt("gridItem", index + 1);
                         setState(() {
                           gridItem = index + 1;
 
