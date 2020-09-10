@@ -8,7 +8,7 @@ void main() => runApp(MaterialApp(
       home: SplashScreen(),
       //debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: MaterialColor(0xff407473, const {
+          primarySwatch: MaterialColor(0xff8AC6D1, const {
             50: kPrimaryColor,
             100: kPrimaryColor,
             200: kPrimaryColor,
@@ -22,7 +22,7 @@ void main() => runApp(MaterialApp(
           }),
           accentColor: kPrimaryTextColor,
           primaryColor: kPrimaryColor,
-          fontFamily: 'Sansnarrow'),
+          fontFamily: 'Roboto'),
       routes: <String, WidgetBuilder>{
         SPLASH_SCREEN: (BuildContext context) => SplashScreen(),
         HOME_SCREEN: (BuildContext context) => Dashboard(),

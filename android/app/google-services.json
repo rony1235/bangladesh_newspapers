@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "91523969199",
-    "firebase_url": "https://all-bangla-newspapers-524fa.firebaseio.com",
-    "project_id": "all-bangla-newspapers-524fa",
-    "storage_bucket": "all-bangla-newspapers-524fa.appspot.com"
+    "project_number": "342299849155",
+    "firebase_url": "https://all-bangla-newspaper-1cbeb.firebaseio.com",
+    "project_id": "all-bangla-newspaper-1cbeb",
+    "storage_bucket": "all-bangla-newspaper-1cbeb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:91523969199:android:829dc44f2e30885362e45a",
+        "mobilesdk_app_id": "1:342299849155:android:cb463c85b3f2439d85cd76",
         "android_client_info": {
-          "package_name": "keya.rony.bangladesh_newspapers"
+          "package_name": "e2rsoft.com.all_bangla_newspapers"
         }
       },
       "oauth_client": [
         {
-          "client_id": "91523969199-u7aq4d693dhmrmg97f2hati3a2p9a6ef.apps.googleusercontent.com",
+          "client_id": "342299849155-jqk5aln725ibfib7ka5vmfu2boehomka.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC7cwAZ_QhCnqw-LpqmIuzYwe5j7PuXbxc"
+          "current_key": "AIzaSyARhTicTEAsHaIfkO993e3YuZkyXJiP0N8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "91523969199-u7aq4d693dhmrmg97f2hati3a2p9a6ef.apps.googleusercontent.com",
+              "client_id": "342299849155-jqk5aln725ibfib7ka5vmfu2boehomka.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

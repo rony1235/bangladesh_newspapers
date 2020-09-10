@@ -9,7 +9,7 @@ import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const String testDevice = 'F6836817538F494C0544BC912D578A82';
-const int ShowAdsNumber = 3;
+const int ShowAdsNumber = 4;
 
 // ignore: must_be_immutable
 class MyWebTestView extends StatelessWidget {
@@ -77,7 +77,7 @@ class MyWebTestView extends StatelessWidget {
     // https://developers.google.com/admob/ios/test-ads
     adUnitId:
         "ca-app-pub-4471555289018876/4364597364", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
-    size: AdSize.smartBanner,
+    size: AdSize.banner,
     targetingInfo: targetingInfo,
 
     listener: (MobileAdEvent event) {
@@ -144,9 +144,13 @@ class MyWebTestView extends StatelessWidget {
                         child: newspaper.icon.contains("svg")
                             ? SvgPicture.asset(
                                 "images/${newspaper.icon}",
+                                fit: BoxFit.contain,
+                                height: 30,
                               )
                             : Image.asset(
                                 "images/${newspaper.icon}",
+                                fit: BoxFit.contain,
+                                height: 30,
                               )),
                   ),
                 ),

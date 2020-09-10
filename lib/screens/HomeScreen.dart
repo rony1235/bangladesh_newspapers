@@ -38,21 +38,21 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
 
   void changeGrid() {
     if (gridItem == 1) {
-      fontSize = 40;
+      fontSize = 30;
       childAspectItem = 2;
       boderWidth = 15;
       gridItemSpacing = 10;
       heartFontSize = 30;
     }
     if (gridItem == 2) {
-      fontSize = 20;
+      fontSize = 15;
       childAspectItem = 1;
       boderWidth = 7;
       gridItemSpacing = 10;
       heartFontSize = 25;
     }
     if (gridItem == 3) {
-      fontSize = 14;
+      fontSize = 11;
       childAspectItem = 1;
       boderWidth = 3;
       gridItemSpacing = 4;
@@ -87,7 +87,10 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
     var tabBarItem = TabBar(
       labelPadding: EdgeInsets.fromLTRB(10.0, 5, 10, 2),
       labelStyle: TextStyle(
-          color: Colors.black, fontWeight: FontWeight.w900, fontSize: 20),
+          //'backgroundColor: Colors.green,
+          color: Colors.blue,
+          fontWeight: FontWeight.w900,
+          fontSize: 20),
       unselectedLabelStyle: TextStyle(
           color: kPrimaryColor, fontWeight: FontWeight.w500, fontSize: 20),
       indicatorWeight: 4.0,
@@ -117,6 +120,7 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
                       ? <Widget>[]
                       : myList.map((category) {
                           return Container(
+                            color: Color(0xffF8F8F8),
                             child: Column(
                               children: [
                                 Expanded(

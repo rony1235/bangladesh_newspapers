@@ -11,7 +11,10 @@ class MainTabBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tab(
       child: Container(
-        child: Text(category.category),
+        child: Text(
+          category.category,
+          style: TextStyle(color: Colors.black),
+        ),
       ),
     );
   }

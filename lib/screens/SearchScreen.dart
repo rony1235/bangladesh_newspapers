@@ -165,7 +165,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
         ],
       )),
-      backgroundColor: kPrimaryTextColor,
+      backgroundColor: kGridPrimaryColor,
     );
   }
 }

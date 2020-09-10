@@ -33,7 +33,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
     return GestureDetector(
       child: Card(
         elevation: 1,
-        color: kPrimaryCardColor,
+        color: Colors.white, //kPrimaryCardColor,
         child: ClipPath(
           clipper: ShapeBorderClipper(
               shape: RoundedRectangleBorder(
@@ -68,7 +68,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                         ),
                       ),
                       Expanded(
-                        flex: 10,
+                        flex: 15,
                         child: Column(
                           children: [
                             Text(

@@ -58,7 +58,7 @@ class SplashScreenState extends State<SplashScreen>
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(bottom: 30.0),
-                child: Text("Bangladesh Newspaper"),
+                child: Text("E2RSOFT"),
               )
             ],
           ),
@@ -70,13 +70,13 @@ class SplashScreenState extends State<SplashScreen>
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(bottom: 30.0),
-                    child: new Image.asset(
-                      'images/logo.png',
-                      width: animation.value * 250,
-                      height: animation.value * 250,
-                    ),
-                  )
+                      padding: EdgeInsets.only(bottom: 30.0),
+                      child: Text(
+                        "All Bangla Newspaper",
+                        style: TextStyle(
+                            fontSize: animation.value * 35,
+                            fontWeight: FontWeight.bold),
+                      ))
                 ],
               ),
             ],

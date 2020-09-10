@@ -165,7 +165,7 @@
       {
         "Name": "bdnews24.com",
         "Url": "https://bangla.bdnews24.com/",
-        "Icon": "bdnews24.png",
+        "Icon": "bdnews.png",
         "BDRank": "15"
       },
       {
@@ -304,7 +304,7 @@
       {
         "Name": "BD News24",
         "Url": "https://bdnews24.com/",
-        "Icon": "bdnews24.png",
+        "Icon": "bdnews.png",
         "BDRank": "15101"
       },
       {
@@ -570,7 +570,7 @@
 },
   {
   "Category": "International",
-  "CategoryFullName": "International Newspaper",
+  "CategoryFullName": "International",
   "Icon": "prothomalo.png",
   "NewspaperList": [
     {
@@ -1141,7 +1141,7 @@
     {
       "Name": "BDnews24 Cricket",
       "Url": "https://bangla.bdnews24.com/cricket/",
-      "Icon": "bdnews24.png",
+      "Icon": "bdnews.png",
       "BDRank": "115"
     },
     {

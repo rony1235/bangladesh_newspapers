@@ -182,7 +182,7 @@ class _FavoriteScreenState extends State<FavoriteScreen>
           ],
         ),
       )),
-      backgroundColor: kPrimaryTextColor,
+      backgroundColor: kGridPrimaryColor,
     );
   }
 }

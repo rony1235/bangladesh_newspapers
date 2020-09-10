@@ -18,3 +18,8 @@ git push -u origin master
 
 
 flutter build apk --split-per-abi
+
+
+flutter build appbundle
+
+flutter build apk --release --target-platform=android-arm64

@@ -35,12 +35,16 @@ class _DashboardState extends State<Dashboard> {
       onWillPop: _onWillPop,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: kPrimaryDarkColor,
           shadowColor: kPrimaryColor,
           title: Padding(
             padding: const EdgeInsets.all(2.0),
             child: Text(
-              "Bangladesh Newspaper",
-              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 35),
+              "All Bangla Newspaper",
+              style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 22,
+                  color: kPrimaryTextColor),
             ),
           ),
           centerTitle: true,
