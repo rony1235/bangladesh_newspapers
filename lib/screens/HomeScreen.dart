@@ -85,9 +85,10 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     var tabBarItem = TabBar(
+      labelColor: Colors.blue,
       labelPadding: EdgeInsets.fromLTRB(10.0, 5, 10, 2),
       labelStyle: TextStyle(
-          //'backgroundColor: Colors.green,
+          //backgroundColor: Colors.green,
           color: Colors.blue,
           fontWeight: FontWeight.w900,
           fontSize: 20),

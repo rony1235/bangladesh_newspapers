@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:bangladesh_newspapers/widgets/ColorLoader.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
@@ -52,35 +53,36 @@ class SplashScreenState extends State<SplashScreen>
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          new Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(bottom: 30.0),
-                child: Text("E2RSOFT"),
-              )
-            ],
+          Container(
+            decoration: BoxDecoration(color: kPrimaryColor),
           ),
-          new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              new Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Padding(
-                      padding: EdgeInsets.only(bottom: 30.0),
-                      child: Text(
-                        "All Bangla Newspaper",
-                        style: TextStyle(
-                            fontSize: animation.value * 35,
-                            fontWeight: FontWeight.bold),
-                      ))
-                ],
+              Expanded(
+                flex: 5,
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      ColorLoader(),
+
+                      // Padding(
+                      //   padding: EdgeInsets.only(top: 50.0),
+                      // ),
+                      // Text(
+                      //   "All Bangla Newspapers",
+                      //   style: TextStyle(
+                      //       color: Colors.white,
+                      //       fontWeight: FontWeight.bold,
+                      //       fontSize: 24.0),
+                      // )
+                    ],
+                  ),
+                ),
               ),
             ],
-          ),
+          )
         ],
       ),
     );

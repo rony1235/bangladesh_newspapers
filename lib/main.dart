@@ -8,7 +8,7 @@ void main() => runApp(MaterialApp(
       home: SplashScreen(),
       //debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: MaterialColor(0xff8AC6D1, const {
+          primarySwatch: MaterialColor(0xff3182ce, const {
             50: kPrimaryColor,
             100: kPrimaryColor,
             200: kPrimaryColor,

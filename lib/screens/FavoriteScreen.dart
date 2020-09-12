@@ -40,21 +40,21 @@ class _FavoriteScreenState extends State<FavoriteScreen>
 
   void changeGrid() {
     if (gridItem == 1) {
-      fontSize = 40;
+      fontSize = 30;
       childAspectItem = 2;
       boderWidth = 15;
       gridItemSpacing = 10;
       heartFontSize = 30;
     }
     if (gridItem == 2) {
-      fontSize = 20;
+      fontSize = 15;
       childAspectItem = 1;
       boderWidth = 7;
       gridItemSpacing = 10;
       heartFontSize = 25;
     }
     if (gridItem == 3) {
-      fontSize = 15;
+      fontSize = 11;
       childAspectItem = 1;
       boderWidth = 3;
       gridItemSpacing = 4;

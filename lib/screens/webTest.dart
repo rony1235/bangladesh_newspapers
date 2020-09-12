@@ -75,7 +75,7 @@ class MyWebTestView extends StatelessWidget {
     // Replace the testAdUnitId with an ad unit id from the AdMob dash.
     // https://developers.google.com/admob/android/test-ads
     // https://developers.google.com/admob/ios/test-ads
-    adUnitId:
+    adUnitId: //BannerAd.testAdUnitId,
         "ca-app-pub-4471555289018876/4364597364", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
     size: AdSize.banner,
     targetingInfo: targetingInfo,

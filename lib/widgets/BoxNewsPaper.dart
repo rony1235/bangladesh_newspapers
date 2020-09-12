@@ -32,18 +32,18 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Card(
-        elevation: 1,
+        elevation: 2,
         color: Colors.white, //kPrimaryCardColor,
         child: ClipPath(
           clipper: ShapeBorderClipper(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5))),
           child: Container(
-            decoration: BoxDecoration(
-                border: Border(
-                    right: BorderSide(
-                        color: kPrimaryColor, width: widget.boderWidth))),
-            alignment: Alignment.center,
+            //decoration: BoxDecoration(
+            // border: Border(
+            //     right: BorderSide(
+            //         color: kPrimaryColor, width: widget.boderWidth))),
+            //alignment: Alignment.center,
             child: Stack(
                 alignment: Alignment.topRight,
                 fit: StackFit.expand,

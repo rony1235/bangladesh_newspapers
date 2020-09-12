@@ -23,7 +23,7 @@ class _SettingScreenState extends State<SettingScreen> {
           size: 80,
         ),
       ),
-      backgroundColor: kPrimaryLightColor,
+      backgroundColor: kPrimaryColor,
     );
   }
 }

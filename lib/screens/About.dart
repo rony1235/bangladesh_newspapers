@@ -24,7 +24,7 @@ class _AboutScreenState extends State<AboutScreen> {
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 40),
         ),
       ),
-      backgroundColor: kPrimaryLightColor,
+      backgroundColor: kPrimaryColor,
     );
   }
 }
