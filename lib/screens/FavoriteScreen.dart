@@ -176,7 +176,8 @@ class _FavoriteScreenState extends State<FavoriteScreen>
                             : Colors.black,
                         newspaperList[index].isFavorite
                             ? Icons.favorite
-                            : Icons.favorite_border);
+                            : Icons.favorite_border,
+                        "Fav");
                   }),
             ),
           ],

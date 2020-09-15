@@ -160,7 +160,8 @@ class _SearchScreenState extends State<SearchScreen> {
                           : Colors.black,
                       newspaperList[index].isFavorite
                           ? Icons.favorite
-                          : Icons.favorite_border);
+                          : Icons.favorite_border,
+                      "Ser");
                 }),
           ),
         ],

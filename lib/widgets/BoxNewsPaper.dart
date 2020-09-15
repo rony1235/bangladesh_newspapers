@@ -14,8 +14,17 @@ class BoxNewsPaper extends StatefulWidget {
   final Color iconColor;
   final IconData heartIcon;
 
-  BoxNewsPaper(this.fontSize, this.newspaper, this.boderWidth,
-      this.heartFontSize, this.onPress, this.iconColor, this.heartIcon);
+  final String page;
+
+  BoxNewsPaper(
+      this.fontSize,
+      this.newspaper,
+      this.boderWidth,
+      this.heartFontSize,
+      this.onPress,
+      this.iconColor,
+      this.heartIcon,
+      this.page);
 
   @override
   _BoxNewsPaperState createState() => _BoxNewsPaperState();
@@ -56,7 +65,8 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Hero(
-                            tag: 'imageHero${widget.newspaper.url}',
+                            tag:
+                                'imageHero${widget.newspaper.url + widget.page}',
                             child: widget.newspaper.icon.contains("svg")
                                 ? SvgPicture.asset(
                                     "images/${widget.newspaper.icon}",
@@ -88,8 +98,9 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                     bottom: 0,
                     child: GestureDetector(
                       //padding: EdgeInsets.all(0),
+
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.fromLTRB(23, 23, 8, 8.0),
                         child: Icon(widget.heartIcon,
                             size: widget.heartFontSize,
                             color: widget.iconColor),
@@ -109,7 +120,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
             transitionDuration: Duration(milliseconds: 1000),
             pageBuilder: (BuildContext context, Animation<double> animation,
                 Animation<double> secondaryAnimation) {
-              return MyWebTestView(widget.newspaper);
+              return MyWebTestView(widget.newspaper, widget.page);
             },
             transitionsBuilder: (BuildContext context,
                 Animation<double> animation,

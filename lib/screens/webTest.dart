@@ -14,12 +14,13 @@ const int ShowAdsNumber = 4;
 // ignore: must_be_immutable
 class MyWebTestView extends StatelessWidget {
   final NewspaperList newspaper;
+  final String page;
 
   //WebViewController _controller;
 
   final FlutterWebviewPlugin _controller = FlutterWebviewPlugin();
 
-  MyWebTestView(this.newspaper) {
+  MyWebTestView(this.newspaper, this.page) {
     //print("http://foo.com/bar.html");
     showAds();
   }
@@ -28,7 +29,7 @@ class MyWebTestView extends StatelessWidget {
     //super.initState();
     //FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
     FirebaseAdMob.instance
-        .initialize(appId: "ca-app-pub-4471555289018876~9616924043");
+        .initialize(appId: "ca-app-pub-2656994411361019~4265337089");
 
     RewardedVideoAd.instance.listener =
         (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
@@ -49,7 +50,7 @@ class MyWebTestView extends StatelessWidget {
       if (number == ShowAdsNumber - 1) {
         RewardedVideoAd.instance.load(
             adUnitId:
-                "ca-app-pub-4471555289018876/1457580034", //RewardedVideoAd.testAdUnitId,
+                "ca-app-pub-2656994411361019/4796013643", //RewardedVideoAd.testAdUnitId,
             targetingInfo: targetingInfo);
         prefs.setInt("paperVisit", number + 1);
       } else if (number >= ShowAdsNumber) {
@@ -76,7 +77,7 @@ class MyWebTestView extends StatelessWidget {
     // https://developers.google.com/admob/android/test-ads
     // https://developers.google.com/admob/ios/test-ads
     adUnitId: //BannerAd.testAdUnitId,
-        "ca-app-pub-4471555289018876/4364597364", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
+        "ca-app-pub-2656994411361019/1802825270", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
     size: AdSize.banner,
     targetingInfo: targetingInfo,
 
@@ -136,11 +137,11 @@ class MyWebTestView extends StatelessWidget {
           appBar: AppBar(
               backgroundColor: Colors.white,
               flexibleSpace: SafeArea(
-                child: Hero(
-                  tag: 'imageHero${newspaper.url}',
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    child: Hero(
+                        tag: 'imageHero${newspaper.url + page} ',
                         child: newspaper.icon.contains("svg")
                             ? SvgPicture.asset(
                                 "images/${newspaper.icon}",

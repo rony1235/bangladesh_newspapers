@@ -111,11 +111,7 @@
         "Url": "http://www.dailyvorerpata.com/",
         "Icon": "dailyvorerpata.png"
       },
-      {
-        "Name": "Dainik Azadi",
-        "Url": "https://dainikazadi.net/",
-        "Icon": "azadi.png"
-      },
+
       {
         "Name": "Amar Desh 24",
         "Url": "https://amar-desh24.com/bangla/",
@@ -322,12 +318,6 @@
         "Url": "https://en.ntvbd.com/",
         "Icon": "ntvbd.png",
         "BDRank": "200"
-      },
-      {
-        "Name": "The Financial Expres",
-        "Url": "https://thefinancialexpress.com.bd/",
-        "Icon": "thefinancialexpress.png",
-        "BDRank": "319"
       },
       {
         "Name": "The Daily Observer",
@@ -623,7 +613,7 @@
       },
       {
         "Name": "DAWN",
-        "Url": "https://epaper.dawn.com/",
+        "Url": "https://www.dawn.com/",
         "Icon": "dawn.png"
       },
       {
@@ -635,11 +625,6 @@
         "Name": "Telegraph",
         "Url": "https://www.telegraph.co.uk/news/",
         "Icon": "telegraph.png"
-      },
-      {
-        "Name": "The Independent",
-        "Url": "http://www.theindependentbd.com/",
-        "Icon": "indipendent.png"
       },
       {
         "Name": "The Sun",
@@ -776,7 +761,7 @@
       },
       {
         "Name": "Dainik Purbokone",
-        "Url": "https://dainikazadi.net/",
+        "Url": "http://dainikpurbokone.net/",
         "Icon": "dainikpurbokone.png",
         "BDRank": "1094"
       },
@@ -788,7 +773,7 @@
       },
       {
         "Name": "Dainik Azadi",
-        "Url": "http://www.bdallbanglanewspaper.com/dainik-azadi/",
+        "Url": "https://dainikazadi.net/",
         "Icon": "azadi.png",
         "BDRank": "1688"
       },
@@ -1227,12 +1212,7 @@
         "Icon": "techtunes.png",
         "BDRank": "279"
       },
-      {
-        "Name": "Somewhere In Blog",
-        "Url": "https://www.somewhereinblog.net/",
-        "Icon": "somewhereinblog.png",
-        "BDRank": "549"
-      },
+
       {
         "Name": "Tech Shohor",
         "Url": "https://techshohor.com/",
@@ -1376,11 +1356,7 @@
         "Url": "http://www.srishtisandhan.com/",
         "Icon": "sandhan.png"
       },
-      {
-        "Name": "Health Bangla",
-        "Url": "https://healthbangla.com/",
-        "Icon": "government.png"
-      },
+
       {
         "Name": "Abasar",
         "Url": "http://www.abasar.net/",
@@ -1611,12 +1587,7 @@
         "Icon": "islamqa.svg",
         "BDRank": "5000"
       },
-      {
-        "Name": "Sachalayatan",
-        "Url": "http://www.sachalayatan.com/",
-        "Icon": "Sachalayatan.png",
-        "BDRank": "5465"
-      },
+
       {
         "Name": "Biggan Projukti",
         "Url": "http://www.bigganprojukti.com/",
@@ -1661,7 +1632,7 @@
       },
       {
         "Name": "Mukto Mona",
-        "Url": "http://home.mukto-mona.com/",
+        "Url": "http://home.mukto-mona.com/index.html",
         "Icon": "muktomona.png",
         "BDRank": "5768"
       }
@@ -1724,7 +1695,7 @@
       },
       {
         "Name": "Nababarta Prasanga",
-        "Url": "http://www.nababartaprasanga.com/Archives/Classic.aspx?page=p1",
+        "Url": "http://www.nababartaprasanga.com/",
         "Icon": "nababartaprasanga.png"
       },
       {

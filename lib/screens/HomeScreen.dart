@@ -233,7 +233,8 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
                                             category.newspaperList[index]
                                                     .isFavorite
                                                 ? Icons.favorite
-                                                : Icons.favorite_border);
+                                                : Icons.favorite_border,
+                                            "Home");
                                       }),
                                 ),
                               ],
