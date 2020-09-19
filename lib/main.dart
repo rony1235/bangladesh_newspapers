@@ -4,7 +4,7 @@ import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:bangladesh_newspapers/screens/SplashScreen.dart';
 
 void main() => runApp(MaterialApp(
-      title: 'GridView Demo',
+      title: 'সংবাদপত্র',
       home: SplashScreen(),
       //debugShowCheckedModeBanner: false,
       theme: ThemeData(

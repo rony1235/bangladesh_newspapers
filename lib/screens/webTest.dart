@@ -9,7 +9,7 @@ import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const String testDevice = 'F6836817538F494C0544BC912D578A82';
-const int ShowAdsNumber = 4;
+const int ShowAdsNumber = 5;
 
 // ignore: must_be_immutable
 class MyWebTestView extends StatelessWidget {
@@ -114,6 +114,7 @@ class MyWebTestView extends StatelessWidget {
           _controller.goBack();
           return false;
         } else {
+          await FlutterWebviewPlugin().close();
           if (!await myBanner.isLoaded()) {
             //print("working");
             Timer(const Duration(seconds: 2), () async {
@@ -134,67 +135,41 @@ class MyWebTestView extends StatelessWidget {
         }
       },
       child: Scaffold(
-          appBar: AppBar(
-              backgroundColor: Colors.white,
-              flexibleSpace: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: Hero(
-                        tag: 'imageHero${newspaper.url + page} ',
-                        child: newspaper.icon.contains("svg")
-                            ? SvgPicture.asset(
-                                "images/${newspaper.icon}",
-                                fit: BoxFit.contain,
-                                height: 30,
-                              )
-                            : Image.asset(
-                                "images/${newspaper.icon}",
-                                fit: BoxFit.contain,
-                                height: 30,
-                              )),
-                  ),
+        appBar: AppBar(
+            backgroundColor: Colors.white,
+            flexibleSpace: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: Hero(
+                      tag: '${page}imageHero${newspaper.url}',
+                      child: newspaper.icon.contains("svg")
+                          ? SvgPicture.asset(
+                              "images/${newspaper.icon}",
+                              fit: BoxFit.contain,
+                              height: 30,
+                            )
+                          : Image.asset(
+                              "images/${newspaper.icon}",
+                              fit: BoxFit.contain,
+                              height: 30,
+                            )),
                 ),
               ),
-              centerTitle: true,
-              leading: BackButton(
-                  color: Colors.black,
-                  onPressed: () async {
-                    //print("bef");
-                    var status = await _controller.canGoBack();
-                    print(status);
-                    if (status) {
-                      _controller.goBack();
-                    } else {
-                      if (!await myBanner.isLoaded()) {
-                        //print("working");
-                        Timer(const Duration(seconds: 2), () async {
-                          if (!await myBanner.isLoaded()) {
-                            Timer(const Duration(seconds: 6), () {
-                              myBanner?.dispose();
-                            });
-                          } else {
-                            myBanner?.dispose();
-                          }
-                        });
-                        //print("dsd");
-                      } else {
-                        myBanner?.dispose();
-                      }
-
-                      Navigator.pop(context, true);
-                    }
-                    //myBanner?.dispose();
-                  }),
-              actions: <Widget>[
-                IconButton(
-                  icon: Icon(
-                    Icons.home,
-                    color: Colors.black,
-                  ),
-                  onPressed: () async {
+            ),
+            centerTitle: true,
+            leading: BackButton(
+                color: Colors.black,
+                onPressed: () async {
+                  //print("bef");
+                  var status = await _controller.canGoBack();
+                  //print("status" + status.toString());
+                  if (status) {
+                    _controller.goBack();
+                  } else {
+                    await FlutterWebviewPlugin().close();
                     if (!await myBanner.isLoaded()) {
-                      //print("working");
+                      //print("test");
                       Timer(const Duration(seconds: 2), () async {
                         if (!await myBanner.isLoaded()) {
                           Timer(const Duration(seconds: 6), () {
@@ -208,15 +183,45 @@ class MyWebTestView extends StatelessWidget {
                     } else {
                       myBanner?.dispose();
                     }
+                    //print("status dfhgvsgdv");
                     Navigator.pop(context, true);
-                  },
-                )
-              ]),
-          body: WebviewScaffold(
+                  }
+                  //myBanner?.dispose();
+                }),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.black,
+                ),
+                onPressed: () async {
+                  await FlutterWebviewPlugin().close();
+                  if (!await myBanner.isLoaded()) {
+                    print("working");
+                    Timer(const Duration(seconds: 2), () async {
+                      if (!await myBanner.isLoaded()) {
+                        Timer(const Duration(seconds: 6), () {
+                          myBanner?.dispose();
+                        });
+                      } else {
+                        myBanner?.dispose();
+                      }
+                    });
+                    //print("dsd");
+                  } else {
+                    myBanner?.dispose();
+                  }
+                  Navigator.pop(context, true);
+                },
+              )
+            ]),
+        body: Container(
+          child: WebviewScaffold(
             url: newspaper.url,
             displayZoomControls: true,
             withZoom: true,
             withJavascript: true,
+
             // gestureNavigationEnabled: true,
             // javascriptMode: JavascriptMode.unrestricted,
             // onWebViewCreated: (WebViewController webViewController) {
@@ -225,7 +230,9 @@ class MyWebTestView extends StatelessWidget {
             //
             //   //_controller.complete(webViewController);
             // },
-          )),
+          ),
+        ),
+      ),
     );
   }
 }

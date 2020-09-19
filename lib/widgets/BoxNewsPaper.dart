@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:bangladesh_newspapers/utilities/constant.dart';
 
 class BoxNewsPaper extends StatefulWidget {
   final NewspaperList newspaper;
@@ -64,16 +63,18 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                         flex: 15,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Hero(
-                            tag:
-                                'imageHero${widget.newspaper.url + widget.page}',
-                            child: widget.newspaper.icon.contains("svg")
-                                ? SvgPicture.asset(
-                                    "images/${widget.newspaper.icon}",
-                                  )
-                                : Image.asset(
-                                    "images/${widget.newspaper.icon}",
-                                  ),
+                          child: Container(
+                            child: Hero(
+                              tag:
+                                  '${widget.page}imageHero${widget.newspaper.url}',
+                              child: widget.newspaper.icon.contains("svg")
+                                  ? SvgPicture.asset(
+                                      "images/${widget.newspaper.icon}",
+                                    )
+                                  : Image.asset(
+                                      "images/${widget.newspaper.icon}",
+                                    ),
+                            ),
                           ),
                         ),
                       ),
@@ -115,9 +116,16 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
       ),
       onTap: () {
         //showAds();
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //       builder: (context) =>
+        //           MyWebTestView(widget.newspaper, widget.page)),
+        // );
+
         Navigator.of(context).push(
           PageRouteBuilder(
-            transitionDuration: Duration(milliseconds: 1000),
+            transitionDuration: Duration(milliseconds: 1700),
             pageBuilder: (BuildContext context, Animation<double> animation,
                 Animation<double> secondaryAnimation) {
               return MyWebTestView(widget.newspaper, widget.page);
