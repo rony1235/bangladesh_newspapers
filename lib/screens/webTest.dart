@@ -19,15 +19,19 @@ class MyWebTestView extends StatelessWidget {
   //WebViewController _controller;
 
   final FlutterWebviewPlugin _controller = FlutterWebviewPlugin();
+  StreamSubscription _onDestroy;
+  StreamSubscription<String> _onUrlChanged;
+  StreamSubscription<WebViewStateChanged> _onStateChanged;
 
   MyWebTestView(this.newspaper, this.page) {
     //print("http://foo.com/bar.html");
     showAds();
   }
 
-  void initState() {
+  Future<void> initState() async {
     //super.initState();
     //FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
+
     FirebaseAdMob.instance
         .initialize(appId: "ca-app-pub-2656994411361019~4265337089");
 
@@ -55,7 +59,9 @@ class MyWebTestView extends StatelessWidget {
         prefs.setInt("paperVisit", number + 1);
       } else if (number >= ShowAdsNumber) {
         prefs.setInt("paperVisit", 0);
-        RewardedVideoAd.instance.show();
+        try {
+          RewardedVideoAd.instance.show();
+        } catch (e) {}
       } else {
         prefs.setInt("paperVisit", number + 1);
       }
@@ -88,6 +94,11 @@ class MyWebTestView extends StatelessWidget {
 
   void dispose() {
     print("myBanner?.dispose()");
+    _onDestroy.cancel();
+    _onUrlChanged.cancel();
+    _onStateChanged.cancel();
+    _controller.dispose();
+    //super.dispose();
     myBanner?.dispose();
   }
 
@@ -114,6 +125,7 @@ class MyWebTestView extends StatelessWidget {
           _controller.goBack();
           return false;
         } else {
+          _controller.dispose();
           await FlutterWebviewPlugin().close();
           if (!await myBanner.isLoaded()) {
             //print("working");
@@ -161,33 +173,45 @@ class MyWebTestView extends StatelessWidget {
             leading: BackButton(
                 color: Colors.black,
                 onPressed: () async {
-                  //print("bef");
-                  var status = await _controller.canGoBack();
-                  //print("status" + status.toString());
-                  if (status) {
-                    _controller.goBack();
-                  } else {
-                    await FlutterWebviewPlugin().close();
-                    if (!await myBanner.isLoaded()) {
-                      //print("test");
-                      Timer(const Duration(seconds: 2), () async {
-                        if (!await myBanner.isLoaded()) {
-                          Timer(const Duration(seconds: 6), () {
-                            myBanner?.dispose();
-                          });
-                        } else {
-                          myBanner?.dispose();
-                        }
-                      });
-                      //print("dsd");
+                  print("bef");
+                  try {
+                    var status = await _controller.canGoBack();
+                    print("status" + status.toString());
+                    if (status) {
+                      _controller.goBack();
                     } else {
-                      myBanner?.dispose();
+                      _controller.dispose();
+                      await FlutterWebviewPlugin().close();
+                      if (!await myBanner.isLoaded()) {
+                        //print("test");
+                        Timer(const Duration(seconds: 2), () async {
+                          if (!await myBanner.isLoaded()) {
+                            Timer(const Duration(seconds: 6), () {
+                              myBanner?.dispose();
+                            });
+                          } else {
+                            myBanner?.dispose();
+                          }
+                        });
+                        //print("dsd");
+                      } else {
+                        myBanner?.dispose();
+                      }
                     }
-                    //print("status dfhgvsgdv");
                     Navigator.pop(context, true);
+                  } catch (e) {
+                    print("ddd" + e.toString());
+                    _controller.dispose();
+                    print(e);
+                    Navigator.pop(context, true);
+
+                    print(e);
                   }
-                  //myBanner?.dispose();
-                }),
+
+                  //print("status dfhgvsgdv");
+                }
+                //myBanner?.dispose();
+                ),
             actions: <Widget>[
               IconButton(
                 icon: Icon(
@@ -195,6 +219,7 @@ class MyWebTestView extends StatelessWidget {
                   color: Colors.black,
                 ),
                 onPressed: () async {
+                  _controller.dispose();
                   await FlutterWebviewPlugin().close();
                   if (!await myBanner.isLoaded()) {
                     print("working");
@@ -221,7 +246,11 @@ class MyWebTestView extends StatelessWidget {
             displayZoomControls: true,
             withZoom: true,
             withJavascript: true,
-
+            geolocationEnabled: false,
+            ignoreSSLErrors: true,
+            debuggingEnabled: false,
+            allowFileURLs: true,
+            appCacheEnabled: false,
             // gestureNavigationEnabled: true,
             // javascriptMode: JavascriptMode.unrestricted,
             // onWebViewCreated: (WebViewController webViewController) {
