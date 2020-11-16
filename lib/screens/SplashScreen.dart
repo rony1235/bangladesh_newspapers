@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/services.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class SplashScreenState extends State<SplashScreen>
   startTime() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setInt("paperVisit", 0);
-    var _duration = new Duration(seconds: 3);
+    var _duration = new Duration(seconds: 2);
     return Timer(_duration, navigationPage);
   }
 
@@ -31,6 +32,10 @@ class SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      //systemNavigationBarColor: kPrimaryColor, // navigation bar color
+      statusBarColor: kPrimaryColor, // status bar color
+    ));
     animationController = new AnimationController(
       vsync: this,
       duration: new Duration(seconds: 2),

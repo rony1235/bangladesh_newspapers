@@ -3,6 +3,7 @@ import 'package:bangladesh_newspapers/widgets/MainTabBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/services/DataProvider.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,6 +27,7 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     gridItem = 2;
     changeGrid();
     tabController = new TabController(vsync: this, length: myList.length);

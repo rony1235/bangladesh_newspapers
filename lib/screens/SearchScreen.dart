@@ -28,7 +28,8 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   void initState() {
-    super.initState();
+    //super.initState();
+
     newspaperList = List();
     gridItem = 2;
     changeGrid();
@@ -66,106 +67,113 @@ class _SearchScreenState extends State<SearchScreen> {
     mainNewspaperList = await DataProvider().getAllNewspaper();
     newspaperList = mainNewspaperList;
     setState(() {});
-    //print(newspaperList[0].name);
+
+    //     //print(newspaperList[0].name);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: null,
+      //backgroundColor: kPrimaryColor,
       body: Container(
+          height: double.infinity,
+          width: double.infinity,
           child: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: Container(
-                margin: const EdgeInsets.fromLTRB(15, 15, 15, 15),
-                child: TextField(
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: kPrimaryColor,
-                  ),
-                  cursorColor: kPrimaryColor,
-                  onChanged: (value) {
-                    //print(value);
-                    textSearch = value;
-                    //print(newspaperList.length);
-                    setState(() {
-                      newspaperList = mainNewspaperList
-                          .where((element) => element.name
-                              .toLowerCase()
-                              .contains(textSearch.toLowerCase()))
-                          .toList();
-                    });
-                  },
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                    hintText: 'Search',
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: kPrimaryColor,
+            children: [
+              Expanded(
+                flex: 2,
+                child: Container(
+                    margin: const EdgeInsets.fromLTRB(15, 15, 15, 15),
+                    child: TextField(
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: kPrimaryColor,
+                      ),
+                      cursorColor: kPrimaryColor,
+                      onChanged: (value) {
+                        //print(value);
+                        textSearch = value;
+                        //print(newspaperList.length);
+                        setState(() {
+                          newspaperList = mainNewspaperList
+                              .where((element) => element.name
+                                  .toLowerCase()
+                                  .contains(textSearch.toLowerCase()))
+                              .toList();
+                        });
+                      },
+                      decoration: InputDecoration(
+                        contentPadding:
+                            EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                        hintText: 'Search',
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: kPrimaryColor,
+                        ),
+                        hintStyle: TextStyle(color: kPrimaryColor),
+                        filled: true,
+                        fillColor: Colors.white,
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                          borderSide:
+                              BorderSide(color: kPrimaryColor, width: 2),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                          borderSide:
+                              BorderSide(color: kPrimaryColor, width: 2),
+                        ),
+                      ),
+                    )),
+              ),
+              Expanded(
+                flex: 10,
+                child: GridView.builder(
+                    padding: const EdgeInsets.all(10.0),
+                    itemCount: newspaperList.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: gridItem,
+                      crossAxisSpacing: gridItemSpacing,
+                      mainAxisSpacing: gridItemSpacing,
+                      childAspectRatio: childAspectItem,
                     ),
-                    hintStyle: TextStyle(color: kPrimaryColor),
-                    filled: true,
-                    fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                      borderSide: BorderSide(color: kPrimaryColor, width: 2),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                      borderSide: BorderSide(color: kPrimaryColor, width: 2),
-                    ),
-                  ),
-                )),
-          ),
-          Expanded(
-            flex: 10,
-            child: GridView.builder(
-                padding: const EdgeInsets.all(10.0),
-                itemCount: newspaperList.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: gridItem,
-                  crossAxisSpacing: gridItemSpacing,
-                  mainAxisSpacing: gridItemSpacing,
-                  childAspectRatio: childAspectItem,
-                ),
-                itemBuilder: (BuildContext context, int index) {
-                  return BoxNewsPaper(
-                      fontSize, newspaperList[index], boderWidth, heartFontSize,
-                      () async {
-                    setState(() {
-                      newspaperList[index].isFavorite =
-                          !newspaperList[index].isFavorite;
-                    });
-                    SharedPreferences prefs =
-                        await SharedPreferences.getInstance();
-                    var favoriteList = prefs.getStringList("Favorite");
-                    if (favoriteList == null) {
-                      favoriteList = List();
-                    }
-                    if (newspaperList[index].isFavorite) {
-                      favoriteList.add(newspaperList[index].url);
-                    } else {
-                      favoriteList.remove(newspaperList[index].url);
-                    }
-                    //favoriteList = List();
-                    prefs.setStringList("Favorite", favoriteList);
-                    //newspaperList.removeAt(index);
-                    // favoriteList.forEach((element) {
-                    //   print("test ---" + element);
-                    // });
-                  },
-                      newspaperList[index].isFavorite
-                          ? Colors.redAccent
-                          : Colors.black,
-                      newspaperList[index].isFavorite
-                          ? Icons.favorite
-                          : Icons.favorite_border,
-                      "Ser");
-                }),
-          ),
-        ],
-      )),
+                    itemBuilder: (BuildContext context, int index) {
+                      return BoxNewsPaper(fontSize, newspaperList[index],
+                          boderWidth, heartFontSize, () async {
+                        setState(() {
+                          newspaperList[index].isFavorite =
+                              !newspaperList[index].isFavorite;
+                        });
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        var favoriteList = prefs.getStringList("Favorite");
+                        if (favoriteList == null) {
+                          favoriteList = List();
+                        }
+                        if (newspaperList[index].isFavorite) {
+                          favoriteList.add(newspaperList[index].url);
+                        } else {
+                          favoriteList.remove(newspaperList[index].url);
+                        }
+                        //favoriteList = List();
+                        prefs.setStringList("Favorite", favoriteList);
+                        //newspaperList.removeAt(index);
+                        // favoriteList.forEach((element) {
+                        //   print("test ---" + element);
+                        // });
+                      },
+                          newspaperList[index].isFavorite
+                              ? Colors.redAccent
+                              : Colors.black,
+                          newspaperList[index].isFavorite
+                              ? Icons.favorite
+                              : Icons.favorite_border,
+                          "Ser");
+                    }),
+              ),
+            ],
+          )),
       backgroundColor: kGridPrimaryColor,
     );
   }

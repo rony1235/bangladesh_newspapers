@@ -133,7 +133,7 @@
         "Icon": "odhikarnews.png"
       },
       {
-        "Name": "Dainik Odhikar News",
+        "Name": "Bhorer Dak",
         "Url": "https://bhorer-dak.com/",
         "Icon": "bhorerdak.png"
       }
@@ -213,7 +213,7 @@
       {
         "Name": "Amadershomoy",
         "Url": "https://www.amadershomoy.com/bn/",
-        "Icon": "amadershomoy.jpeg",
+        "Icon": "amadershomoy.png",
         "BDRank": "164"
       },
       {
@@ -249,7 +249,7 @@
       {
         "Name": "DMP News",
         "Url": "https://dmpnews.org/",
-        "Icon": "dmpnews.jpeg",
+        "Icon": "dmpnews.png",
         "BDRank": "518"
       },
       {
@@ -579,17 +579,17 @@
       {
         "Name": "The Wall Street Journal",
         "Url": "https://www.wsj.com/",
-        "Icon": "wsj.png"
+        "Icon": "wsj.svg"
       },
       {
         "Name": "The New Work Times",
         "Url": "https://www.nytimes.com/section/world",
-        "Icon": "TNWT.png"
+        "Icon": "TNWT.svg"
       },
       {
         "Name": "The Washington Post",
         "Url": "https://www.washingtonpost.com/",
-        "Icon": "TWP.png"
+        "Icon": "TWP.svg"
       },
       {
         "Name": "China Daily",
@@ -816,7 +816,7 @@
       {
         "Name": "Gramer Kagoj",
         "Url": "http://www.gramerkagoj.com/",
-        "Icon": "gramerkagoj.jpeg",
+        "Icon": "gramerkagoj.png",
         "BDRank": "6393"
       },
       {
@@ -845,8 +845,8 @@
       },
       {
         "Name": "Comillar Kagoj",
-        "Url": "http://www.comillarkagoj.com/#",
-        "Icon": "comillarkagoj.jpeg",
+        "Url": "http://www.comillarkagoj.com/",
+        "Icon": "comillarkagoj.png",
         "BDRank": "7802"
       },
       {
@@ -870,7 +870,7 @@
       {
         "Name": "Amader Barisal",
         "Url": "http://www.amaderbarisal.com/",
-        "Icon": "amaderbarisal.jpeg",
+        "Icon": "amaderbarisal.png",
         "BDRank": "13679"
       },
       {
@@ -882,7 +882,7 @@
       {
         "Name": "Ajker Bhola",
         "Url": "http://www.ajkerbhola.com/",
-        "Icon": "ajkerbhola.jpeg",
+        "Icon": "ajkerbhola.png",
         "BDRank": "56584564564"
       }
     ]
@@ -1088,7 +1088,7 @@
   },
   {
     "Category": "Sports",
-    "CategoryFullName": "English Newspapers",
+    "CategoryFullName": "Sports Newspapers",
     "Icon": "prothomalo.png",
     "NewspaperList": [
       {
@@ -1435,14 +1435,14 @@
         "Icon": "EB.png"
       },
       {
-        "Name": "Online BanglaNewsBD",
+        "Name": "Online Bangla News BD",
         "Url": "https://www.onlinebanglanewsbd.com/category/%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE/",
         "Icon": "banglanews.png"
       },
       {
         "Name": "Dainik Shiksha",
         "Url": "http://www.dainikshiksha.com/",
-        "Icon": "dainik shiksha.png"
+        "Icon": "dainik_shiksha.png"
       },
       {
         "Name": "Amar Pathshala",

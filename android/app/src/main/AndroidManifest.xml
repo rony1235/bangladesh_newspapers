@@ -39,6 +39,7 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
 
         <!-- Don't delete the meta-data below.
@@ -48,7 +49,7 @@
             android:value="2" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2656994411361019~4265337089"/>
+            android:value="ca-app-pub-1820129438048787~6122806677"/>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

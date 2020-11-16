@@ -1,3 +1,4 @@
+import 'package:bangladesh_newspapers/screens/webInappwebview.dart';
 import 'package:bangladesh_newspapers/screens/webTest.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
     return GestureDetector(
       child: Card(
         elevation: 2,
-        color: Colors.white, //kPrimaryCardColor,
+        color: Color(0xff323143), //kPrimaryCardColor,
         child: ClipPath(
           clipper: ShapeBorderClipper(
               shape: RoundedRectangleBorder(
@@ -125,10 +126,10 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
 
         Navigator.of(context).push(
           PageRouteBuilder(
-            transitionDuration: Duration(milliseconds: 1700),
+            transitionDuration: Duration(milliseconds: 1400),
             pageBuilder: (BuildContext context, Animation<double> animation,
                 Animation<double> secondaryAnimation) {
-              return MyWebTestView(widget.newspaper, widget.page);
+              return webInappwebview(widget.newspaper, widget.page);
             },
             transitionsBuilder: (BuildContext context,
                 Animation<double> animation,

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
@@ -15,13 +16,11 @@ const int ShowAdsNumber = 5;
 class MyWebTestView extends StatelessWidget {
   final NewspaperList newspaper;
   final String page;
-
+  final _key = UniqueKey();
   //WebViewController _controller;
 
-  final FlutterWebviewPlugin _controller = FlutterWebviewPlugin();
-  StreamSubscription _onDestroy;
-  StreamSubscription<String> _onUrlChanged;
-  StreamSubscription<WebViewStateChanged> _onStateChanged;
+  //final FlutterWebviewPlugin _controller = FlutterWebviewPlugin();
+  final flutterWebviewPlugin = FlutterWebviewPlugin();
 
   MyWebTestView(this.newspaper, this.page) {
     //print("http://foo.com/bar.html");
@@ -33,7 +32,7 @@ class MyWebTestView extends StatelessWidget {
     //FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
 
     FirebaseAdMob.instance
-        .initialize(appId: "ca-app-pub-2656994411361019~4265337089");
+        .initialize(appId: "ca-app-pub-1820129438048787~6122806677");
 
     RewardedVideoAd.instance.listener =
         (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
@@ -51,20 +50,28 @@ class MyWebTestView extends StatelessWidget {
       prefs.setInt("paperVisit", 0);
     } else {
       // print("paperVisit" + number.toString());
-      if (number == ShowAdsNumber - 1) {
-        RewardedVideoAd.instance.load(
-            adUnitId:
-                "ca-app-pub-2656994411361019/4796013643", //RewardedVideoAd.testAdUnitId,
-            targetingInfo: targetingInfo);
-        prefs.setInt("paperVisit", number + 1);
-      } else if (number >= ShowAdsNumber) {
-        prefs.setInt("paperVisit", 0);
-        try {
-          RewardedVideoAd.instance.show();
-        } catch (e) {}
-      } else {
-        prefs.setInt("paperVisit", number + 1);
-      }
+      try {
+        if (number == ShowAdsNumber - 1) {
+          RewardedVideoAd.instance
+              .load(
+                  adUnitId: "ca-app-pub-1820129438048787/1743512301",
+                  //RewardedVideoAd.testAdUnitId,
+                  targetingInfo: targetingInfo)
+              .catchError((e) => print('Error in loading.'));
+          ;
+          prefs.setInt("paperVisit", number + 1);
+        } else if (number >= ShowAdsNumber) {
+          prefs.setInt("paperVisit", 0);
+          try {
+            await RewardedVideoAd.instance
+                .show()
+                .catchError((e) => print('Error in loading.'));
+            ;
+          } on PlatformException catch (e) {}
+        } else {
+          prefs.setInt("paperVisit", number + 1);
+        }
+      } catch (e) {}
     }
   }
 
@@ -83,7 +90,7 @@ class MyWebTestView extends StatelessWidget {
     // https://developers.google.com/admob/android/test-ads
     // https://developers.google.com/admob/ios/test-ads
     adUnitId: //BannerAd.testAdUnitId,
-        "ca-app-pub-2656994411361019/1802825270", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
+        "ca-app-pub-1820129438048787/7491728668", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
     size: AdSize.banner,
     targetingInfo: targetingInfo,
 
@@ -92,12 +99,10 @@ class MyWebTestView extends StatelessWidget {
     },
   );
 
-  void dispose() {
+  Future<void> dispose() async {
     print("myBanner?.dispose()");
-    _onDestroy.cancel();
-    _onUrlChanged.cancel();
-    _onStateChanged.cancel();
-    _controller.dispose();
+    await flutterWebviewPlugin.close();
+    flutterWebviewPlugin.dispose();
     //super.dispose();
     myBanner?.dispose();
   }
@@ -119,31 +124,42 @@ class MyWebTestView extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async {
         //print("bef");
-        var status = await _controller.canGoBack();
-        //print(status);
-        if (status) {
-          _controller.goBack();
-          return false;
-        } else {
-          _controller.dispose();
-          await FlutterWebviewPlugin().close();
-          if (!await myBanner.isLoaded()) {
-            //print("working");
-            Timer(const Duration(seconds: 2), () async {
-              if (!await myBanner.isLoaded()) {
-                Timer(const Duration(seconds: 6), () {
-                  myBanner?.dispose();
-                });
-              } else {
-                myBanner?.dispose();
-              }
-            });
-            //print("dsd");
+        try {
+          var status = await flutterWebviewPlugin.canGoBack();
+          //print("status" + status.toString());
+          if (status) {
+            flutterWebviewPlugin.goBack();
+            return false;
           } else {
-            myBanner?.dispose();
+            //flutterWebviewPlugin.close();
+            await flutterWebviewPlugin.close();
+            flutterWebviewPlugin.dispose();
+            await FlutterWebviewPlugin().close();
+            if (!await myBanner.isLoaded()) {
+              //print("test");
+              Timer(const Duration(seconds: 2), () async {
+                if (!await myBanner.isLoaded()) {
+                  Timer(const Duration(seconds: 6), () {
+                    myBanner?.dispose();
+                  });
+                } else {
+                  myBanner?.dispose();
+                }
+              });
+              //print("dsd");
+            } else {
+              myBanner?.dispose();
+            }
           }
-
           return true;
+        } catch (e) {
+          //print("ddd" + e.toString());
+          await flutterWebviewPlugin.close();
+          flutterWebviewPlugin.dispose();
+          //print(e);
+          return true;
+
+          //print(e);
         }
       },
       child: Scaffold(
@@ -173,15 +189,16 @@ class MyWebTestView extends StatelessWidget {
             leading: BackButton(
                 color: Colors.black,
                 onPressed: () async {
-                  print("bef");
+                  // print("bef");
                   try {
-                    var status = await _controller.canGoBack();
-                    print("status" + status.toString());
+                    var status = await flutterWebviewPlugin.canGoBack();
+                    //print("status" + status.toString());
                     if (status) {
-                      _controller.goBack();
+                      flutterWebviewPlugin.goBack();
                     } else {
-                      _controller.dispose();
-                      await FlutterWebviewPlugin().close();
+                      await flutterWebviewPlugin.close();
+                      flutterWebviewPlugin.dispose();
+
                       if (!await myBanner.isLoaded()) {
                         //print("test");
                         Timer(const Duration(seconds: 2), () async {
@@ -200,12 +217,14 @@ class MyWebTestView extends StatelessWidget {
                     }
                     Navigator.pop(context, true);
                   } catch (e) {
-                    print("ddd" + e.toString());
-                    _controller.dispose();
-                    print(e);
+                    //print("ddd" + e.toString());
+                    await flutterWebviewPlugin.close();
+                    flutterWebviewPlugin.dispose();
+                    //print(e);
+                    await FlutterWebviewPlugin().close();
                     Navigator.pop(context, true);
 
-                    print(e);
+                    //print(e);
                   }
 
                   //print("status dfhgvsgdv");
@@ -219,10 +238,11 @@ class MyWebTestView extends StatelessWidget {
                   color: Colors.black,
                 ),
                 onPressed: () async {
-                  _controller.dispose();
-                  await FlutterWebviewPlugin().close();
+                  await flutterWebviewPlugin.close();
+                  flutterWebviewPlugin.dispose();
+                  //await FlutterWebviewPlugin().close();
                   if (!await myBanner.isLoaded()) {
-                    print("working");
+                    //print("working");
                     Timer(const Duration(seconds: 2), () async {
                       if (!await myBanner.isLoaded()) {
                         Timer(const Duration(seconds: 6), () {
@@ -242,24 +262,33 @@ class MyWebTestView extends StatelessWidget {
             ]),
         body: Container(
           child: WebviewScaffold(
-            url: newspaper.url,
-            displayZoomControls: true,
-            withZoom: true,
-            withJavascript: true,
-            geolocationEnabled: false,
-            ignoreSSLErrors: true,
-            debuggingEnabled: false,
-            allowFileURLs: true,
-            appCacheEnabled: false,
-            // gestureNavigationEnabled: true,
-            // javascriptMode: JavascriptMode.unrestricted,
-            // onWebViewCreated: (WebViewController webViewController) {
-            //   _controllerCompleter.future.then((value) => _controller = value);
-            //   _controllerCompleter.complete(webViewController);
-            //
-            //   //_controller.complete(webViewController);
-            // },
-          ),
+              url: newspaper.url,
+              displayZoomControls: true,
+              withZoom: true,
+              key: _key,
+              withLocalStorage: true,
+              hidden: true,
+              initialChild: Container(
+                color: Colors.black,
+                child: const Center(
+                  child: Text(''),
+                ),
+              )
+              // withJavascript: true,
+              // geolocationEnabled: false,
+              // ignoreSSLErrors: true,
+              // debuggingEnabled: false,
+              // //allowFileURLs: true,
+              // appCacheEnabled: false,
+              // gestureNavigationEnabled: true,
+              // javascriptMode: JavascriptMode.unrestricted,
+              // onWebViewCreated: (WebViewController webViewController) {
+              //   _controllerCompleter.future.then((value) => _controller = value);
+              //   _controllerCompleter.complete(webViewController);
+              //
+              //   //_controller.complete(webViewController);
+              // },
+              ),
         ),
       ),
     );

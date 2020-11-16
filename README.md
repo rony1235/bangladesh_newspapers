@@ -16,16 +16,14 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 git push -u origin master
 
-
 flutter build apk --split-per-abi
-
 
 flutter build appbundle
 
 flutter build apk --release --target-platform=android-arm64
 
-flutter channel master 
+flutter channel master
 
-flutter channel Stable 
+flutter channel Stable
 
 flutter clean && flutter build appbundle --release
