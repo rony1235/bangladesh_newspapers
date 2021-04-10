@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,11 @@ class webInappwebview extends StatelessWidget {
     //FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
 
     FirebaseAdMob.instance
-        .initialize(appId: "ca-app-pub-1820129438048787~6122806677");
+        .initialize(appId: "ca-app-pub-4471555289018876~9616924043");
+
+    FacebookAudienceNetwork.init(
+        //testingId: "37b1da9d-b48c-4103-a393-2e095e734bd6", //optional
+        );
 
     RewardedVideoAd.instance.listener =
         (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
@@ -58,7 +63,7 @@ class webInappwebview extends StatelessWidget {
         if (number == ShowAdsNumber - 1) {
           RewardedVideoAd.instance
               .load(
-                  adUnitId: "ca-app-pub-1820129438048787/1743512301",
+                  adUnitId: "ca-app-pub-4471555289018876/1165255741",
                   //RewardedVideoAd.testAdUnitId,
                   targetingInfo: targetingInfo)
               .catchError((e) => print('Error in loading.'));
@@ -94,7 +99,7 @@ class webInappwebview extends StatelessWidget {
     // https://developers.google.com/admob/android/test-ads
     // https://developers.google.com/admob/ios/test-ads
     adUnitId: //BannerAd.testAdUnitId,
-        "ca-app-pub-1820129438048787/7491728668", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
+        "ca-app-pub-4471555289018876/7187757128", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
     size: AdSize.banner,
     targetingInfo: targetingInfo,
 
@@ -174,18 +179,19 @@ class webInappwebview extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   child: Hero(
-                      tag: '${page}imageHero${newspaper.url}',
-                      child: newspaper.icon.contains("svg")
-                          ? SvgPicture.asset(
-                              "images/${newspaper.icon}",
-                              fit: BoxFit.contain,
-                              height: 30,
-                            )
-                          : Image.asset(
-                              "images/${newspaper.icon}",
-                              fit: BoxFit.contain,
-                              height: 30,
-                            )),
+                    tag: '${page}imageHero${newspaper.url}',
+                    child: newspaper.icon.contains("svg")
+                        ? SvgPicture.asset(
+                            "images/${newspaper.icon}",
+                            fit: BoxFit.contain,
+                            height: 30,
+                          )
+                        : Image.asset(
+                            "images/${newspaper.icon}",
+                            fit: BoxFit.contain,
+                            height: 30,
+                          ),
+                  ),
                 ),
               ),
             ),
@@ -265,46 +271,76 @@ class webInappwebview extends StatelessWidget {
               )
             ]),
         body: Container(
-          child: InAppWebView(
-            initialUrl: newspaper.url,
-            initialHeaders: {},
+          child: Stack(
+            children: [
+              InAppWebView(
+                initialUrl: newspaper.url,
+                initialHeaders: {},
 
-            initialOptions: InAppWebViewGroupOptions(
-                crossPlatform: InAppWebViewOptions(
-                    debuggingEnabled: true, supportZoom: true)),
-            onWebViewCreated: (InAppWebViewController ncontroller) {
-              controller = ncontroller;
-            },
-            onLoadStart: (InAppWebViewController controller, String url) {
-              // setState(() {
-              //   this.url = url;
-              // });
-            },
-            onLoadStop: (InAppWebViewController controller, String url) async {
-              // setState(() {
-              //   this.url = url;
-              // });
-            },
-            onProgressChanged:
-                (InAppWebViewController controller, int progress) {
-              // setState(() {
-              //   this.progress = progress / 100;
-              // });
-            },
-            // withJavascript: true,
-            // geolocationEnabled: false,
-            // ignoreSSLErrors: true,
-            // debuggingEnabled: false,
-            // //allowFileURLs: true,
-            // appCacheEnabled: false,
-            // gestureNavigationEnabled: true,
-            // javascriptMode: JavascriptMode.unrestricted,
-            // onWebViewCreated: (WebViewController webViewController) {
-            //   _controllerCompleter.future.then((value) => _controller = value);
-            //   _controllerCompleter.complete(webViewController);
-            //
-            //   //_controller.complete(webViewController);
-            // },
+                initialOptions: InAppWebViewGroupOptions(
+                    crossPlatform: InAppWebViewOptions(
+                        debuggingEnabled: true, supportZoom: true)),
+                onWebViewCreated: (InAppWebViewController ncontroller) {
+                  controller = ncontroller;
+                },
+                onLoadStart: (InAppWebViewController controller, String url) {
+                  // setState(() {
+                  //   this.url = url;
+                  // });
+                },
+                onLoadStop:
+                    (InAppWebViewController controller, String url) async {
+                  // setState(() {
+                  //   this.url = url;
+                  // });
+                },
+                onProgressChanged:
+                    (InAppWebViewController controller, int progress) {
+                  // setState(() {
+                  //   this.progress = progress / 100;
+                  // });
+                },
+                // withJavascript: true,
+                // geolocationEnabled: false,
+                // ignoreSSLErrors: true,
+                // debuggingEnabled: false,
+                // //allowFileURLs: true,
+                // appCacheEnabled: false,
+                // gestureNavigationEnabled: true,
+                // javascriptMode: JavascriptMode.unrestricted,
+                // onWebViewCreated: (WebViewController webViewController) {
+                //   _controllerCompleter.future.then((value) => _controller = value);
+                //   _controllerCompleter.complete(webViewController);
+                //
+                //   //_controller.complete(webViewController);
+                // },
+              ),
+              Container(
+                alignment: Alignment.bottomCenter,
+                child: FacebookBannerAd(
+                  placementId: "306255247337644_306258744003961",
+                  bannerSize: BannerSize.STANDARD,
+                  listener: (result, value) {
+                    print("Error: $result");
+                    print("Error: $value");
+                    switch (result) {
+                      case BannerAdResult.ERROR:
+                        print("Error: $value");
+                        break;
+                      case BannerAdResult.LOADED:
+                        print("Loaded: $value");
+                        break;
+                      case BannerAdResult.CLICKED:
+                        print("Clicked: $value");
+                        break;
+                      case BannerAdResult.LOGGING_IMPRESSION:
+                        print("Logging Impression: $value");
+                        break;
+                    }
+                  },
+                ),
+              ),
+            ],
           ),
         ),
       ),

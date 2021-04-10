@@ -36,6 +36,7 @@ class NewspaperList {
   String url;
   String icon;
   bool isFavorite;
+  bool colorFiltered;
 
   NewspaperList({this.name, this.url, this.icon, this.isFavorite});
 
@@ -44,6 +45,7 @@ class NewspaperList {
     url = json['Url'];
     icon = json['Icon'];
     isFavorite = json['IsFavorite'];
+    colorFiltered = json['ColorFiltered'];
   }
 
   Map<String, dynamic> toJson() {
@@ -52,6 +54,7 @@ class NewspaperList {
     data['Url'] = this.url;
     data['Icon'] = this.icon;
     data['IsFavorite'] = this.isFavorite;
+    data['ColorFiltered'] = this.colorFiltered;
     return data;
   }
 }

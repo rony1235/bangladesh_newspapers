@@ -32,7 +32,7 @@ class MyWebTestView extends StatelessWidget {
     //FirebaseAdMob.instance.initialize(appId: FirebaseAdMob.testAppId);
 
     FirebaseAdMob.instance
-        .initialize(appId: "ca-app-pub-1820129438048787~6122806677");
+        .initialize(appId: "ca-app-pub-4471555289018876~9616924043");
 
     RewardedVideoAd.instance.listener =
         (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
@@ -54,7 +54,7 @@ class MyWebTestView extends StatelessWidget {
         if (number == ShowAdsNumber - 1) {
           RewardedVideoAd.instance
               .load(
-                  adUnitId: "ca-app-pub-1820129438048787/1743512301",
+                  adUnitId: "ca-app-pub-4471555289018876/1165255741",
                   //RewardedVideoAd.testAdUnitId,
                   targetingInfo: targetingInfo)
               .catchError((e) => print('Error in loading.'));
@@ -90,7 +90,7 @@ class MyWebTestView extends StatelessWidget {
     // https://developers.google.com/admob/android/test-ads
     // https://developers.google.com/admob/ios/test-ads
     adUnitId: //BannerAd.testAdUnitId,
-        "ca-app-pub-1820129438048787/7491728668", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
+        "ca-app-pub-4471555289018876/7187757128", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
     size: AdSize.banner,
     targetingInfo: targetingInfo,
 

@@ -49,7 +49,7 @@
             android:value="2" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-1820129438048787~6122806677"/>
+            android:value="ca-app-pub-4471555289018876~9616924043"/>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

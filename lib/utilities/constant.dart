@@ -21,11 +21,16 @@ const kGridPrimaryColor = Color(0xfff8f8f8);
 //const kPrimaryCardColor = Color(0xffE6FCFC);
 
 //red atik
-// const kPrimaryColor = Color(0xfff50057);
-// const kPrimaryDarkColor = Color(0xffab003c);
+//const kPrimaryColor = Color(0xfff50057);
+//const kPrimaryDarkColor = Color(0xffab003c);
 
 //red blue
+//const kPrimaryColor = Color(0xff26292E);
+//const kPrimaryDarkColor = Color(0xff26292E);
+
 const kPrimaryColor = Color(0xff3182ce);
 const kPrimaryDarkColor = Color(0xff2b6cb0);
 
 const kPrimaryLightColor = Color(0xffCBD5e0);
+
+bool isDark;

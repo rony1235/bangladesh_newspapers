@@ -42,7 +42,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
     return GestureDetector(
       child: Card(
         elevation: 2,
-        color: Color(0xff323143), //kPrimaryCardColor,
+        color: Colors.white, //kPrimaryCardColor,
         child: ClipPath(
           clipper: ShapeBorderClipper(
               shape: RoundedRectangleBorder(
@@ -72,9 +72,18 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                                   ? SvgPicture.asset(
                                       "images/${widget.newspaper.icon}",
                                     )
-                                  : Image.asset(
-                                      "images/${widget.newspaper.icon}",
-                                    ),
+                                  : widget.newspaper.colorFiltered
+                                      ? ColorFiltered(
+                                          child: Image.asset(
+                                            "images/${widget.newspaper.icon}",
+                                          ),
+                                          colorFilter: ColorFilter.mode(
+                                              Colors.greenAccent,
+                                              BlendMode.srcIn),
+                                        )
+                                      : Image.asset(
+                                          "images/${widget.newspaper.icon}",
+                                        ),
                             ),
                           ),
                         ),
