@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
+import 'package:share/share.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const String testDevice = 'F6836817538F494C0544BC912D578A82';
@@ -343,6 +345,29 @@ class webInappwebview extends StatelessWidget {
             ],
           ),
         ),
+        floatingActionButton:
+            FabCircularMenu(fabSize: 35, ringDiameter: 250, children: <Widget>[
+          IconButton(
+              icon: Icon(Icons.zoom_out),
+              onPressed: () async {
+                await controller.zoomBy(.5);
+                print('zoom_out');
+              }),
+          IconButton(
+              icon: Icon(Icons.zoom_in),
+              onPressed: () async {
+                await controller.zoomBy(1.5);
+                print('zoom_in');
+              }),
+          IconButton(
+              icon: Icon(Icons.share),
+              onPressed: () async {
+                var url = await controller?.getUrl();
+                Share.share(url);
+
+                print('Favorite');
+              })
+        ]),
       ),
     );
   }
