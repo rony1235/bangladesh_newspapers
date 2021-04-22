@@ -34,35 +34,37 @@ class _DashboardState extends State<Dashboard> {
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: kPrimaryDarkColor,
-          shadowColor: kPrimaryColor,
-          title: Padding(
-            padding: const EdgeInsets.all(2.0),
-            child: Text(
-              "All Bangla Newspaper",
-              style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 22,
-                  color: kPrimaryTextColor),
-            ),
-          ),
-          centerTitle: true,
+        // appBar: AppBar(
+        //   backgroundColor: kPrimaryDarkColor,
+        //   shadowColor: kPrimaryColor,
+        //   title: Padding(
+        //     padding: const EdgeInsets.all(2.0),
+        //     child: Text(
+        //       "All Bangla Newspaper",
+        //       style: TextStyle(
+        //           fontWeight: FontWeight.w800,
+        //           fontSize: 22,
+        //           color: kPrimaryTextColor),
+        //     ),
+        //   ),
+        //   centerTitle: true,
+        // ),
+        body: SafeArea(
+          child: PageView(
+              controller: _pageController,
+              children: <Widget>[
+                HomeScreen(),
+                SearchScreen(),
+                FavoriteScreen(),
+                SettingScreen(),
+                AboutScreen(),
+              ],
+              onPageChanged: (int index) {
+                setState(() {
+                  _pageController.jumpToPage(index);
+                });
+              }),
         ),
-        body: PageView(
-            controller: _pageController,
-            children: <Widget>[
-              HomeScreen(),
-              SearchScreen(),
-              FavoriteScreen(),
-              SettingScreen(),
-              AboutScreen(),
-            ],
-            onPageChanged: (int index) {
-              setState(() {
-                _pageController.jumpToPage(index);
-              });
-            }),
         bottomNavigationBar: CurvedNavigationBar(
           //animationCurve: Curves.easeInOutBack,
           index: 0,
@@ -70,7 +72,7 @@ class _DashboardState extends State<Dashboard> {
             NavButton(_Page, Icons.home, 0, "Home"),
             NavButton(_Page, Icons.search, 1, "Search"),
             NavButton(_Page, Icons.favorite, 2, "Favorite"),
-            NavButton(_Page, Icons.settings, 3, "Settings"),
+            NavButton(_Page, Icons.flip, 3, "flip"),
             NavButton(_Page, Icons.info_outline, 4, "Info"),
           ],
           color: Colors.white,

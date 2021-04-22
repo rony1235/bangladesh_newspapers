@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:firebase_admob/firebase_admob.dart';
@@ -361,11 +362,20 @@ class _webInappwebviewState extends State<webInappwebview> {
         floatingActionButton: FabCircularMenu(
             fabSize: 35,
             alignment: Alignment.bottomRight,
+            fabColor: kPrimaryDarkColor,
+            fabOpenIcon: Icon(
+              Icons.menu,
+              color: Colors.white,
+            ),
+            fabCloseIcon: Icon(
+              Icons.close,
+              color: Colors.white,
+            ),
             fabMargin: EdgeInsets.fromLTRB(0, 0, 10, 70),
             ringDiameter: 250,
             children: <Widget>[
               IconButton(
-                  icon: Icon(Icons.home),
+                  icon: Icon(Icons.home, color: Colors.white),
                   onPressed: () async {
                     try {
                       var status = await controller.canGoBack();
@@ -405,19 +415,19 @@ class _webInappwebviewState extends State<webInappwebview> {
                     }
                   }),
               IconButton(
-                  icon: Icon(Icons.zoom_out),
+                  icon: Icon(Icons.zoom_out, color: Colors.white),
                   onPressed: () async {
                     await controller.zoomBy(.5);
                     print('zoom_out');
                   }),
               IconButton(
-                  icon: Icon(Icons.zoom_in),
+                  icon: Icon(Icons.zoom_in, color: Colors.white),
                   onPressed: () async {
                     await controller.zoomBy(1.5);
                     print('zoom_in');
                   }),
               IconButton(
-                  icon: Icon(Icons.share),
+                  icon: Icon(Icons.share, color: Colors.white),
                   onPressed: () async {
                     var url = await controller?.getUrl();
                     Share.share(url);

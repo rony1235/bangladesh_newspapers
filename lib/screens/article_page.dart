@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/models/article.dart';
+import 'package:bangladesh_newspapers/screens/webInappwebview.dart';
 import 'package:flutter/material.dart';
 
 typedef void FlipBack({bool backToTop});
@@ -39,6 +41,27 @@ class ArticlePageState extends State<ArticlePage> {
 
   _launchURL() async {
     String url = widget.article.url;
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        transitionDuration: Duration(milliseconds: 1400),
+        pageBuilder: (BuildContext context, Animation<double> animation,
+            Animation<double> secondaryAnimation) {
+          return webInappwebview(
+              NewspaperList(name: "", icon: "", isFavorite: false, url: url),
+              null);
+        },
+        transitionsBuilder: (BuildContext context, Animation<double> animation,
+            Animation<double> secondaryAnimation, Widget child) {
+          return Align(
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        },
+      ),
+    );
+
     // if (await canLaunch(url)) {
     //   await launch(url);
     // } else {
@@ -101,7 +124,10 @@ class ArticlePageState extends State<ArticlePage> {
                   ),
             title: Text(
               widget.article.source,
-              style: TextStyle(color: Colors.black87),
+              style: TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23),
             ),
             elevation: 0.0,
             centerTitle: true,
@@ -113,37 +139,43 @@ class ArticlePageState extends State<ArticlePage> {
                       // onPressed: () => ArticleBlocProvider.of(context)
                       //     .getArticles(refresh: true),
                     )
-                  : Container(),
-              PopupMenuButton<String>(
-                itemBuilder: (BuildContext context) {
-                  return <PopupMenuEntry<String>>[
-                    widget.flipBack == null
-                        ? PopupMenuItem<String>(
-                            value: 'sources',
-                            child: Text('Select Sources'),
-                          )
-                        : PopupMenuItem<String>(
-                            value: 'back',
-                            child: Text('Back to Top'),
-                          ),
-                    PopupMenuItem<String>(
-                      value: 'about',
-                      child: Text('About'),
-                    ),
-                  ];
-                },
-                onSelected: (String value) {
-                  if (value == 'back') {
-                    widget.flipBack(backToTop: true);
-                  }
-                  if (value == 'sources') {
-                    _selectSources(context);
-                  }
-                  if (value == 'about') {
-                    _aboutPage(context);
-                  }
-                },
-              ),
+                  : IconButton(
+                      icon: Icon(Icons.arrow_upward),
+                      onPressed: () {
+                        widget.flipBack(backToTop: true);
+                      })
+
+              // PopupMenuButton<String>(
+              //   itemBuilder: (BuildContext context) {
+              //     return <PopupMenuEntry<String>>[
+              //       widget.flipBack == null
+              //           ? null
+              //           // ? PopupMenuItem<String>(
+              //           //     value: 'sources',
+              //           //     child: Text('Select Sources'),
+              //           //   )
+              //           : PopupMenuItem<String>(
+              //               value: 'back',
+              //               child: Text('Back to Top'),
+              //             ),
+              //       // PopupMenuItem<String>(
+              //       //   value: 'about',
+              //       //   child: Text('About'),
+              //       // ),
+              //     ];
+              //   },
+              //   onSelected: (String value) {
+              //     if (value == 'back') {
+              //       widget.flipBack(backToTop: true);
+              //     }
+              //     if (value == 'sources') {
+              //       _selectSources(context);
+              //     }
+              //     if (value == 'about') {
+              //       _aboutPage(context);
+              //     }
+              //   },
+              // ),
             ],
           ),
           body: GestureDetector(
@@ -170,7 +202,7 @@ class ArticlePageState extends State<ArticlePage> {
                   child: Text(
                     widget.article.title,
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 28.0),
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
                   ),
                 ),
                 Padding(
@@ -184,7 +216,7 @@ class ArticlePageState extends State<ArticlePage> {
                     style: TextStyle(
                         fontSize: 15.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.grey),
+                        color: Colors.blueGrey),
                   ),
                 ),
                 Expanded(
@@ -201,7 +233,7 @@ class ArticlePageState extends State<ArticlePage> {
                                     widget.article.description,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
-                                        fontSize: 18.0, color: Colors.black54),
+                                        fontSize: 18.0, color: Colors.black87),
                                     maxLines: maxLines,
                                   )
                                 : Container();
@@ -209,25 +241,25 @@ class ArticlePageState extends State<ArticlePage> {
                         )
                       : Container(),
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    Expanded(child: Container()),
-                    IconButton(
-                      icon: Icon(Icons.favorite_border),
-                      onPressed: null,
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.add),
-                      onPressed: null,
-                    ),
-                    IconButton(
-                      icon: _getMenuIcon(Theme.of(context).platform),
-                      onPressed: null,
-                    ),
-                  ],
-                ),
+                // Row(
+                //   mainAxisSize: MainAxisSize.max,
+                //   crossAxisAlignment: CrossAxisAlignment.end,
+                //   children: <Widget>[
+                //     Expanded(child: Container()),
+                //     IconButton(
+                //       icon: Icon(Icons.favorite_border),
+                //       onPressed: null,
+                //     ),
+                //     IconButton(
+                //       icon: Icon(Icons.add),
+                //       onPressed: null,
+                //     ),
+                //     IconButton(
+                //       icon: _getMenuIcon(Theme.of(context).platform),
+                //       onPressed: null,
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ),
