@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "342299849155",
-    "firebase_url": "https://all-bangla-newspaper-1cbeb.firebaseio.com",
-    "project_id": "all-bangla-newspaper-1cbeb",
-    "storage_bucket": "all-bangla-newspaper-1cbeb.appspot.com"
+    "project_number": "171904327246",
+    "project_id": "kolkata-newspaper-ee791",
+    "storage_bucket": "kolkata-newspaper-ee791.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:342299849155:android:cb463c85b3f2439d85cd76",
+        "mobilesdk_app_id": "1:171904327246:android:f2e19ed60bfec3e3b0ad1f",
         "android_client_info": {
-          "package_name": "e2rsoft.com.all_bangla_newspapers"
+          "package_name": "e2rsoft.com.kolkata"
         }
       },
       "oauth_client": [
         {
-          "client_id": "342299849155-jqk5aln725ibfib7ka5vmfu2boehomka.apps.googleusercontent.com",
+          "client_id": "171904327246-a7r7jrh496e2rnpudtfu3r4q706565fs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyARhTicTEAsHaIfkO993e3YuZkyXJiP0N8"
+          "current_key": "AIzaSyANGhGCfwFL9zLM8n5GJ8SAaH1JBRjVTi0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "342299849155-jqk5aln725ibfib7ka5vmfu2boehomka.apps.googleusercontent.com",
+              "client_id": "171904327246-a7r7jrh496e2rnpudtfu3r4q706565fs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -36,6 +35,5 @@
       }
     }
   ],
-  "admob_app_id": "ca-app-pub-4471555289018876~9616924043",
   "configuration_version": "1"
 }

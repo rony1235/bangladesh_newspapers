@@ -1,0 +1,1096 @@
+[
+  {
+    "Category": "Bangla",
+    "CategoryFullName": "Bangla Newspaper",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "Anandabazar Patrika",
+        "Url": "https://www.anandabazar.com/",
+        "Icon": "anandabazar.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Aajkaal",
+        "Url": "https://www.aajkaal.in/",
+        "Icon": "aajkaal.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bartaman",
+        "Url": "https://bartamanpatrika.com",
+        "Icon": "Bartaman.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Sangbad Pratidin",
+        "Url": "https://www.sangbadpratidin.in/",
+        "Icon": "SangbadPratidin.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Ganashakti",
+        "Url": "http://ganashakti.com/bengali/",
+        "Icon": "ganashakti.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Telegraph",
+        "Url": "https://www.telegraphindia.com/",
+        "Icon": "TheTelegraphIndia.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Dainik Statesman",
+        "Url": "https://www.dainikstatesmannews.com/",
+        "Icon": "DainikStatesman.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Ei Samay",
+        "Url": "https://eisamay.indiatimes.com/",
+        "Icon": "eisamay.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Dainik Jugasankha",
+        "Url": "https://jugasankha.in/",
+        "Icon": "jugasankha.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Uttarbanga Sambad",
+        "Url": "https://www.uttarbangasambad.com/",
+        "Icon": "UttarBangaSambad.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Puber Kalom",
+        "Url": "https://www.puberkalom.com/",
+        "Icon": "PuberKalom.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Dainik Sambad",
+        "Url": "https://dainiksambad.net/",
+        "Icon": "dainiksambad.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Dainik Prantojyoti",
+        "Url": "http://dainikprantojyoti.com/",
+        "Icon": "DainikPrantojyoti.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Aamader Malda",
+        "Url": "https://www.aamadermalda.in/",
+        "Icon": "aamadermalda.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Ganadabi",
+        "Url": "http://ganadabi.com/",
+        "Icon": "Ganadabi.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Syandan Patrika",
+        "Url": "https://syandanpatrika.com/",
+        "Icon": "syandanpatrika.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Ekdin",
+        "Url": "https://ekdin-epaper.com/",
+        "Icon": "ekdin.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Tripura Khabar",
+        "Url": "http://tripurakhabar.in/",
+        "Icon": "TripuraKhabar.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Pratyasha Tripura",
+        "Url": "https://pratyashatripura.in/",
+        "Icon": "PratyashaTripura.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Gati Dainik",
+        "Url": "https://www.gatidainik.in/",
+        "Icon": "GatiDainik.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Samayik Prasanga\n",
+        "Url": "https://samayikprasanga.in/epaper.php",
+        "Icon": "Samayik Prasanga.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Nababarta Prasanga",
+        "Url": "http://www.nababartaprasanga.com/Archives/info.aspx",
+        "Icon": "nababartaprasanga.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Daily Desher Katha",
+        "Url": "https://www.dailydesherkatha.net/",
+        "Icon": "Dailydesherkatha.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Manush Patrika",
+        "Url": "https://manushpatrika.com/",
+        "Icon": "Manushpatrika.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Manbhum Sambad",
+        "Url": "http://www.manbhumsambad.com/",
+        "Icon": "ManbhumSambad.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Uttarer Saradin",
+        "Url": "http://www.uttarersaradin.com/",
+        "Icon": "UttarerSaradin.png",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bangla Kagaj",
+        "Url": "http://banglakagaj.com/online/",
+        "Icon": "BanglaKagaj.jpg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      }
+    ]
+  },
+  {
+    "Category": "Online",
+    "CategoryFullName": "Online Newspapers",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "Oneindia Bengali",
+        "Url": "https://bengali.oneindia.com/",
+        "Icon": "bengalioneindia.svg",
+        "BDRank": ""
+      },
+      {
+        "Name": "kolkata 24X7",
+        "Url": "https://www.kolkata24x7.com/",
+        "Icon": "Kolkata24x7.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Asianet News Bangla",
+        "Url": "https://bangla.asianetnews.com/",
+        "Icon": "AsianetNewsBangla.jpg",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "The Wall",
+        "Url": "https://thewall.in/",
+        "Icon": "TheWall.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Fast Nation",
+        "Url": "https://www.fastnation.in/",
+        "Icon": "FastNation.jpg",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Independent 24X7",
+        "Url": "https://www.independent24x7.com/",
+        "Icon": "Independent24.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bangla Hunt",
+        "Url": "https://banglahunt.com/",
+        "Icon": "BanglaHunt.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Kolkata Gossip",
+        "Url": "https://kolkatagossip.com/",
+        "Icon": "Kolkata Gossip.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "India Rag",
+        "Url": "https://indiarag.in/",
+        "Icon": "IndiaRag.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Mahanagar 24X7",
+        "Url": "https://bengali.mahanagar24x7.com/",
+        "Icon": "Mahanagar24.jpg",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bongnews 24X7",
+        "Url": "https://www.bongnews24x7.com/",
+        "Icon": "bongnews24.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Priyo Bandhu Bengali",
+        "Url": "https://bengali.priyobandhu.com/",
+        "Icon": "PriyoBandhu.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "TDN Bangla",
+        "Url": "https://bangla.tdnworld.com/",
+        "Icon": "tdnbangla.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "The Bengal Story",
+        "Url": "https://thebengalstory.com/",
+        "Icon": "TheBengalStory.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Kolome Kolkata",
+        "Url": "https://kolomekolkata.com/",
+        "Icon": "kolomekolkata.jpg",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Tripura Today",
+        "Url": "https://tripuratoday.com/",
+        "Icon": "TripuraToday.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Najarbandi",
+        "Url": "https://najarbandi.in/",
+        "Icon": "Najarbandi.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Kolkata Times 24",
+        "Url": "https://kolkatatimes24.com/",
+        "Icon": "KolataTimes.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Khabor Online",
+        "Url": "https://www.khaboronline.com/",
+        "Icon": "KhaborOnline.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Kolkata Today",
+        "Url": "https://kolkatatoday.com/",
+        "Icon": "KolkataToday.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Ekhon Khobor",
+        "Url": "https://ekhonkhobor.com/",
+        "Icon": "TheBengalStory.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "People's Reporter",
+        "Url": "https://www.peoplesreporter.in/",
+        "Icon": "peoplesreporter.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Amader Bharat",
+        "Url": "https://www.amaderbharat.com/",
+        "Icon": "AmaderBharat.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bangla Express",
+        "Url": "https://www.banglaexpress.in/",
+        "Icon": "BanglaExpress.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Aponzone",
+        "Url": "https://www.aponzonepatrika.com/",
+        "Icon": "Aponzone.jpg",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Rojdin",
+        "Url": "https://www.rojdin.in/",
+        "Icon": "rojdin.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "News India Press",
+        "Url": "https://newsindiapress.in/",
+        "Icon": "NewsIndiaPress.png",
+        "BDRank": "32",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Abtakkhabar",
+        "Url": "https://www.abtakkhabar.com/",
+        "Icon": "abtakkhabar.jpg",
+        "BDRank": "32",
+        "ColorFiltered": false
+      }
+    ]
+  },
+  {
+    "Category": "English",
+    "CategoryFullName": "English Newspaper",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "Anandabazar Patrika",
+        "Url": "https://www.telegraphindia.com/west-bengal",
+        "Icon": "thestatesman.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "The Statesman",
+        "Url": "https://www.thestatesman.com/",
+        "Icon": "aajkaal.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Tripura Times",
+        "Url": "https://tripuratimes.com",
+        "Icon": "tripuratimes.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Fast Nation",
+        "Url": "https://www.fastnation.in/english-news/",
+        "Icon": "FastNation.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Kolkata Tv",
+        "Url": "https://english.kolkata24x7.com/",
+        "Icon": "KolkataTv.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      }
+    ]
+  },
+  {
+    "Category": "Epaper",
+    "CategoryFullName": "E Paper",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "Anandabazar Patrika",
+        "Url": "https://epaper.anandabazar.com/",
+        "Icon": "anandabazar.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Aajkaal",
+        "Url": "https://www.eaajkaal.in/",
+        "Icon": "aajkaal.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Sangbad Pratidin",
+        "Url": "https://epaper.sangbadpratidin.in/",
+        "Icon": "SangbadPratidin.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Ganashakti",
+        "Url": "http://bangla.ganashakti.co.in/",
+        "Icon": "ganashakti.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Telegraph",
+        "Url": "https://epaper.telegraphindia.com/",
+        "Icon": "TheTelegraphIndia.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Ei Samay",
+        "Url": "https://www.epaper.eisamay.com/",
+        "Icon": "eisamay.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Dainik Jugasankha",
+        "Url": "https://www.jugasankhaepaper.com/",
+        "Icon": "jugasankha.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Uttarbanga Sambad",
+        "Url": "https://www.uttarbangasambad.in/",
+        "Icon": "UttarBangaSambad.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Tripura Times",
+        "Url": "https://tripuratimes.com/e_paper.aspx",
+        "Icon": "tripuratimes.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Puber Kalom",
+        "Url": "https://epaper.puberkalom.com/",
+        "Icon": "PuberKalom.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Dainik Sambad",
+        "Url": "https://dainiksambad.net/",
+        "Icon": "dainiksambad.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Dainik Prantojyoti",
+        "Url": "http://dainikprantojyoti.com/",
+        "Icon": "DainikPrantojyoti.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Syandan Patrika",
+        "Url": "https://syandanpatrika.com/",
+        "Icon": "syandanpatrika.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Ekdin",
+        "Url": "https://ekdin-epaper.com/",
+        "Icon": "ekdin.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Tripura Khabar",
+        "Url": "http://tripurakhabar.in/",
+        "Icon": "TripuraKhabar.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Pratyasha Tripura",
+        "Url": "https://pratyashatripura.in/",
+        "Icon": "PratyashaTripura.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Gati Dainik",
+        "Url": "https://www.gatidainik.in/",
+        "Icon": "GatiDainik.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Samayik Prasanga",
+        "Url": "https://samayikprasanga.in/epaper.php",
+        "Icon": "Samayik Prasanga.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Nababarta Prasanga",
+        "Url": "http://www.nababartaprasanga.com/Archives/info.aspx",
+        "Icon": "nababartaprasanga.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Daily Desher Katha",
+        "Url": "https://www.dailydesherkatha.net/",
+        "Icon": "Dailydesherkatha.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Manush Patrika",
+        "Url": "https://manushpatrika.com/",
+        "Icon": "Manushpatrika.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Manbhum Sambad",
+        "Url": "http://www.manbhumsambad.com/",
+        "Icon": "ManbhumSambad.jpg",
+        "BDRank": "4",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Uttarer Saradin",
+        "Url": "http://www.uttarersaradin.com/",
+        "Icon": "UttarerSaradin.png",
+        "BDRank": "4",
+        "ColorFiltered": false
+      }
+    ]
+  },
+  {
+    "Category": "International",
+    "CategoryFullName": "International",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "The Gurdian",
+        "Url": "https://www.theguardian.com/international",
+        "Icon": "theguardian.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "BBC News",
+        "Url": "https://www.bbc.com/news",
+        "Icon": "bbcnews.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "CNN",
+        "Url": "https://edition.cnn.com/",
+        "Icon": "cnn.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "Al Jazeera English",
+        "Url": "https://www.aljazeera.com/",
+        "Icon": "aljazeera.svg",
+         "ColorFiltered": false
+      },
+
+      {
+        "Name": "The Wall Street Journal",
+        "Url": "https://www.wsj.com/",
+        "Icon": "wsj.svg",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "The New Work Times",
+        "Url": "https://www.nytimes.com/section/world",
+        "Icon": "TNWT.svg",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "The Washington Post",
+        "Url": "https://www.washingtonpost.com/",
+        "Icon": "TWP.svg",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "China Daily",
+        "Url": "http://www.chinadaily.com.cn/",
+        "Icon": "CD.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "The Times Of India",
+        "Url": "https://timesofindia.indiatimes.com/",
+        "Icon": "TTOI.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "Sydney Morning Herald",
+        "Url": "https://www.smh.com.au/",
+        "Icon": "smh.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "The Asahi Shimbun",
+        "Url": "http://www.asahi.com/ajw/",
+        "Icon": "Asahi-Shimbun.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "DAWN",
+        "Url": "https://www.dawn.com/",
+        "Icon": "dawn.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "Liberty Times",
+        "Url": "https://www.ltn.com.tw/",
+        "Icon": "LT.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "Telegraph",
+        "Url": "https://www.telegraph.co.uk/news/",
+        "Icon": "telegraph.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "The Sun",
+        "Url": "https://www.thesun.co.uk/news/",
+        "Icon": "sun.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "The Daily Mirror",
+        "Url": "https://www.mirror.co.uk/news/",
+        "Icon": "mirror.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "Daily Express",
+        "Url": "https://www.express.co.uk/news",
+        "Icon": "DX.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "Chicago Tribune",
+        "Url": "https://www.chicagotribune.com/news/breaking/",
+        "Icon": "tribune.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "The Indian Express",
+        "Url": "https://indianexpress.com/latest-news/",
+        "Icon": "indian-express.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "The Japan Times",
+        "Url": "https://www.japantimes.co.jp/news/",
+        "Icon": "JT.png",
+         "ColorFiltered": false
+      },
+      {
+        "Name": "China Economic Net",
+        "Url": "http://en.ce.cn/World/",
+        "Icon": "CEN.png",
+         "ColorFiltered": false
+      }
+    ]
+  },
+
+  {
+    "Category": "TV Channel",
+    "CategoryFullName": "English Newspaper",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "News18 Bengali",
+        "Url": "https://bengali.news18.com/",
+        "Icon": "News18Bangla.png",
+        "BDRank": "466",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "ABP Bengali",
+        "Url": "https://bengali.abplive.com/",
+        "Icon": "bengaliabp.png",
+        "BDRank": "466",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Zee 24 Ghanta",
+        "Url": "https://zeenews.india.com/bengali",
+        "Icon": "zeeghanta.jpg",
+        "BDRank": "466",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Kolkata Tv",
+        "Url": "https://www.kolkatatv.org/",
+        "Icon": "KolkataTv.png",
+        "BDRank": "466",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Calcutta News CN",
+        "Url": "https://calcuttanews.tv/",
+        "Icon": "CalcuttaNewsCN.jpg",
+        "BDRank": "466",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "ETV Bharat",
+        "Url": "https://www.etvbharat.com/bengali/west-bengal",
+        "Icon": "ETVBharat.png",
+        "BDRank": "466",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Asianet News",
+        "Url": "https://bangla.asianetnews.com/",
+        "Icon": "asianetnews.png",
+        "BDRank": "466",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "TV9 Bangla",
+        "Url": "https://tv9bangla.com/",
+        "Icon": "TV9Bangla.jpg",
+        "BDRank": "466",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Republic Bangla",
+        "Url": "https://bangla.republicworld.com",
+        "Icon": "republibangla.png",
+        "BDRank": "466",
+        "ColorFiltered": false
+      }
+    ]
+  },
+  {
+    "Category": "Election",
+    "CategoryFullName": "Local Newspapers",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "Anandabazar Patrika",
+        "Url": "https://www.anandabazar.com/topic/election",
+        "Icon": "anandabazar.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Aajkaal",
+        "Url": "https://aajkaal.in/recent",
+        "Icon": "aajkaal.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bartaman",
+        "Url": "https://bartamanpatrika.com/home?cid=13&id=275138",
+        "Icon": "Bartaman.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Sangbad Pratidin",
+        "Url": "https://www.sangbadpratidin.in/category/voterhawa/",
+        "Icon": "SangbadPratidin.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Telegraph",
+        "Url": "https://www.telegraphindia.com/",
+        "Icon": "TheTelegraphIndia.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Dainik Statesman",
+        "Url": "https://www.dainikstatesmannews.com/",
+        "Icon": "DainikStatesman.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Uttarbanga Sambad",
+        "Url": "https://www.uttarbangasambad.com/category/politics",
+        "Icon": "UttarBangaSambad.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Aamader Malda",
+        "Url": "https://www.aamadermalda.in/municipality-election",
+        "Icon": "aamadermalda.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bangla Kagaj",
+        "Url": "http://banglakagaj.com/online/blog/category/politics/elections/",
+        "Icon": "BanglaKagaj.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Oneindia Bengali",
+        "Url": "https://bengali.oneindia.com/topic/west-bengal-assembly-election-2021?ref_medium=Desktop&ref_source=OI-BN&ref_campaign=Home-TrendingTopics1",
+        "Icon": "bengalioneindia.svg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "kolkata 24X7",
+        "Url": "https://www.kolkata24x7.com/category/west-bengal-assembly-election-seats-detail/",
+        "Icon": "Kolkata24x7.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Asianet News Bangla",
+        "Url": "https://bangla.asianetnews.com/topic/west-bengal-assembly-elections-2021",
+        "Icon": "AsianetNewsBangla.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Fast Nation",
+        "Url": "https://www.fastnation.in/category/fast-nation-politics/",
+        "Icon": "FastNation.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Independent 24X7",
+        "Url": "https://www.independent24x7.com/tag/assembly-elections-2021/",
+        "Icon": "Independent24.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bangla Hunt",
+        "Url": "https://banglahunt.com/category/west-bengal-election-2021/",
+        "Icon": "BanglaHunt.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Kolkata Gossip",
+        "Url": "https://kolkatagossip.com/category/west-bengal-assembly-election-2021/",
+        "Icon": "Kolkata Gossip.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bongnews 24X7",
+        "Url": "https://www.bongnews24x7.com/category/wb-assembly-election-2021/",
+        "Icon": "bongnews24.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Priyo Bandhu Bengali",
+        "Url": "https://bengali.priyobandhu.com/category/politics-news/",
+        "Icon": "PriyoBandhu.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "News18 Bengali",
+        "Url": "https://bengali.news18.com/west-bengal-assembly-election-2021/",
+        "Icon": "News18Bangla.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "ABP Bengali",
+        "Url": "https://bengali.abplive.com/elections",
+        "Icon": "bengaliabp.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Zee 24 Ghanta",
+        "Url": "https://zeenews.india.com/bengali/tags/wb-assembly-election-2021.html",
+        "Icon": "zeeghanta.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "TV9 Bangla",
+        "Url": "https://tv9bangla.com/elections/west-bengal-elections-2021",
+        "Icon": "TV9Bangla.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      }
+    ]
+  },
+
+  {
+    "Category": "Magazine",
+    "CategoryFullName": "Magazine",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Name": "Sananda",
+        "Url": "https://www.sananda.in/",
+        "Icon": "Sananda.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Anandalok",
+        "Url": "https://www.anandalok.in/",
+        "Icon": "Anandalok.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Anandamela",
+        "Url": "https://www.anandamela.in/",
+        "Icon": "Anandamela.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Abasar",
+        "Url": "https://abasar.net/",
+        "Icon": "Abasar.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Kaurab",
+        "Url": "https://kaurab.tripod.com/",
+        "Icon": "Kaurab.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Srishtisandhan",
+        "Url": "http://www.srishtisandhan.com/",
+        "Icon": "Srishtisandhan.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Hangla Hneshel",
+        "Url": "https://hanglamagazine.com/",
+        "Icon": "HanglaHneshel.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Bangla Live",
+        "Url": "https://banglalive.com/",
+        "Icon": "BanglaLive.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Banglastreet",
+        "Url": "http://banglastreet.org/",
+        "Icon": "Banglastreet.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Hatpakha",
+        "Url": "https://hatpakha.com/",
+        "Icon": "HatpakhaBengaliMagazine.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Unish Kuri",
+        "Url": "http://unishkuri.in/",
+        "Icon": "UnishKuri.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Ichchha Moti",
+        "Url": "https://www.ichchhamoti.in/",
+        "Icon": "ichchhamoti.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Sristi",
+        "Url": "https://sristi.co.in/",
+        "Icon": "sristi.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Maadhukari",
+        "Url": "https://www.maadhukari.com/",
+        "Icon": "maadhukari.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Guru Chandali",
+        "Url": "https://www.guruchandali.com/",
+        "Icon": "GuruChandali.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Name": "Kobita",
+        "Url": "https://www.kobita.ws/",
+        "Icon": "kobita.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      }
+    ]
+  }
+]

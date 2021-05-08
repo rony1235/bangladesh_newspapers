@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class DataProvider {
   Future<List<DataCategoryModel>> getAll() async {
-    final response = await rootBundle.loadString("assets/data.json");
+    final response = await rootBundle.loadString("assets/kolkataData.json");
 
     List<DataCategoryModel> myModels;
     myModels = (json.decode(response) as List)
@@ -36,7 +36,7 @@ class DataProvider {
   }
 
   Future<List<NewspaperList>> getAllFavorite() async {
-    final response = await rootBundle.loadString("assets/data.json");
+    final response = await rootBundle.loadString("assets/kolkataData.json");
 
     List<DataCategoryModel> myModels;
 
@@ -69,7 +69,7 @@ class DataProvider {
   }
 
   Future<List<NewspaperList>> getAllNewspaper() async {
-    final response = await rootBundle.loadString("assets/data.json");
+    final response = await rootBundle.loadString("assets/kolkataData.json");
 
     List<DataCategoryModel> myModels;
 

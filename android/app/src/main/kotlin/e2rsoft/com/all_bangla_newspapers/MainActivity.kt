@@ -1,4 +1,4 @@
-package e2rsoft.com.all_bangla_newspapers
+package e2rsoft.com.kolkata
 
 import io.flutter.embedding.android.FlutterActivity
 

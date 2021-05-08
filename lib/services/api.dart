@@ -14,7 +14,7 @@ class Api {
     @required int page,
     @required int pageSize,
   }) async {
-    String url = Uri.encodeFull(_baseUrl + 'all/bangla');
+    String url = Uri.encodeFull(_baseUrl + 'all/kolkata');
     try {
       http.Response response = await http.get(url, headers: _headers());
       if (response.statusCode == 200) {

@@ -173,12 +173,12 @@ class MyWebTestView extends StatelessWidget {
                       tag: '${page}imageHero${newspaper.url}',
                       child: newspaper.icon.contains("svg")
                           ? SvgPicture.asset(
-                              "images/${newspaper.icon}",
+                              "KolkataImages/${newspaper.icon}",
                               fit: BoxFit.contain,
                               height: 30,
                             )
                           : Image.asset(
-                              "images/${newspaper.icon}",
+                              "KolkataImages/${newspaper.icon}",
                               fit: BoxFit.contain,
                               height: 30,
                             )),

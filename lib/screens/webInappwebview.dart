@@ -195,12 +195,12 @@ class _webInappwebviewState extends State<webInappwebview> {
                         tag: '${widget.page}imageHero${widget.newspaper.url}',
                         child: widget.newspaper.icon.contains("svg")
                             ? SvgPicture.asset(
-                                "images/${widget.newspaper.icon}",
+                                "KolkataImages/${widget.newspaper.icon}",
                                 fit: BoxFit.contain,
                                 height: 30,
                               )
                             : Image.asset(
-                                "images/${widget.newspaper.icon}",
+                                "KolkataImages/${widget.newspaper.icon}",
                                 fit: BoxFit.contain,
                                 height: 30,
                               ),
@@ -330,31 +330,31 @@ class _webInappwebviewState extends State<webInappwebview> {
                   //   //_controller.complete(webViewController);
                   // },
                 ),
-                Container(
-                  alignment: Alignment.bottomCenter,
-                  child: FacebookBannerAd(
-                    placementId: "306255247337644_306258744003961",
-                    bannerSize: BannerSize.STANDARD,
-                    listener: (result, value) {
-                      print("Error: $result");
-                      print("Error: $value");
-                      switch (result) {
-                        case BannerAdResult.ERROR:
-                          print("Error: $value");
-                          break;
-                        case BannerAdResult.LOADED:
-                          print("Loaded: $value");
-                          break;
-                        case BannerAdResult.CLICKED:
-                          print("Clicked: $value");
-                          break;
-                        case BannerAdResult.LOGGING_IMPRESSION:
-                          print("Logging Impression: $value");
-                          break;
-                      }
-                    },
-                  ),
-                ),
+                // Container(
+                //   alignment: Alignment.bottomCenter,
+                //   child: FacebookBannerAd(
+                //     placementId: "306255247337644_306258744003961",
+                //     bannerSize: BannerSize.STANDARD,
+                //     listener: (result, value) {
+                //       print("Error: $result");
+                //       print("Error: $value");
+                //       switch (result) {
+                //         case BannerAdResult.ERROR:
+                //           print("Error: $value");
+                //           break;
+                //         case BannerAdResult.LOADED:
+                //           print("Loaded: $value");
+                //           break;
+                //         case BannerAdResult.CLICKED:
+                //           print("Clicked: $value");
+                //           break;
+                //         case BannerAdResult.LOGGING_IMPRESSION:
+                //           print("Logging Impression: $value");
+                //           break;
+                //       }
+                //     },
+                //   ),
+                // ),
               ],
             ),
           ),

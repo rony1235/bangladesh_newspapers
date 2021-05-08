@@ -70,19 +70,19 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
                                   '${widget.page}imageHero${widget.newspaper.url}',
                               child: widget.newspaper.icon.contains("svg")
                                   ? SvgPicture.asset(
-                                      "images/${widget.newspaper.icon}",
+                                      "KolkataImages/${widget.newspaper.icon}",
                                     )
                                   : widget.newspaper.colorFiltered
                                       ? ColorFiltered(
                                           child: Image.asset(
-                                            "images/${widget.newspaper.icon}",
+                                            "KolkataImages/${widget.newspaper.icon}",
                                           ),
                                           colorFilter: ColorFilter.mode(
                                               Colors.greenAccent,
                                               BlendMode.srcIn),
                                         )
                                       : Image.asset(
-                                          "images/${widget.newspaper.icon}",
+                                          "KolkataImages/${widget.newspaper.icon}",
                                         ),
                             ),
                           ),
