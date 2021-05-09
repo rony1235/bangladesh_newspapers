@@ -7,14 +7,15 @@ import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
 class Api {
-  final String _baseUrl = "https://sportapi.e2rsoft.com/";
+  final String _baseUrl = "sportapi.e2rsoft.com";
 
   Future<String> getArticles({
     @required String sources,
     @required int page,
     @required int pageSize,
   }) async {
-    String url = Uri.encodeFull(_baseUrl + 'all/bangla');
+    var url = Uri.https(_baseUrl, '/all/bangla');
+    //String url = Uri.encodeFull(_baseUrl + 'all/bangla');
     try {
       http.Response response = await http.get(url, headers: _headers());
       if (response.statusCode == 200) {
@@ -25,7 +26,7 @@ class Api {
   }
 
   Future<List<Source>> getSources() async {
-    String url = Uri.encodeFull(_baseUrl + 'sources');
+    var url = Uri.https(_baseUrl, '/all/bangla');
     try {
       http.Response response = await http.get(url, headers: _headers());
       if (response.statusCode == 200) {
