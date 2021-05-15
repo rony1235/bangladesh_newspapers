@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>iisnode logs</title>
+    <style type="text/css">
+        body
+        {
+            font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        td, th
+        {
+            border: 1px solid lightgray;
+            padding: 3px 7px 2px 7px;
+        }
+        th
+        {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: Gray;
+            color: #ffffff;
+        }
+        td.stderr
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <table id="logFilesTable">
+        <tr>
+            <th>
+                Computer name
+            </th>
+            <th>
+                PID
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                Link
+            </th>
+        </tr>
+    </table>
+    <p id="lastUpdated"></p>
+    <script type="text/javascript">
+
+        // this is replaced with actual data at runtime by code in interceptor.js
+        var logFiles = [{"file":"AZ1-WSS1-11332-stderr-1619368524184.txt","computername":"AZ1-WSS1","pid":11332,"type":"stderr","created":1619368524184},{"file":"AZ1-WSS1-11332-stdout-1619368524184.txt","computername":"AZ1-WSS1","pid":11332,"type":"stdout","created":1619368524184},{"file":"AZ1-WSS1-13568-stderr-1619040079949.txt","computername":"AZ1-WSS1","pid":13568,"type":"stderr","created":1619040079949},{"file":"AZ1-WSS1-13568-stdout-1619040079949.txt","computername":"AZ1-WSS1","pid":13568,"type":"stdout","created":1619040079949},{"file":"AZ1-WSS1-15332-stderr-1619526549597.txt","computername":"AZ1-WSS1","pid":15332,"type":"stderr","created":1619526549597},{"file":"AZ1-WSS1-15332-stdout-1619526549580.txt","computername":"AZ1-WSS1","pid":15332,"type":"stdout","created":1619526549580},{"file":"AZ1-WSS1-16120-stderr-1619160696135.txt","computername":"AZ1-WSS1","pid":16120,"type":"stderr","created":1619160696135},{"file":"AZ1-WSS1-16120-stdout-1619160696135.txt","computername":"AZ1-WSS1","pid":16120,"type":"stdout","created":1619160696135},{"file":"AZ1-WSS1-16664-stderr-1619116904629.txt","computername":"AZ1-WSS1","pid":16664,"type":"stderr","created":1619116904629},{"file":"AZ1-WSS1-16664-stdout-1619116904629.txt","computername":"AZ1-WSS1","pid":16664,"type":"stdout","created":1619116904629},{"file":"AZ1-WSS1-26288-stderr-1619077082893.txt","computername":"AZ1-WSS1","pid":26288,"type":"stderr","created":1619077082893},{"file":"AZ1-WSS1-26288-stdout-1619077082893.txt","computername":"AZ1-WSS1","pid":26288,"type":"stdout","created":1619077082893},{"file":"AZ1-WSS1-27364-stderr-1619165432243.txt","computername":"AZ1-WSS1","pid":27364,"type":"stderr","created":1619165432243},{"file":"AZ1-WSS1-27364-stdout-1619165432243.txt","computername":"AZ1-WSS1","pid":27364,"type":"stdout","created":1619165432243},{"file":"AZ1-WSS1-34864-stderr-1619456903973.txt","computername":"AZ1-WSS1","pid":34864,"type":"stderr","created":1619456903973},{"file":"AZ1-WSS1-34864-stdout-1619456903973.txt","computername":"AZ1-WSS1","pid":34864,"type":"stdout","created":1619456903973},{"file":"AZ1-WSS1-36424-stderr-1619158170303.txt","computername":"AZ1-WSS1","pid":36424,"type":"stderr","created":1619158170303},{"file":"AZ1-WSS1-36424-stdout-1619158170303.txt","computername":"AZ1-WSS1","pid":36424,"type":"stdout","created":1619158170303},{"file":"AZ1-WSS1-38224-stderr-1619185015941.txt","computername":"AZ1-WSS1","pid":38224,"type":"stderr","created":1619185015941},{"file":"AZ1-WSS1-38224-stdout-1619185015926.txt","computername":"AZ1-WSS1","pid":38224,"type":"stdout","created":1619185015926},{"file":"AZ1-WSS1-40196-stderr-1619337813930.txt","computername":"AZ1-WSS1","pid":40196,"type":"stderr","created":1619337813930},{"file":"AZ1-WSS1-40196-stdout-1619337813930.txt","computername":"AZ1-WSS1","pid":40196,"type":"stdout","created":1619337813930},{"file":"AZ1-WSS1-40728-stderr-1619612053496.txt","computername":"AZ1-WSS1","pid":40728,"type":"stderr","created":1619612053496},{"file":"AZ1-WSS1-40728-stdout-1619612053496.txt","computername":"AZ1-WSS1","pid":40728,"type":"stdout","created":1619612053496},{"file":"AZ1-WSS1-41164-stderr-1619722456212.txt","computername":"AZ1-WSS1","pid":41164,"type":"stderr","created":1619722456212},{"file":"AZ1-WSS1-41164-stdout-1619722456196.txt","computername":"AZ1-WSS1","pid":41164,"type":"stdout","created":1619722456196},{"file":"AZ1-WSS1-52052-stderr-1619067587365.txt","computername":"AZ1-WSS1","pid":52052,"type":"stderr","created":1619067587365},{"file":"AZ1-WSS1-52052-stdout-1619067587365.txt","computername":"AZ1-WSS1","pid":52052,"type":"stdout","created":1619067587365},{"file":"AZ1-WSS1-5224-stderr-1619258097768.txt","computername":"AZ1-WSS1","pid":5224,"type":"stderr","created":1619258097768},{"file":"AZ1-WSS1-5224-stdout-1619258097753.txt","computername":"AZ1-WSS1","pid":5224,"type":"stdout","created":1619258097753},{"file":"AZ1-WSS1-52456-stderr-1619073782444.txt","computername":"AZ1-WSS1","pid":52456,"type":"stderr","created":1619073782444},{"file":"AZ1-WSS1-52456-stdout-1619073782444.txt","computername":"AZ1-WSS1","pid":52456,"type":"stdout","created":1619073782444},{"file":"AZ1-WSS1-53728-stderr-1619040012477.txt","computername":"AZ1-WSS1","pid":53728,"type":"stderr","created":1619040012477},{"file":"AZ1-WSS1-55184-stderr-1619599443983.txt","computername":"AZ1-WSS1","pid":55184,"type":"stderr","created":1619599443983},{"file":"AZ1-WSS1-55184-stdout-1619599443983.txt","computername":"AZ1-WSS1","pid":55184,"type":"stdout","created":1619599443983},{"file":"AZ1-WSS1-56872-stderr-1619078739064.txt","computername":"AZ1-WSS1","pid":56872,"type":"stderr","created":1619078739064},{"file":"AZ1-WSS1-56872-stdout-1619078739064.txt","computername":"AZ1-WSS1","pid":56872,"type":"stdout","created":1619078739064},{"file":"AZ1-WSS1-57608-stderr-1619618507780.txt","computername":"AZ1-WSS1","pid":57608,"type":"stderr","created":1619618507780},{"file":"AZ1-WSS1-57608-stdout-1619618507765.txt","computername":"AZ1-WSS1","pid":57608,"type":"stdout","created":1619618507765},{"file":"AZ1-WSS1-60244-stderr-1619759801490.txt","computername":"AZ1-WSS1","pid":60244,"type":"stderr","created":1619759801490},{"file":"AZ1-WSS1-60244-stdout-1619759801474.txt","computername":"AZ1-WSS1","pid":60244,"type":"stdout","created":1619759801474},{"file":"AZ1-WSS1-77416-stderr-1619812496005.txt","computername":"AZ1-WSS1","pid":77416,"type":"stderr","created":1619812496005},{"file":"AZ1-WSS1-77416-stdout-1619812495989.txt","computername":"AZ1-WSS1","pid":77416,"type":"stdout","created":1619812495989},{"file":"AZ1-WSS1-80900-stderr-1619645938786.txt","computername":"AZ1-WSS1","pid":80900,"type":"stderr","created":1619645938786},{"file":"AZ1-WSS1-80900-stdout-1619645938786.txt","computername":"AZ1-WSS1","pid":80900,"type":"stdout","created":1619645938786}];
+        var lastUpdated = 1619812496677;
+        var date = new Date();
+
+        date.setTime(lastUpdated);
+        document.getElementById('lastUpdated').innerHTML = 'Index was last updated ' + date;
+
+        logFiles.sort(function (a, b) {
+            return b.created - a.created;
+        });
+
+        var logFilesTable = document.getElementById("logFilesTable");
+        for (var i = 0; i < logFiles.length; i++) {
+            var logFile = logFiles[i];
+            date.setTime(logFile.created);
+            var row = logFilesTable.insertRow(-1);
+            var computerNameCell = row.insertCell(0);
+            var pidCell = row.insertCell(1);
+            var typeCell = row.insertCell(2);
+            var dateCell = row.insertCell(3);
+            var logCell = row.insertCell(4);
+            computerNameCell.innerHTML = logFile.computername;
+            pidCell.innerHTML = logFile.pid.toString();
+            typeCell.innerHTML = logFile.type;
+            typeCell.setAttribute('class', logFile.type);
+            dateCell.innerHTML = date.toString();
+            logCell.innerHTML = '<a href="' + logFile.file + '">log</a>';
+        };
+
+    </script>
+</body>
+</html>

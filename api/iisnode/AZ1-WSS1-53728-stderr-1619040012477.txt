@@ -1,0 +1,12 @@
+Application has thrown an uncaught exception and is terminated:
+Error: listen EADDRINUSE: address already in use :::3019
+    at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+    at listenInCluster (net.js:1364:12)
+    at Server.listen (net.js:1450:7)
+    at Function.listen (E:\vhosts\e2rsoft.com\sportapi.e2rsoft.com\node_modules\express\lib\application.js:618:24)
+    at Object.<anonymous> (E:\vhosts\e2rsoft.com\sportapi.e2rsoft.com\server.js:132:5)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)

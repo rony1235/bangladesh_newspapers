@@ -46,7 +46,7 @@ class webInappwebview extends StatefulWidget {
 class _webInappwebviewState extends State<webInappwebview> {
   final _key = UniqueKey();
 
-  bool showAppBar = true;
+  bool showAppBar = false;
 
   InAppWebViewController controller;
 
@@ -184,177 +184,183 @@ class _webInappwebviewState extends State<webInappwebview> {
         }
       },
       child: Scaffold(
-        appBar: showAppBar
-            ? AppBar(
-                backgroundColor: Colors.white,
-                flexibleSpace: SafeArea(
+        // appBar: showAppBar
+        //     ? AppBar(
+        //         backgroundColor: Colors.white,
+        //         flexibleSpace: SafeArea(
+        //           child: Padding(
+        //             padding: const EdgeInsets.all(8.0),
+        //             child: Container(
+        //               child: Hero(
+        //                 tag: '${widget.page}imageHero${widget.newspaper.url}',
+        //                 child: widget.newspaper.icon.contains("svg")
+        //                     ? SvgPicture.asset(
+        //                         "images/${widget.newspaper.icon}",
+        //                         fit: BoxFit.contain,
+        //                         height: 30,
+        //                       )
+        //                     : Image.asset(
+        //                         "images/${widget.newspaper.icon}",
+        //                         fit: BoxFit.contain,
+        //                         height: 30,
+        //                       ),
+        //               ),
+        //             ),
+        //           ),
+        //         ),
+        //         centerTitle: true,
+        //         leading: BackButton(
+        //             color: Colors.black,
+        //             onPressed: () async {
+        //               // print("bef");
+        //               try {
+        //                 var status = await controller.canGoBack();
+        //                 print("status" + status.toString());
+        //                 if (status) {
+        //                   controller.goBack();
+        //                 } else {
+        //                   //await controller.close();
+        //                   //controller.dispose();
+        //
+        //                   if (!await myBanner.isLoaded()) {
+        //                     //print("test");
+        //                     Timer(const Duration(seconds: 2), () async {
+        //                       if (!await myBanner.isLoaded()) {
+        //                         Timer(const Duration(seconds: 6), () {
+        //                           myBanner?.dispose();
+        //                         });
+        //                       } else {
+        //                         myBanner?.dispose();
+        //                       }
+        //                     });
+        //                     //print("dsd");
+        //                   } else {
+        //                     myBanner?.dispose();
+        //                   }
+        //                   Navigator.pop(context, true);
+        //                 }
+        //               } catch (e) {
+        //                 //print("ddd" + e.toString());
+        //                 //await controller.close();
+        //                 //controller.dispose();
+        //                 //print(e);
+        //                 //await FlutterWebviewPlugin().close();
+        //                 Navigator.pop(context, true);
+        //
+        //                 //print(e);
+        //               }
+        //
+        //               //print("status dfhgvsgdv");
+        //             }
+        //             //myBanner?.dispose();
+        //             ),
+        //         actions: <Widget>[
+        //             IconButton(
+        //               icon: Icon(
+        //                 Icons.home,
+        //                 color: Colors.black,
+        //               ),
+        //               onPressed: () async {
+        //                 //controller.close();
+        //                 //controller.dispose();
+        //                 //await FlutterWebviewPlugin().close();
+        //                 if (!await myBanner.isLoaded()) {
+        //                   //print("working");
+        //                   Timer(const Duration(seconds: 2), () async {
+        //                     if (!await myBanner.isLoaded()) {
+        //                       Timer(const Duration(seconds: 6), () {
+        //                         myBanner?.dispose();
+        //                       });
+        //                     } else {
+        //                       myBanner?.dispose();
+        //                     }
+        //                   });
+        //                   //print("dsd");
+        //                 } else {
+        //                   myBanner?.dispose();
+        //                 }
+        //                 Navigator.pop(context, true);
+        //               },
+        //             )
+        //           ])
+        //     : null,
+        body: SafeArea(
+          child: Container(
+            child: Column(
+              children: [
+                Expanded(
+                  child: InAppWebView(
+                    initialUrl: widget.newspaper.url,
+                    initialHeaders: {},
+
+                    initialOptions: InAppWebViewGroupOptions(
+                        crossPlatform: InAppWebViewOptions(
+                            debuggingEnabled: false, supportZoom: true)),
+                    onWebViewCreated: (InAppWebViewController ncontroller) {
+                      controller = ncontroller;
+                    },
+                    onLoadStart:
+                        (InAppWebViewController controller, String url) {
+                      // setState(() {
+                      //   this.url = url;
+                      // });
+                    },
+                    onLoadStop:
+                        (InAppWebViewController controller, String url) async {
+                      // setState(() {
+                      //   this.url = url;
+                      // });
+                    },
+                    onProgressChanged:
+                        (InAppWebViewController controller, int progress) {
+                      // setState(() {
+                      //   if (progress > 80) this.showAppBar = false;
+                      // });
+                    },
+                    // withJavascript: true,
+                    // geolocationEnabled: false,
+                    // ignoreSSLErrors: true,
+                    // debuggingEnabled: false,
+                    // //allowFileURLs: true,
+                    // appCacheEnabled: false,
+                    // gestureNavigationEnabled: true,
+                    // javascriptMode: JavascriptMode.unrestricted,
+                    // onWebViewCreated: (WebViewController webViewController) {
+                    //   _controllerCompleter.future.then((value) => _controller = value);
+                    //   _controllerCompleter.complete(webViewController);
+                    //
+                    //   //_controller.complete(webViewController);
+                    // },
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.bottomCenter,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      child: Hero(
-                        tag: '${widget.page}imageHero${widget.newspaper.url}',
-                        child: widget.newspaper.icon.contains("svg")
-                            ? SvgPicture.asset(
-                                "KolkataImages/${widget.newspaper.icon}",
-                                fit: BoxFit.contain,
-                                height: 30,
-                              )
-                            : Image.asset(
-                                "KolkataImages/${widget.newspaper.icon}",
-                                fit: BoxFit.contain,
-                                height: 30,
-                              ),
-                      ),
+                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    child: FacebookBannerAd(
+                      placementId: "306255247337644_375749887054846",
+                      bannerSize: BannerSize.STANDARD,
+                      listener: (result, value) {
+                        print("Error: $result");
+                        print("Error: $value");
+                        switch (result) {
+                          case BannerAdResult.ERROR:
+                            print("Error: $value");
+                            break;
+                          case BannerAdResult.LOADED:
+                            print("Loaded: $value");
+                            break;
+                          case BannerAdResult.CLICKED:
+                            print("Clicked: $value");
+                            break;
+                          case BannerAdResult.LOGGING_IMPRESSION:
+                            print("Logging Impression: $value");
+                            break;
+                        }
+                      },
                     ),
                   ),
                 ),
-                centerTitle: true,
-                leading: BackButton(
-                    color: Colors.black,
-                    onPressed: () async {
-                      // print("bef");
-                      try {
-                        var status = await controller.canGoBack();
-                        print("status" + status.toString());
-                        if (status) {
-                          controller.goBack();
-                        } else {
-                          //await controller.close();
-                          //controller.dispose();
-
-                          if (!await myBanner.isLoaded()) {
-                            //print("test");
-                            Timer(const Duration(seconds: 2), () async {
-                              if (!await myBanner.isLoaded()) {
-                                Timer(const Duration(seconds: 6), () {
-                                  myBanner?.dispose();
-                                });
-                              } else {
-                                myBanner?.dispose();
-                              }
-                            });
-                            //print("dsd");
-                          } else {
-                            myBanner?.dispose();
-                          }
-                          Navigator.pop(context, true);
-                        }
-                      } catch (e) {
-                        //print("ddd" + e.toString());
-                        //await controller.close();
-                        //controller.dispose();
-                        //print(e);
-                        //await FlutterWebviewPlugin().close();
-                        Navigator.pop(context, true);
-
-                        //print(e);
-                      }
-
-                      //print("status dfhgvsgdv");
-                    }
-                    //myBanner?.dispose();
-                    ),
-                actions: <Widget>[
-                    IconButton(
-                      icon: Icon(
-                        Icons.home,
-                        color: Colors.black,
-                      ),
-                      onPressed: () async {
-                        //controller.close();
-                        //controller.dispose();
-                        //await FlutterWebviewPlugin().close();
-                        if (!await myBanner.isLoaded()) {
-                          //print("working");
-                          Timer(const Duration(seconds: 2), () async {
-                            if (!await myBanner.isLoaded()) {
-                              Timer(const Duration(seconds: 6), () {
-                                myBanner?.dispose();
-                              });
-                            } else {
-                              myBanner?.dispose();
-                            }
-                          });
-                          //print("dsd");
-                        } else {
-                          myBanner?.dispose();
-                        }
-                        Navigator.pop(context, true);
-                      },
-                    )
-                  ])
-            : null,
-        body: SafeArea(
-          child: Container(
-            child: Stack(
-              children: [
-                InAppWebView(
-                  initialUrl: widget.newspaper.url,
-                  initialHeaders: {},
-
-                  initialOptions: InAppWebViewGroupOptions(
-                      crossPlatform: InAppWebViewOptions(
-                          debuggingEnabled: true, supportZoom: true)),
-                  onWebViewCreated: (InAppWebViewController ncontroller) {
-                    controller = ncontroller;
-                  },
-                  onLoadStart: (InAppWebViewController controller, String url) {
-                    // setState(() {
-                    //   this.url = url;
-                    // });
-                  },
-                  onLoadStop:
-                      (InAppWebViewController controller, String url) async {
-                    // setState(() {
-                    //   this.url = url;
-                    // });
-                  },
-                  onProgressChanged:
-                      (InAppWebViewController controller, int progress) {
-                    setState(() {
-                      if (progress > 80) this.showAppBar = false;
-                    });
-                  },
-                  // withJavascript: true,
-                  // geolocationEnabled: false,
-                  // ignoreSSLErrors: true,
-                  // debuggingEnabled: false,
-                  // //allowFileURLs: true,
-                  // appCacheEnabled: false,
-                  // gestureNavigationEnabled: true,
-                  // javascriptMode: JavascriptMode.unrestricted,
-                  // onWebViewCreated: (WebViewController webViewController) {
-                  //   _controllerCompleter.future.then((value) => _controller = value);
-                  //   _controllerCompleter.complete(webViewController);
-                  //
-                  //   //_controller.complete(webViewController);
-                  // },
-                ),
-                // Container(
-                //   alignment: Alignment.bottomCenter,
-                //   child: FacebookBannerAd(
-                //     placementId: "306255247337644_306258744003961",
-                //     bannerSize: BannerSize.STANDARD,
-                //     listener: (result, value) {
-                //       print("Error: $result");
-                //       print("Error: $value");
-                //       switch (result) {
-                //         case BannerAdResult.ERROR:
-                //           print("Error: $value");
-                //           break;
-                //         case BannerAdResult.LOADED:
-                //           print("Loaded: $value");
-                //           break;
-                //         case BannerAdResult.CLICKED:
-                //           print("Clicked: $value");
-                //           break;
-                //         case BannerAdResult.LOGGING_IMPRESSION:
-                //           print("Logging Impression: $value");
-                //           break;
-                //       }
-                //     },
-                //   ),
-                // ),
               ],
             ),
           ),
@@ -371,7 +377,7 @@ class _webInappwebviewState extends State<webInappwebview> {
               Icons.close,
               color: Colors.white,
             ),
-            fabMargin: EdgeInsets.fromLTRB(0, 0, 10, 70),
+            fabMargin: EdgeInsets.fromLTRB(0, 0, 10, 90),
             ringDiameter: 250,
             children: <Widget>[
               IconButton(
