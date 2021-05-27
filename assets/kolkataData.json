@@ -39,6 +39,15 @@
         "BDRank": "10",
         "ColorFiltered": false
       },
+       {
+        "Name": "Hindustan Times Bangla",
+        "Url": "https://bangla.hindustantimes.com/",
+        "Icon": "htbanglal.svg",
+        "BDRank": "10",
+        "ColorFiltered": false
+      },
+
+      
       {
         "Name": "Telegraph",
         "Url": "https://www.telegraphindia.com/",
@@ -1088,6 +1097,97 @@
         "Name": "Kobita",
         "Url": "https://www.kobita.ws/",
         "Icon": "kobita.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      }
+    ]
+  },
+  {
+    "Category": "Magazine",
+    "CategoryFullName": "Magazine",
+    "Icon": "prothomalo.png",
+    "NewspaperList": [
+      {
+        "Url": "http://www.assamtribune.com/",
+        "Name": "Assam Tribune",
+        "Icon": "assamtribune.gif",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://nenow.in/",
+        "Name": "North East Now",
+        "Icon": "nenow.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://www.asomiyapratidin.in/",
+        "Name": "Asomiya Pratidin",
+        "Icon": "asomiyapratidin.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://dainikjanambhumi.co.in/",
+        "Name": "Dainik Janambhumi",
+        "Icon": "dainik-janambhumi.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://www.sentinelassam.com/",
+        "Name": "The Sentinel Assam",
+        "Icon": "sentinelassam.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://niyomiyabarta.com/home/",
+        "Name": "Niyomiya Barta",
+        "Icon": "niyomiyabarta.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://www.assamiyakhabor.com/",
+        "Name": "Assamiya Khabor",
+        "Icon": "assamiyakhabor.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://amarasom.glpublications.in/",
+        "Name": "Amar Asom",
+        "Icon": "amarasom.png",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://www.insidene.com/",
+        "Name": "InsideNE",
+        "Icon": "insidene.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://assam.news18.com/",
+        "Name": "News18 Assam",
+        "Icon": "news18assam.gif",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "http://www.nababartaprasanga.com/",
+        "Name": "Nababarta Prasanga",
+        "Icon": "nababartaprasanga.jpg",
+        "BDRank": "55",
+        "ColorFiltered": false
+      },
+      {
+        "Url": "https://ganaadhikar.com/",
+        "Name": "Gana Adhikar",
+        "Icon": "ganaadhikar.png",
         "BDRank": "55",
         "ColorFiltered": false
       }

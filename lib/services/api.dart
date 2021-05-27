@@ -15,7 +15,7 @@ class Api {
     @required int pageSize,
   }) async {
     //String url = Uri.encodeFull(_baseUrl + 'all/kolkata');
-    var url = Uri.https(_baseUrl, '/all/bangla');
+    var url = Uri.https(_baseUrl, '/all/kolkata');
     //String url = Uri.encodeFull(_baseUrl + 'all/bangla');
     try {
       http.Response response = await http.get(url, headers: _headers());

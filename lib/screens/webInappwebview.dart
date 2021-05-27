@@ -288,6 +288,34 @@ class _webInappwebviewState extends State<webInappwebview> {
           child: Container(
             child: Column(
               children: [
+                Container(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                    child: FacebookBannerAd(
+                      placementId: "161534199250448_161534625917072",
+                      bannerSize: BannerSize.STANDARD,
+                      listener: (result, value) {
+                        print("Error: $result");
+                        print("Error: $value");
+                        switch (result) {
+                          case BannerAdResult.ERROR:
+                            print("Error: $value");
+                            break;
+                          case BannerAdResult.LOADED:
+                            print("Loaded: $value");
+                            break;
+                          case BannerAdResult.CLICKED:
+                            print("Clicked: $value");
+                            break;
+                          case BannerAdResult.LOGGING_IMPRESSION:
+                            print("Logging Impression: $value");
+                            break;
+                        }
+                      },
+                    ),
+                  ),
+                ),
                 Expanded(
                   child: InAppWebView(
                     initialUrl: widget.newspaper.url,
@@ -333,34 +361,6 @@ class _webInappwebviewState extends State<webInappwebview> {
                     // },
                   ),
                 ),
-                Container(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                    child: FacebookBannerAd(
-                      placementId: "306255247337644_375749887054846",
-                      bannerSize: BannerSize.STANDARD,
-                      listener: (result, value) {
-                        print("Error: $result");
-                        print("Error: $value");
-                        switch (result) {
-                          case BannerAdResult.ERROR:
-                            print("Error: $value");
-                            break;
-                          case BannerAdResult.LOADED:
-                            print("Loaded: $value");
-                            break;
-                          case BannerAdResult.CLICKED:
-                            print("Clicked: $value");
-                            break;
-                          case BannerAdResult.LOGGING_IMPRESSION:
-                            print("Logging Impression: $value");
-                            break;
-                        }
-                      },
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
@@ -377,7 +377,7 @@ class _webInappwebviewState extends State<webInappwebview> {
               Icons.close,
               color: Colors.white,
             ),
-            fabMargin: EdgeInsets.fromLTRB(0, 0, 10, 90),
+            fabMargin: EdgeInsets.fromLTRB(0, 0, 10, 0),
             ringDiameter: 250,
             children: <Widget>[
               IconButton(
