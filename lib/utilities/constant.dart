@@ -33,4 +33,6 @@ const kPrimaryDarkColor = Color(0xff2b6cb0);
 
 const kPrimaryLightColor = Color(0xffCBD5e0);
 
+const kMainImageLocation = "KolkataImages/";
+
 bool isDark;

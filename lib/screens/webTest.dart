@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -173,12 +174,12 @@ class MyWebTestView extends StatelessWidget {
                       tag: '${page}imageHero${newspaper.url}',
                       child: newspaper.icon.contains("svg")
                           ? SvgPicture.asset(
-                              "KolkataImages/${newspaper.icon}",
+                              kMainImageLocation + newspaper.icon,
                               fit: BoxFit.contain,
                               height: 30,
                             )
                           : Image.asset(
-                              "KolkataImages/${newspaper.icon}",
+                              kMainImageLocation + newspaper.icon,
                               fit: BoxFit.contain,
                               height: 30,
                             )),
