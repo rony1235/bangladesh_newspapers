@@ -73,7 +73,7 @@ class _DashboardState extends State<Dashboard> {
             NavButton(_Page, Icons.search, 1, "Search"),
             NavButton(_Page, Icons.favorite, 2, "Favorite"),
             NavButton(_Page, Icons.flip, 3, "flip"),
-            NavButton(_Page, Icons.info_outline, 4, "Info"),
+            NavButton(_Page, Icons.line_style, 4, "Info"),
           ],
           color: Colors.white,
           buttonBackgroundColor: kPrimaryColor,
