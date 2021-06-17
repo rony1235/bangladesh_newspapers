@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bangladesh_newspapers/widgets/ColorLoader.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,12 +31,19 @@ class SplashScreenState extends State<SplashScreen>
   }
 
   @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      //systemNavigationBarColor: kPrimaryColor, // navigation bar color
-      statusBarColor: kPrimaryColor, // status bar color
-    ));
+        //systemNavigationBarColor: kPrimaryColor, // navigation bar color
+        // systemNavigationBarColor: Colors.blue, // navigation bar color
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark));
     animationController = new AnimationController(
       vsync: this,
       duration: new Duration(seconds: 2),
@@ -55,41 +63,46 @@ class SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(color: kPrimaryColor),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Expanded(
-                flex: 5,
-                child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      ColorLoader(),
-
-                      // Padding(
-                      //   padding: EdgeInsets.only(top: 50.0),
-                      // ),
-                      // Text(
-                      //   "All Bangla Newspapers",
-                      //   style: TextStyle(
-                      //       color: Colors.white,
-                      //       fontWeight: FontWeight.bold,
-                      //       fontSize: 24.0),
-                      // )
+      body: Container(
+        child: Center(
+          child: ListView(scrollDirection: Axis.horizontal, children: <Widget>[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(width: 20.0, height: 100.0),
+                Text(
+                  'List',
+                  textAlign: TextAlign.end,
+                  style: TextStyle(fontSize: 40),
+                ),
+                SizedBox(width: 20.0, height: 100.0),
+                DefaultTextStyle(
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontFamily: 'Sansnarrow',
+                  ),
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      RotateAnimatedText(
+                        'List',
+                        textStyle: TextStyle(
+                          fontSize: 40,
+                          fontFamily: 'Lato',
+                        ),
+                      ),
+                      RotateAnimatedText('Flip'),
+                      RotateAnimatedText('All'),
                     ],
+                    repeatForever: true,
                   ),
                 ),
-              ),
-            ],
-          )
-        ],
+              ],
+            ),
+          ]),
+        ),
       ),
+      backgroundColor: Colors.redAccent,
     );
   }
 }

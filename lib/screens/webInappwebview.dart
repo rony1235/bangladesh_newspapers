@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:facebook_audience_network/facebook_audience_network.dart';
-import 'package:firebase_admob/firebase_admob.dart';
+//import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,16 +28,16 @@ class webInappwebview extends StatefulWidget {
     // showAds();
   }
 
-  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
-      testDevices: testDevice != null ? <String>[testDevice] : null,
-      keywords: <String>['game', 'newspaper'],
-      //contentUrl: 'https://flutter.io',
-      //birthday: DateTime.now(),
-      childDirected: false,
-      nonPersonalizedAds: false
-      //designedForFamilies: false,
-      //gender: MobileAdGender.male,
-      );
+  // static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+  //     testDevices: testDevice != null ? <String>[testDevice] : null,
+  //     keywords: <String>['game', 'newspaper'],
+  //     //contentUrl: 'https://flutter.io',
+  //     //birthday: DateTime.now(),
+  //     childDirected: false,
+  //     nonPersonalizedAds: false
+  //     //designedForFamilies: false,
+  //     //gender: MobileAdGender.male,
+  //     );
 
   @override
   _webInappwebviewState createState() => _webInappwebviewState();
@@ -83,21 +83,21 @@ class _webInappwebviewState extends State<webInappwebview> {
       // print("paperVisit" + number.toString());
       try {
         if (number == ShowAdsNumber - 1) {
-          RewardedVideoAd.instance
-              .load(
-                  adUnitId: "ca-app-pub-4471555289018876/1165255741",
-                  //RewardedVideoAd.testAdUnitId,
-                  targetingInfo: webInappwebview.targetingInfo)
-              .catchError((e) => print('Error in loading.'));
-          ;
+          // RewardedVideoAd.instance
+          //     .load(
+          //         adUnitId: "ca-app-pub-4471555289018876/1165255741",
+          //         //RewardedVideoAd.testAdUnitId,
+          //         targetingInfo: webInappwebview.targetingInfo)
+          //     .catchError((e) => print('Error in loading.'));
+          // ;
           prefs.setInt("paperVisit", number + 1);
         } else if (number >= ShowAdsNumber) {
           prefs.setInt("paperVisit", 0);
           try {
-            await RewardedVideoAd.instance
-                .show()
-                .catchError((e) => print('Error in loading.'));
-            ;
+            // await RewardedVideoAd.instance
+            //     .show()
+            //     .catchError((e) => print('Error in loading.'));
+            // ;
           } on PlatformException catch (e) {}
         } else {
           prefs.setInt("paperVisit", number + 1);
@@ -106,26 +106,26 @@ class _webInappwebviewState extends State<webInappwebview> {
     }
   }
 
-  BannerAd myBanner = BannerAd(
-    // Replace the testAdUnitId with an ad unit id from the AdMob dash.
-    // https://developers.google.com/admob/android/test-ads
-    // https://developers.google.com/admob/ios/test-ads
-    adUnitId: //BannerAd.testAdUnitId,
-        "ca-app-pub-4471555289018876/7187757128", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
-    size: AdSize.banner,
-    targetingInfo: webInappwebview.targetingInfo,
-
-    listener: (MobileAdEvent event) {
-      print("BannerAd event is $event");
-    },
-  );
+  // BannerAd myBanner = BannerAd(
+  //   // Replace the testAdUnitId with an ad unit id from the AdMob dash.
+  //   // https://developers.google.com/admob/android/test-ads
+  //   // https://developers.google.com/admob/ios/test-ads
+  //   adUnitId: //BannerAd.testAdUnitId,
+  //       "ca-app-pub-4471555289018876/7187757128", // "ca-app-pub-2877215416565320/1305026042", //BannerAd.testAdUnitId,
+  //   size: AdSize.banner,
+  //   targetingInfo: webInappwebview.targetingInfo,
+  //
+  //   listener: (MobileAdEvent event) {
+  //     print("BannerAd event is $event");
+  //   },
+  // );
 
   Future<void> dispose() async {
     print("myBanner?.dispose()");
     //await controller..close();
     //controller.dispose();
     //super.dispose();
-    myBanner?.dispose();
+    //myBanner?.dispose();
   }
 
   @override
@@ -156,21 +156,21 @@ class _webInappwebviewState extends State<webInappwebview> {
             //await controller.close();
             //controller.dispose();
             //await FlutterWebviewPlugin().close();
-            if (!await myBanner.isLoaded()) {
-              //print("test");
-              Timer(const Duration(seconds: 2), () async {
-                if (!await myBanner.isLoaded()) {
-                  Timer(const Duration(seconds: 6), () {
-                    myBanner?.dispose();
-                  });
-                } else {
-                  myBanner?.dispose();
-                }
-              });
-              //print("dsd");
-            } else {
-              myBanner?.dispose();
-            }
+            // if (!await myBanner.isLoaded()) {
+            //   //print("test");
+            //   Timer(const Duration(seconds: 2), () async {
+            //     if (!await myBanner.isLoaded()) {
+            //       Timer(const Duration(seconds: 6), () {
+            //         myBanner?.dispose();
+            //       });
+            //     } else {
+            //       myBanner?.dispose();
+            //     }
+            //   });
+            //   //print("dsd");
+            // } else {
+            //   myBanner?.dispose();
+            // }
             return true;
           }
         } catch (e) {

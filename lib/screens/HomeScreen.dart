@@ -47,7 +47,7 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
       heartFontSize = 30;
     }
     if (gridItem == 2) {
-      fontSize = 15;
+      fontSize = 18;
       childAspectItem = 1;
       boderWidth = 7;
       gridItemSpacing = 10;
@@ -87,16 +87,18 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     var tabBarItem = TabBar(
-      labelColor: Colors.blue,
-      labelPadding: EdgeInsets.fromLTRB(10.0, 5, 10, 2),
+      indicatorColor: Colors.black,
+      labelColor: Colors.black,
+      unselectedLabelColor: Colors.black26,
+      labelPadding: EdgeInsets.fromLTRB(10.0, 5, 10, 0),
       labelStyle: TextStyle(
           //backgroundColor: Colors.green,
-          color: Colors.blue,
-          fontWeight: FontWeight.w900,
+          color: Colors.black,
+          fontWeight: FontWeight.w500,
           fontSize: 20),
       unselectedLabelStyle: TextStyle(
-          color: kPrimaryColor, fontWeight: FontWeight.w500, fontSize: 20),
-      indicatorWeight: 4.0,
+          color: Colors.black12, fontWeight: FontWeight.w500, fontSize: 20),
+      indicatorWeight: 1,
       isScrollable: true,
       tabs: myList.isEmpty
           ? <Widget>[]
@@ -104,7 +106,6 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
               return MainTabBarWidget(category);
             }).toList(),
       controller: tabController,
-      indicatorColor: kPrimaryLightColor,
     );
 
     return DefaultTabController(
@@ -112,7 +113,10 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
       child: Scaffold(
         appBar: PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
-            child: Container(color: kPrimaryColor, child: tabBarItem)),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(12.0, 0, 18, 0),
+              child: Container(color: Colors.white, child: tabBarItem),
+            )),
         body: Container(
           child: Column(
             children: [
@@ -123,62 +127,62 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
                       ? <Widget>[]
                       : myList.map((category) {
                           return Container(
-                            color: Color(0xffF8F8F8),
+                            color: Colors.white,
                             child: Column(
                               children: [
-                                Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                    margin:
-                                        const EdgeInsets.fromLTRB(15, 5, 15, 5),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          category.categoryFullName,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 20),
-                                        ),
-                                        ToggleButtons(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(15.0)),
-                                          children: <Widget>[
-                                            Icon(FontAwesomeIcons.bars),
-                                            Icon(FontAwesomeIcons.gripVertical),
-                                            Icon(FontAwesomeIcons.th),
-                                          ],
-                                          onPressed: (int index) async {
-                                            SharedPreferences prefs =
-                                                await SharedPreferences
-                                                    .getInstance();
-                                            prefs.setInt("gridItem", index + 1);
-                                            setState(() {
-                                              gridItem = index + 1;
-
-                                              changeGrid();
-                                              for (int buttonIndex = 0;
-                                                  buttonIndex <
-                                                      isSelected.length;
-                                                  buttonIndex++) {
-                                                if (buttonIndex == index) {
-                                                  isSelected[buttonIndex] =
-                                                      true;
-                                                } else {
-                                                  isSelected[buttonIndex] =
-                                                      false;
-                                                }
-                                              }
-                                            });
-                                          },
-                                          isSelected: isSelected,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                                // Expanded(
+                                //   flex: 1,
+                                //   child: Container(
+                                //     margin:
+                                //         const EdgeInsets.fromLTRB(15, 5, 15, 5),
+                                //     child: Row(
+                                //       mainAxisAlignment:
+                                //           MainAxisAlignment.spaceBetween,
+                                //       children: [
+                                //         Text(
+                                //           category.categoryFullName,
+                                //           overflow: TextOverflow.ellipsis,
+                                //           style: TextStyle(
+                                //               fontWeight: FontWeight.w800,
+                                //               fontSize: 20),
+                                //         ),
+                                //         ToggleButtons(
+                                //           borderRadius: BorderRadius.all(
+                                //               Radius.circular(15.0)),
+                                //           children: <Widget>[
+                                //             Icon(FontAwesomeIcons.bars),
+                                //             Icon(FontAwesomeIcons.gripVertical),
+                                //             Icon(FontAwesomeIcons.th),
+                                //           ],
+                                //           onPressed: (int index) async {
+                                //             SharedPreferences prefs =
+                                //                 await SharedPreferences
+                                //                     .getInstance();
+                                //             prefs.setInt("gridItem", index + 1);
+                                //             setState(() {
+                                //               gridItem = index + 1;
+                                //
+                                //               changeGrid();
+                                //               for (int buttonIndex = 0;
+                                //                   buttonIndex <
+                                //                       isSelected.length;
+                                //                   buttonIndex++) {
+                                //                 if (buttonIndex == index) {
+                                //                   isSelected[buttonIndex] =
+                                //                       true;
+                                //                 } else {
+                                //                   isSelected[buttonIndex] =
+                                //                       false;
+                                //                 }
+                                //               }
+                                //             });
+                                //           },
+                                //           isSelected: isSelected,
+                                //         ),
+                                //       ],
+                                //     ),
+                                //   ),
+                                // ),
                                 Expanded(
                                   flex: 10,
                                   child: GridView.builder(
@@ -271,7 +275,7 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
         //     });
         //   },
         // ),
-        backgroundColor: kPrimaryTextColor,
+        backgroundColor: Color(0xffF9FAFA),
       ),
     );
   }

@@ -42,90 +42,95 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Card(
-        elevation: 2,
-        color: Colors.white, //kPrimaryCardColor,
-        child: ClipPath(
-          clipper: ShapeBorderClipper(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5))),
-          child: Container(
-            //decoration: BoxDecoration(
-            // border: Border(
-            //     right: BorderSide(
-            //         color: kPrimaryColor, width: widget.boderWidth))),
-            //alignment: Alignment.center,
-            child: Stack(
-                alignment: Alignment.topRight,
-                fit: StackFit.expand,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        flex: 15,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            child: Hero(
-                              tag:
-                                  '${widget.page}imageHero${widget.newspaper.url}',
-                              child: widget.newspaper.icon.contains("svg")
-                                  ? SvgPicture.asset(
+        elevation: 1,
+        //color: Color(0xFFF1F2F3),
+        // shape: Border(
+        //   right: BorderSide(color: Color(0xFFF1F2F3), width: 1),
+        //   left: BorderSide(color: Color(0xFFF1F2F3), width: 1),
+        //   top: BorderSide(color: Color(0xFFF1F2F3), width: 1),
+        //   bottom: BorderSide(color: Color(0xFFF1F2F3), width: 1),
+        // ),
+        // shape: RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.circular(15.0),
+        //     side: BorderSide(
+        //         color: Color(0xFF000000), width: 1)), //kPrimaryCardColor,
+        child: Container(
+          //decoration: BoxDecoration(
+          // border: Border(
+          //     right: BorderSide(
+          //         color: kPrimaryColor, width: widget.boderWidth))),
+          //alignment: Alignment.center,
+          child: Stack(
+              alignment: Alignment.topRight,
+              fit: StackFit.expand,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8.0, 0, 8, 0),
+                      child: Container(
+                        child: Hero(
+                          tag: '${widget.page}imageHero${widget.newspaper.url}',
+                          child: widget.newspaper.icon.contains("svg")
+                              ? SvgPicture.asset(
+                                  kMainImageLocation + widget.newspaper.icon,
+                                  height: 55,
+                                )
+                              : widget.newspaper.colorFiltered
+                                  ? ColorFiltered(
+                                      child: Image.asset(
+                                        kMainImageLocation +
+                                            widget.newspaper.icon,
+                                        height: 55,
+                                      ),
+                                      colorFilter: ColorFilter.mode(
+                                          Colors.greenAccent, BlendMode.srcIn),
+                                    )
+                                  : Image.asset(
                                       kMainImageLocation +
                                           widget.newspaper.icon,
-                                    )
-                                  : widget.newspaper.colorFiltered
-                                      ? ColorFiltered(
-                                          child: Image.asset(
-                                            kMainImageLocation +
-                                                widget.newspaper.icon,
-                                          ),
-                                          colorFilter: ColorFilter.mode(
-                                              Colors.greenAccent,
-                                              BlendMode.srcIn),
-                                        )
-                                      : Image.asset(
-                                          kMainImageLocation +
-                                              widget.newspaper.icon,
-                                        ),
-                            ),
-                          ),
+                                      height: 55,
+                                    ),
                         ),
                       ),
-                      Expanded(
-                        flex: 15,
-                        child: Column(
-                          children: [
-                            Text(
+                    ),
+                    Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(8.0, 0, 8, 8),
+                            child: Text(
                               widget.newspaper.name,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
+                                  color: kPrimaryColor,
                                   fontSize: widget.fontSize,
                                   fontWeight: FontWeight.w800),
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Positioned(
-                    right: 0,
-                    bottom: 0,
-                    child: GestureDetector(
-                      //padding: EdgeInsets.all(0),
-
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(23, 23, 8, 8.0),
-                        child: Icon(widget.heartIcon,
-                            size: widget.heartFontSize,
-                            color: widget.iconColor),
-                      ),
-                      onTap: widget.onPress,
-                      //onPressed: ,
+                      ],
                     ),
-                  )
-                ]),
-          ),
+                  ],
+                ),
+                Positioned(
+                  right: 0,
+                  top: 0,
+                  child: GestureDetector(
+                    //padding: EdgeInsets.all(0),
+
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(23, 8, 8, 8.0),
+                      child: Icon(widget.heartIcon,
+                          size: widget.heartFontSize, color: widget.iconColor),
+                    ),
+                    onTap: widget.onPress,
+                    //onPressed: ,
+                  ),
+                )
+              ]),
         ),
       ),
       onTap: () {

@@ -111,79 +111,79 @@ class ArticlePageState extends State<ArticlePage> {
           });
         },
         child: Scaffold(
-          appBar: AppBar(
-            leading: widget.flipBack != null
-                ? new IconButton(
-                    icon: _getBackIcon(Theme.of(context).platform),
-                    color: Colors.black87,
-                    onPressed: widget.flipBack,
-                  )
-                : Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Image.asset(
-                      kMainImageLocation + 'flutboard_logo.png',
-                    ),
-                  ),
-            title: widget.article.logo.contains("svg")
-                ? SvgPicture.asset(
-                    kMainImageLocation + widget.article.logo,
-                    fit: BoxFit.contain,
-                    height: 30,
-                  )
-                : Image.asset(
-                    kMainImageLocation + widget.article.logo,
-                    fit: BoxFit.contain,
-                    height: 30,
-                  ),
-            elevation: 0.0,
-            centerTitle: true,
-            actions: <Widget>[
-              widget.flipBack == null
-                  ? IconButton(
-                      icon: new Icon(Icons.refresh),
-                      //color: Colors.black87,
-                      // onPressed: () => ArticleBlocProvider.of(context)
-                      //     .getArticles(refresh: true),
-                    )
-                  : IconButton(
-                      icon: Icon(Icons.arrow_upward),
-                      onPressed: () {
-                        widget.flipBack(backToTop: true);
-                      })
-
-              // PopupMenuButton<String>(
-              //   itemBuilder: (BuildContext context) {
-              //     return <PopupMenuEntry<String>>[
-              //       widget.flipBack == null
-              //           ? null
-              //           // ? PopupMenuItem<String>(
-              //           //     value: 'sources',
-              //           //     child: Text('Select Sources'),
-              //           //   )
-              //           : PopupMenuItem<String>(
-              //               value: 'back',
-              //               child: Text('Back to Top'),
-              //             ),
-              //       // PopupMenuItem<String>(
-              //       //   value: 'about',
-              //       //   child: Text('About'),
-              //       // ),
-              //     ];
-              //   },
-              //   onSelected: (String value) {
-              //     if (value == 'back') {
-              //       widget.flipBack(backToTop: true);
-              //     }
-              //     if (value == 'sources') {
-              //       _selectSources(context);
-              //     }
-              //     if (value == 'about') {
-              //       _aboutPage(context);
-              //     }
-              //   },
-              // ),
-            ],
-          ),
+          // appBar: AppBar(
+          //   leading: widget.flipBack != null
+          //       ? new IconButton(
+          //           icon: _getBackIcon(Theme.of(context).platform),
+          //           color: Colors.black87,
+          //           onPressed: widget.flipBack,
+          //         )
+          //       : Padding(
+          //           padding: const EdgeInsets.all(10.0),
+          //           child: Image.asset(
+          //             kMainImageLocation + 'flutboard_logo.png',
+          //           ),
+          //         ),
+          //   title: widget.article.logo.contains("svg")
+          //       ? SvgPicture.asset(
+          //           kMainImageLocation + widget.article.logo,
+          //           fit: BoxFit.contain,
+          //           height: 30,
+          //         )
+          //       : Image.asset(
+          //           kMainImageLocation + widget.article.logo,
+          //           fit: BoxFit.contain,
+          //           height: 30,
+          //         ),
+          //   elevation: 0.0,
+          //   centerTitle: true,
+          //   actions: <Widget>[
+          //     widget.flipBack == null
+          //         ? IconButton(
+          //             icon: new Icon(Icons.refresh),
+          //             //color: Colors.black87,
+          //             // onPressed: () => ArticleBlocProvider.of(context)
+          //             //     .getArticles(refresh: true),
+          //           )
+          //         : IconButton(
+          //             icon: Icon(Icons.arrow_upward),
+          //             onPressed: () {
+          //               widget.flipBack(backToTop: true);
+          //             })
+          //
+          //     // PopupMenuButton<String>(
+          //     //   itemBuilder: (BuildContext context) {
+          //     //     return <PopupMenuEntry<String>>[
+          //     //       widget.flipBack == null
+          //     //           ? null
+          //     //           // ? PopupMenuItem<String>(
+          //     //           //     value: 'sources',
+          //     //           //     child: Text('Select Sources'),
+          //     //           //   )
+          //     //           : PopupMenuItem<String>(
+          //     //               value: 'back',
+          //     //               child: Text('Back to Top'),
+          //     //             ),
+          //     //       // PopupMenuItem<String>(
+          //     //       //   value: 'about',
+          //     //       //   child: Text('About'),
+          //     //       // ),
+          //     //     ];
+          //     //   },
+          //     //   onSelected: (String value) {
+          //     //     if (value == 'back') {
+          //     //       widget.flipBack(backToTop: true);
+          //     //     }
+          //     //     if (value == 'sources') {
+          //     //       _selectSources(context);
+          //     //     }
+          //     //     if (value == 'about') {
+          //     //       _aboutPage(context);
+          //     //     }
+          //     //   },
+          //     // ),
+          //   ],
+          // ),
           body: GestureDetector(
             onTap: _launchURL,
             child: Column(
@@ -224,6 +224,24 @@ class ArticlePageState extends State<ArticlePage> {
                                       ))
                                   : Container(),
                             ),
+                            Positioned(
+                                right: 15,
+                                bottom: 10,
+                                child: Container(
+                                  color: Colors.white70,
+                                  padding: EdgeInsets.all(5),
+                                  child: widget.article.logo.contains("svg")
+                                      ? SvgPicture.asset(
+                                          kMainImageLocation +
+                                              widget.article.logo,
+                                          height: 40,
+                                        )
+                                      : Image.asset(
+                                          kMainImageLocation +
+                                              widget.article.logo,
+                                          height: 40,
+                                        ),
+                                )),
                           ],
                         )
                       : Container(),

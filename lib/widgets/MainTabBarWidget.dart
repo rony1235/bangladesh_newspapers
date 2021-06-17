@@ -11,11 +11,9 @@ class MainTabBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tab(
-      child: Container(
-        child: Text(
-          category.category,
-          style: TextStyle(color: kPrimaryTextColor),
-        ),
+      child: Text(
+        category.category,
+        style: TextStyle(fontSize: 15),
       ),
     );
   }
