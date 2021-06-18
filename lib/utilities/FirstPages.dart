@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:liquid_swipe/PageHelpers/LiquidController.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -173,10 +174,10 @@ class _WithBuilder extends State<WithBuilder> {
 ///Example of App with LiquidSwipe by providing list of widgets
 class WithPages extends StatefulWidget {
   static final style = TextStyle(
-    fontSize: 30,
-    fontFamily: "Billy",
-    fontWeight: FontWeight.w600,
-  );
+      fontSize: 30,
+      fontFamily: "Billy",
+      fontWeight: FontWeight.w600,
+      color: Colors.white);
 
   @override
   _WithPages createState() => _WithPages();
@@ -186,6 +187,7 @@ class _WithPages extends State<WithPages> {
   int page = 0;
   LiquidController liquidController;
   UpdateType updateType;
+  double screenWidth = 0.0;
 
   @override
   Future<void> initState() {
@@ -203,29 +205,18 @@ class _WithPages extends State<WithPages> {
     Container(
       color: Colors.pink,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisSize: MainAxisSize.max,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Image.asset(
-            'images/dw.png',
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: EdgeInsets.all(20.0),
+          SvgPicture.asset(
+            'common_assert/home.svg',
+            fit: BoxFit.contain,
           ),
           Column(
             children: <Widget>[
               Text(
-                "Hi",
-                style: WithPages.style,
-              ),
-              Text(
-                "It's Me",
-                style: WithPages.style,
-              ),
-              Text(
-                "Sahdeep",
+                "Which Newspaper you want to read",
                 style: WithPages.style,
               ),
             ],
@@ -236,29 +227,18 @@ class _WithPages extends State<WithPages> {
     Container(
       color: Colors.deepPurpleAccent,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisSize: MainAxisSize.max,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Image.asset(
-            'images/theguardian.png',
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: EdgeInsets.all(20.0),
+          SvgPicture.asset(
+            'common_assert/Scroll.svg',
+            fit: BoxFit.contain,
           ),
           Column(
             children: <Widget>[
               Text(
-                "Take a",
-                style: WithPages.style,
-              ),
-              Text(
-                "look at",
-                style: WithPages.style,
-              ),
-              Text(
-                "Liquid Swipe",
+                "Scroll unlimited News on Hybrid Platform",
                 style: WithPages.style,
               ),
             ],
@@ -269,29 +249,18 @@ class _WithPages extends State<WithPages> {
     Container(
       color: Colors.greenAccent,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisSize: MainAxisSize.max,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Image.asset(
-            'images/icc.png',
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: EdgeInsets.all(20.0),
+          SvgPicture.asset(
+            'common_assert/flip.svg',
+            fit: BoxFit.contain,
           ),
           Column(
             children: <Widget>[
               Text(
-                "Liked?",
-                style: WithPages.style,
-              ),
-              Text(
-                "Fork!",
-                style: WithPages.style,
-              ),
-              Text(
-                "Give Star!",
+                "Flip News",
                 style: WithPages.style,
               ),
             ],
@@ -302,29 +271,18 @@ class _WithPages extends State<WithPages> {
     Container(
       color: Colors.yellowAccent,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisSize: MainAxisSize.max,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Image.asset(
-            'images/logo.png',
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: EdgeInsets.all(20.0),
+          SvgPicture.asset(
+            'common_assert/Wishlist.svg',
+            fit: BoxFit.contain,
           ),
           Column(
             children: <Widget>[
               Text(
-                "Can be",
-                style: WithPages.style,
-              ),
-              Text(
-                "Used for",
-                style: WithPages.style,
-              ),
-              Text(
-                "Onboarding Design",
+                "Make Favourite",
                 style: WithPages.style,
               ),
             ],
@@ -333,31 +291,20 @@ class _WithPages extends State<WithPages> {
       ),
     ),
     Container(
-      color: Colors.redAccent,
+      color: Colors.blueAccent,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisSize: MainAxisSize.max,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Image.asset(
-            'images/eisamay.png',
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: EdgeInsets.all(20.0),
+          SvgPicture.asset(
+            'common_assert/Social_share.svg',
+            fit: BoxFit.contain,
           ),
           Column(
             children: <Widget>[
               Text(
-                "Do",
-                style: WithPages.style,
-              ),
-              Text(
-                "Try it",
-                style: WithPages.style,
-              ),
-              Text(
-                "Thank You",
+                "Social Share",
                 style: WithPages.style,
               ),
             ],
@@ -392,12 +339,204 @@ class _WithPages extends State<WithPages> {
 
   @override
   Widget build(BuildContext context) {
+    screenWidth = MediaQuery.of(context).size.width;
     return MaterialApp(
       home: Scaffold(
         body: Stack(
           children: <Widget>[
             LiquidSwipe(
-              pages: pages,
+              pages: [
+                Container(
+                  color: Colors.pink,
+                  child: SafeArea(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          height: 500,
+                          child: SvgPicture.asset(
+                            'common_assert/home.svg',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Text(
+                              "Which",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              "Newspaper",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              "you want to read",
+                              style: WithPages.style,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.deepPurpleAccent,
+                  child: SafeArea(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          height: 500,
+                          child: SvgPicture.asset(
+                            'common_assert/Scroll.svg',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Text(
+                              "Scroll unlimited",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              "News",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              "on Hybrid Platform",
+                              style: WithPages.style,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.greenAccent,
+                  child: SafeArea(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          height: 500,
+                          child: SvgPicture.asset(
+                            'common_assert/flip.svg',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Text(
+                              "Reed all",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              "News",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              "using Flip",
+                              style: WithPages.style,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.blueAccent,
+                  child: SafeArea(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          height: 500,
+                          child: SvgPicture.asset(
+                            'common_assert/Wishlist.svg',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Text(
+                              "Make list of ",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              "Your",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              "Favourite Newspaper",
+                              style: WithPages.style,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.greenAccent,
+                  child: SafeArea(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          height: 500,
+                          child: SvgPicture.asset(
+                            'common_assert/Social_share.svg',
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Text(
+                              "Share your",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              " news",
+                              style: WithPages.style,
+                            ),
+                            Text(
+                              "in Social Network",
+                              style: WithPages.style,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
               positionSlideIcon: 0.8,
               slideIconWidget: Icon(Icons.arrow_back_ios),
               onPageChangeCallback: pageChangeCallback,
