@@ -22,6 +22,8 @@ class _FavoriteScreenState extends State<FavoriteScreen>
   double boderWidth;
   double gridItemSpacing;
   double heartFontSize;
+  double textImageBetweenPadding;
+  double textImagePadding;
   // Color _iconColor = Colors.white;
   // int _page = 0;
   // GlobalKey _bottomNavigationKey = GlobalKey();
@@ -45,6 +47,8 @@ class _FavoriteScreenState extends State<FavoriteScreen>
       boderWidth = 15;
       gridItemSpacing = 10;
       heartFontSize = 30;
+      textImageBetweenPadding = 8;
+      textImagePadding = 8;
     }
     if (gridItem == 2) {
       fontSize = 15;
@@ -52,6 +56,8 @@ class _FavoriteScreenState extends State<FavoriteScreen>
       boderWidth = 7;
       gridItemSpacing = 10;
       heartFontSize = 25;
+      textImageBetweenPadding = 8;
+      textImagePadding = 8;
     }
     if (gridItem == 3) {
       fontSize = 11;
@@ -59,6 +65,8 @@ class _FavoriteScreenState extends State<FavoriteScreen>
       boderWidth = 3;
       gridItemSpacing = 4;
       heartFontSize = 19;
+      textImageBetweenPadding = 8;
+      textImagePadding = 8;
     }
   }
 
@@ -177,7 +185,9 @@ class _FavoriteScreenState extends State<FavoriteScreen>
                         newspaperList[index].isFavorite
                             ? Icons.favorite
                             : Icons.favorite_border,
-                        "Fav");
+                        "Fav",
+                        textImageBetweenPadding,
+                        textImagePadding);
                   }),
             ),
           ],

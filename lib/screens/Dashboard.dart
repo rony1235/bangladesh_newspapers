@@ -93,8 +93,8 @@ class _DashboardState extends State<Dashboard> {
             },
           ),
           title: Image.asset(
-            kMainImageLocation + "roar.png",
-            height: 22,
+            "common_assert/logo.png",
+            height: 38,
           ),
           centerTitle: true,
           elevation: 0,
@@ -120,7 +120,7 @@ class _DashboardState extends State<Dashboard> {
                 ListTile(
                     focusColor: Colors.redAccent,
                     title: Image.asset(
-                      kMainImageLocation + "roar.png",
+                      "common_assert/logo.png",
                     )),
 
                 ListTile(

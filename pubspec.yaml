@@ -72,6 +72,7 @@ flutter:
   assets:
   - images/
   - assets/
+  - common_assert/
 
   fonts:
     - family: Sansnarrow

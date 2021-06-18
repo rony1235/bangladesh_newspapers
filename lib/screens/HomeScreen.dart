@@ -24,6 +24,9 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
   double gridItemSpacing;
   double heartFontSize;
 
+  double textImageBetweenPadding;
+  double textImagePadding;
+
   @override
   void initState() {
     super.initState();
@@ -40,25 +43,31 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
 
   void changeGrid() {
     if (gridItem == 1) {
-      fontSize = 30;
+      fontSize = 25;
       childAspectItem = 2;
       boderWidth = 15;
       gridItemSpacing = 10;
       heartFontSize = 30;
+      textImageBetweenPadding = 15;
+      textImagePadding = 20;
     }
     if (gridItem == 2) {
-      fontSize = 18;
+      fontSize = 15;
       childAspectItem = 1;
       boderWidth = 7;
       gridItemSpacing = 10;
       heartFontSize = 25;
+      textImageBetweenPadding = 5;
+      textImagePadding = 8;
     }
     if (gridItem == 3) {
-      fontSize = 11;
+      fontSize = 10;
       childAspectItem = 1;
       boderWidth = 3;
       gridItemSpacing = 4;
       heartFontSize = 19;
+      textImageBetweenPadding = 2;
+      textImagePadding = 4;
     }
   }
 
@@ -240,7 +249,9 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
                                                     .isFavorite
                                                 ? Icons.favorite
                                                 : Icons.favorite_border,
-                                            "Home");
+                                            "Home",
+                                            textImageBetweenPadding,
+                                            textImagePadding);
                                       }),
                                 ),
                               ],

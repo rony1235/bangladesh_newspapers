@@ -22,6 +22,8 @@ class _SearchScreenState extends State<SearchScreen> {
   double gridItemSpacing;
   double heartFontSize;
   String textSearch;
+  double textImageBetweenPadding;
+  double textImagePadding;
   // Color _iconColor = Colors.white;
   // int _page = 0;
   // GlobalKey _bottomNavigationKey = GlobalKey();
@@ -46,6 +48,8 @@ class _SearchScreenState extends State<SearchScreen> {
       boderWidth = 15;
       gridItemSpacing = 10;
       heartFontSize = 30;
+      textImageBetweenPadding = 8;
+      textImagePadding = 8;
     }
     if (gridItem == 2) {
       fontSize = 15;
@@ -53,6 +57,8 @@ class _SearchScreenState extends State<SearchScreen> {
       boderWidth = 7;
       gridItemSpacing = 10;
       heartFontSize = 25;
+      textImageBetweenPadding = 8;
+      textImagePadding = 8;
     }
     if (gridItem == 3) {
       fontSize = 11;
@@ -60,6 +66,8 @@ class _SearchScreenState extends State<SearchScreen> {
       boderWidth = 3;
       gridItemSpacing = 4;
       heartFontSize = 19;
+      textImageBetweenPadding = 8;
+      textImagePadding = 8;
     }
   }
 
@@ -169,7 +177,9 @@ class _SearchScreenState extends State<SearchScreen> {
                           newspaperList[index].isFavorite
                               ? Icons.favorite
                               : Icons.favorite_border,
-                          "Ser");
+                          "Ser",
+                          textImageBetweenPadding,
+                          textImagePadding);
                     }),
               ),
             ],
