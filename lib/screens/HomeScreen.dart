@@ -102,11 +102,11 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
       labelPadding: EdgeInsets.fromLTRB(10.0, 5, 10, 0),
       labelStyle: TextStyle(
           //backgroundColor: Colors.green,
-          color: Colors.black,
+          color: kPrimaryColor,
           fontWeight: FontWeight.w500,
-          fontSize: 20),
+          fontSize: 15),
       unselectedLabelStyle: TextStyle(
-          color: Colors.black12, fontWeight: FontWeight.w500, fontSize: 20),
+          color: Colors.redAccent, fontWeight: FontWeight.w500, fontSize: 15),
       indicatorWeight: 1,
       isScrollable: true,
       tabs: myList.isEmpty

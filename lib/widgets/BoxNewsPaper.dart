@@ -164,7 +164,7 @@ class _BoxNewsPaperState extends State<BoxNewsPaper>
 
         Navigator.of(context).push(
           PageRouteBuilder(
-            transitionDuration: Duration(milliseconds: 1400),
+            transitionDuration: Duration(milliseconds: 0),
             pageBuilder: (BuildContext context, Animation<double> animation,
                 Animation<double> secondaryAnimation) {
               return webInappwebview(widget.newspaper, widget.page);

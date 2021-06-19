@@ -56,7 +56,7 @@ Future<void> main() async {
   firstTime = prefs.getBool("firstTime");
   runApp(MaterialApp(
     navigatorKey: navigatorKey,
-    title: 'সংবাদপত্র',
+    title: 'Newspaper Hub',
     debugShowCheckedModeBanner: false,
     home: firstTime == null ? WithPages() : Dashboard(),
     routes: <String, WidgetBuilder>{

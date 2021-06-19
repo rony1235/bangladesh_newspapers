@@ -80,6 +80,7 @@ class _DashboardState extends State<Dashboard> {
       onWillPop: _onWillPop,
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 35,
           backgroundColor: Colors.white,
           leading: Builder(
             builder: (BuildContext context) {
@@ -134,6 +135,7 @@ class _DashboardState extends State<Dashboard> {
                     size: 26,
                   ),
                   onTap: () {
+                    _pageController.jumpToPage(0);
                     // Update the state of the app.
                     // ...
                   },
@@ -151,17 +153,17 @@ class _DashboardState extends State<Dashboard> {
                   onTap: () {
                     // Update the state of the app.
                     // ...
-                    //_pageController.jumpToPage(4);
-                    Scaffold.of(context).openEndDrawer();
+                    _pageController.jumpToPage(1);
+                    //Scaffold.of(context).openEndDrawer();
                   },
                 ),
                 ListTile(
                   title: Text(
-                    'Settings',
+                    'Tour',
                     style: TextStyle(fontSize: 17),
                   ),
                   leading: Icon(
-                    Icons.settings,
+                    Icons.touch_app,
                     size: 26,
                   ),
                   onTap: () {

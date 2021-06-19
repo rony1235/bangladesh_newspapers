@@ -358,7 +358,7 @@ class _WithPages extends State<WithPages> {
                           height: 500,
                           child: Padding(
                             padding:
-                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                                const EdgeInsets.fromLTRB(120.0, 180, 120, 120),
                             child: SvgPicture.asset(
                               'common_assert/home.svg',
                               fit: BoxFit.fill,
@@ -368,15 +368,15 @@ class _WithPages extends State<WithPages> {
                         Column(
                           children: <Widget>[
                             Text(
-                              "Which",
+                              "নিজের পছন্দমত",
                               style: WithPages.style,
                             ),
                             Text(
-                              "Newspaper",
+                              "সংবাদপত্র",
                               style: WithPages.style,
                             ),
                             Text(
-                              "you want to read",
+                              "পাঠ করুন ",
                               style: WithPages.style,
                             ),
                           ],
@@ -397,7 +397,7 @@ class _WithPages extends State<WithPages> {
                           height: 500,
                           child: Padding(
                             padding:
-                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                                const EdgeInsets.fromLTRB(120.0, 180, 120, 120),
                             child: SvgPicture.asset(
                               'common_assert/Scroll.svg',
                               fit: BoxFit.fill,
@@ -407,15 +407,15 @@ class _WithPages extends State<WithPages> {
                         Column(
                           children: <Widget>[
                             Text(
-                              "Scroll unlimited",
+                              "আমাদের হাইব্রিড",
                               style: WithPages.style,
                             ),
                             Text(
-                              "News",
+                              "প্ল্যাটফর্মে  ",
                               style: WithPages.style,
                             ),
                             Text(
-                              "on Hybrid Platform",
+                              "গুরুত্বপূর্ণ সংবাদ স্ক্রোল করুন",
                               style: WithPages.style,
                             ),
                           ],
@@ -436,7 +436,7 @@ class _WithPages extends State<WithPages> {
                           height: 500,
                           child: Padding(
                             padding:
-                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                                const EdgeInsets.fromLTRB(120.0, 180, 120, 120),
                             child: SvgPicture.asset(
                               'common_assert/flip.svg',
                               fit: BoxFit.fill,
@@ -446,15 +446,15 @@ class _WithPages extends State<WithPages> {
                         Column(
                           children: <Widget>[
                             Text(
-                              "Reed all",
+                              "ফ্লিপ করুন আর",
                               style: WithPages.style,
                             ),
                             Text(
-                              "News",
+                              "সংবাদ ",
                               style: WithPages.style,
                             ),
                             Text(
-                              "using Flip",
+                              "পড়ুন",
                               style: WithPages.style,
                             ),
                           ],
@@ -475,7 +475,7 @@ class _WithPages extends State<WithPages> {
                           height: 500,
                           child: Padding(
                             padding:
-                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                                const EdgeInsets.fromLTRB(120.0, 180, 120, 120),
                             child: SvgPicture.asset(
                               'common_assert/Wishlist.svg',
                               fit: BoxFit.fill,
@@ -485,15 +485,15 @@ class _WithPages extends State<WithPages> {
                         Column(
                           children: <Widget>[
                             Text(
-                              "Make list of ",
+                              "আপনার পছন্দের ",
                               style: WithPages.style,
                             ),
                             Text(
-                              "Your",
+                              " সংবাদপত্র নিয়ে পছন্দের ",
                               style: WithPages.style,
                             ),
                             Text(
-                              "Favourite Newspaper",
+                              "তালিকা তৈরী করুন",
                               style: WithPages.style,
                             ),
                           ],
@@ -514,7 +514,7 @@ class _WithPages extends State<WithPages> {
                           height: 500,
                           child: Padding(
                             padding:
-                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                                const EdgeInsets.fromLTRB(120.0, 180, 120, 120),
                             child: SvgPicture.asset(
                               'common_assert/Social_share.svg',
                               fit: BoxFit.fill,
@@ -524,15 +524,15 @@ class _WithPages extends State<WithPages> {
                         Column(
                           children: <Widget>[
                             Text(
-                              "Share your",
+                              "সোশ্যাল মিডিয়াতে",
                               style: WithPages.style,
                             ),
                             Text(
-                              " news",
+                              " শেয়ার ",
                               style: WithPages.style,
                             ),
                             Text(
-                              "in Social Network",
+                              "করুন",
                               style: WithPages.style,
                             ),
                           ],
@@ -566,22 +566,34 @@ class _WithPages extends State<WithPages> {
               child: Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: page != 4
-                    ? FlatButton(
+                    ? TextButton(
                         onPressed: () {
                           liquidController.animateToPage(
                               page: pages.length - 1, duration: 700);
                         },
                         child: Text("Skip to End"),
-                        color: Colors.white.withOpacity(0.01),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          onPrimary: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(19.0),
+                          ),
+                        ),
                       )
-                    : FlatButton(
+                    : TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, HOME_SCREEN);
                           // Navigator.of(context)
                           //     .pushReplacementNamed(HOME_SCREEN);
                         },
                         child: Text("Home"),
-                        color: Colors.white.withOpacity(0.01),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          onPrimary: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(19.0),
+                          ),
+                        ),
                       ),
               ),
             ),
@@ -589,7 +601,8 @@ class _WithPages extends State<WithPages> {
               alignment: Alignment.bottomLeft,
               child: Padding(
                 padding: const EdgeInsets.all(25.0),
-                child: FlatButton(
+                child: TextButton(
+                  child: Text("Next"),
                   onPressed: () {
                     liquidController.jumpToPage(
                         page:
@@ -597,8 +610,13 @@ class _WithPages extends State<WithPages> {
                                 ? 0
                                 : liquidController.currentPage + 1);
                   },
-                  child: Text("Next"),
-                  color: Colors.white.withOpacity(0.01),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(19.0),
+                    ),
+                  ),
                 ),
               ),
             )
