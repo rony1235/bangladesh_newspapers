@@ -46,15 +46,15 @@ class _webInappwebviewState extends State<webInappwebview> {
 
   bool showAppBar = false;
 
-  bool _isAppbar = true;
+  //bool _isAppbar = true;
 
   InAppWebViewController controller;
 
   String url = "";
 
   double progress = 0;
-  int postY = 0;
-  ScrollController _scrollController = new ScrollController();
+  //int postY = 0;
+  //ScrollController _scrollController = new ScrollController();
 
   void initState() {
     //super.initState();
@@ -407,128 +407,112 @@ class _webInappwebviewState extends State<webInappwebview> {
                 ],
               ),
             ),
-            floatingActionButton: FabCircularMenu(
-                fabSize: 35,
-                alignment: Alignment.bottomRight,
-                fabColor: kPrimaryDarkColor,
-                fabOpenIcon: Icon(
-                  Icons.menu,
-                  color: Colors.white,
+            floatingActionButton: Stack(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: FloatingActionButton(
+                    backgroundColor: kPrimaryColor,
+                    onPressed: () async {
+                      var status = await controller.canGoBack();
+                      print("status" + status.toString());
+                      if (status) {
+                        controller.goBack();
+                      } else {
+                        Navigator.pop(context, true);
+                      }
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    ),
+                    heroTag: null,
+                  ),
                 ),
-                fabCloseIcon: Icon(
-                  Icons.close,
-                  color: Colors.white,
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: FabCircularMenu(
+                      fabSize: 35,
+                      alignment: Alignment.bottomRight,
+                      fabColor: kPrimaryDarkColor,
+                      fabOpenIcon: Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                      ),
+                      fabCloseIcon: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                      ),
+                      fabMargin: EdgeInsets.fromLTRB(0, 0, 30, 90),
+                      ringDiameter: 250,
+                      children: <Widget>[
+                        IconButton(
+                            icon: Icon(Icons.home, color: Colors.white),
+                            onPressed: () async {
+                              try {
+                                var status = await controller.canGoBack();
+                                print("status" + status.toString());
+                                if (status) {
+                                  controller.goBack();
+                                } else {
+                                  //await controller.close();
+                                  //controller.dispose();
+
+                                  // if (!await myBanner.isLoaded()) {
+                                  //   //print("test");
+                                  //   Timer(const Duration(seconds: 2), () async {
+                                  //     if (!await myBanner.isLoaded()) {
+                                  //       Timer(const Duration(seconds: 6), () {
+                                  //         myBanner?.dispose();
+                                  //       });
+                                  //     } else {
+                                  //       myBanner?.dispose();
+                                  //     }
+                                  //   });
+                                  //   //print("dsd");
+                                  // } else {
+                                  //   myBanner?.dispose();
+                                  // }
+                                  Navigator.pop(context, true);
+                                }
+                              } catch (e) {
+                                //print("ddd" + e.toString());
+                                //await controller.close();
+                                //controller.dispose();
+                                //print(e);
+                                //await FlutterWebviewPlugin().close();
+                                Navigator.pop(context, true);
+
+                                //print(e);
+                              }
+                            }),
+                        IconButton(
+                            icon: Icon(Icons.zoom_out, color: Colors.white),
+                            onPressed: () async {
+                              await controller.zoomBy(.5);
+                              print('zoom_out');
+                            }),
+                        IconButton(
+                            icon: Icon(Icons.zoom_in, color: Colors.white),
+                            onPressed: () async {
+                              await controller.zoomBy(1.5);
+                              print('zoom_in');
+                            }),
+                        IconButton(
+                            icon: Icon(Icons.share, color: Colors.white),
+                            onPressed: () async {
+                              var url = await controller?.getUrl();
+                              Share.share(url);
+
+                              print('Favorite');
+                            })
+                      ]),
                 ),
-                fabMargin: EdgeInsets.fromLTRB(0, 0, 10, 90),
-                ringDiameter: 250,
-                children: <Widget>[
-                  IconButton(
-                      icon: Icon(Icons.home, color: Colors.white),
-                      onPressed: () async {
-                        try {
-                          var status = await controller.canGoBack();
-                          print("status" + status.toString());
-                          if (status) {
-                            controller.goBack();
-                          } else {
-                            //await controller.close();
-                            //controller.dispose();
-
-                            // if (!await myBanner.isLoaded()) {
-                            //   //print("test");
-                            //   Timer(const Duration(seconds: 2), () async {
-                            //     if (!await myBanner.isLoaded()) {
-                            //       Timer(const Duration(seconds: 6), () {
-                            //         myBanner?.dispose();
-                            //       });
-                            //     } else {
-                            //       myBanner?.dispose();
-                            //     }
-                            //   });
-                            //   //print("dsd");
-                            // } else {
-                            //   myBanner?.dispose();
-                            // }
-                            Navigator.pop(context, true);
-                          }
-                        } catch (e) {
-                          //print("ddd" + e.toString());
-                          //await controller.close();
-                          //controller.dispose();
-                          //print(e);
-                          //await FlutterWebviewPlugin().close();
-                          Navigator.pop(context, true);
-
-                          //print(e);
-                        }
-                      }),
-                  IconButton(
-                      icon: Icon(Icons.zoom_out, color: Colors.white),
-                      onPressed: () async {
-                        await controller.zoomBy(.5);
-                        print('zoom_out');
-                      }),
-                  IconButton(
-                      icon: Icon(Icons.zoom_in, color: Colors.white),
-                      onPressed: () async {
-                        await controller.zoomBy(1.5);
-                        print('zoom_in');
-                      }),
-                  IconButton(
-                      icon: Icon(Icons.share, color: Colors.white),
-                      onPressed: () async {
-                        var url = await controller?.getUrl();
-                        Share.share(url);
-
-                        print('Favorite');
-                      })
-                ]),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomAppBar extends StatefulWidget {
-  @override
-  AppBarView createState() => new AppBarView();
-}
-
-class AppBarView extends State<CustomAppBar> {
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.white,
-      leading: InkWell(
-        onTap: () => {},
-        child: new Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundColor: Colors.white,
-            child: ClipOval(
-              child: Image.network(
-                  'https://images.squarespace-cdn.com/content/5aee389b3c3a531e6245ae76/1530965251082-9L40PL9QH6PATNQ93LUK/linkedinPortraits_DwayneBrown08.jpg?format=1000w&content-type=image%2Fjpeg'),
+              ],
             ),
           ),
         ),
       ),
-      actions: <Widget>[
-        IconButton(
-          alignment: Alignment.centerLeft,
-          icon: Icon(
-            Icons.search,
-            color: Colors.black,
-          ),
-          onPressed: () {},
-        ),
-      ],
-      title: Container(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            "Custom Appbar",
-            style: TextStyle(color: Colors.black),
-          )),
     );
   }
 }
