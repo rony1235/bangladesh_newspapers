@@ -13,7 +13,6 @@ class MainTabBarWidget extends StatelessWidget {
     return Tab(
       child: Text(
         category.category,
-        style: TextStyle(fontSize: 15),
       ),
     );
   }
