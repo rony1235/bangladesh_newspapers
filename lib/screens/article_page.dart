@@ -212,7 +212,7 @@ class ArticlePageState extends State<ArticlePage> {
                                   ? Container(
                                       // We use this Container to create a black box that wraps the white text so that the user can read the text even when the image is white
 
-                                      color: Colors.redAccent,
+                                      color: kPrimaryColor,
                                       padding: EdgeInsets.all(5),
                                       child: Text(
                                         widget.article.Date,

@@ -356,13 +356,14 @@ class _WithPages extends State<WithPages> {
                       children: <Widget>[
                         Container(
                           height: 500,
-                          child: SvgPicture.asset(
-                            'common_assert/home.svg',
-                            fit: BoxFit.fill,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                            child: SvgPicture.asset(
+                              'common_assert/home.svg',
+                              fit: BoxFit.fill,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 50,
                         ),
                         Column(
                           children: <Widget>[
@@ -394,13 +395,14 @@ class _WithPages extends State<WithPages> {
                       children: <Widget>[
                         Container(
                           height: 500,
-                          child: SvgPicture.asset(
-                            'common_assert/Scroll.svg',
-                            fit: BoxFit.fill,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                            child: SvgPicture.asset(
+                              'common_assert/Scroll.svg',
+                              fit: BoxFit.fill,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 50,
                         ),
                         Column(
                           children: <Widget>[
@@ -432,13 +434,14 @@ class _WithPages extends State<WithPages> {
                       children: <Widget>[
                         Container(
                           height: 500,
-                          child: SvgPicture.asset(
-                            'common_assert/flip.svg',
-                            fit: BoxFit.fill,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                            child: SvgPicture.asset(
+                              'common_assert/flip.svg',
+                              fit: BoxFit.fill,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 50,
                         ),
                         Column(
                           children: <Widget>[
@@ -470,13 +473,14 @@ class _WithPages extends State<WithPages> {
                       children: <Widget>[
                         Container(
                           height: 500,
-                          child: SvgPicture.asset(
-                            'common_assert/Wishlist.svg',
-                            fit: BoxFit.fill,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                            child: SvgPicture.asset(
+                              'common_assert/Wishlist.svg',
+                              fit: BoxFit.fill,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 50,
                         ),
                         Column(
                           children: <Widget>[
@@ -508,13 +512,14 @@ class _WithPages extends State<WithPages> {
                       children: <Widget>[
                         Container(
                           height: 500,
-                          child: SvgPicture.asset(
-                            'common_assert/Social_share.svg',
-                            fit: BoxFit.fill,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.fromLTRB(120.0, 120, 120, 120),
+                            child: SvgPicture.asset(
+                              'common_assert/Social_share.svg',
+                              fit: BoxFit.fill,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 50,
                         ),
                         Column(
                           children: <Widget>[
