@@ -45,7 +45,7 @@ class ArticlePageState extends State<ArticlePage> {
     String url = widget.article.url;
     Navigator.of(context).push(
       PageRouteBuilder(
-        transitionDuration: Duration(milliseconds: 1400),
+        transitionDuration: Duration(milliseconds: 0),
         pageBuilder: (BuildContext context, Animation<double> animation,
             Animation<double> secondaryAnimation) {
           return webInappwebview(

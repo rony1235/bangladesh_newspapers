@@ -19,6 +19,7 @@ final kShadowColor = Color(0xFFD3D3D3).withOpacity(.84);
 // const kPrimaryDarkColor = Color(0xff2d3748);
 const kPrimaryTextColor = Color(0xffffffff);
 const kGridPrimaryColor = Color(0xfff8f8f8);
+const kBackGroundPrimaryColor = Color(0xffffffff);
 
 //const kPrimaryCardColor = Color(0xffE6FCFC);
 

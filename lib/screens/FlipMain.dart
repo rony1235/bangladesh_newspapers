@@ -8,12 +8,12 @@ import 'package:flutter/services.dart';
 import 'FlipPanel.dart';
 import 'article_page.dart';
 
-class SettingScreen extends StatefulWidget {
+class FlipMainScreen extends StatefulWidget {
   @override
-  _SettingScreenState createState() => new _SettingScreenState();
+  _FlipMainScreenState createState() => new _FlipMainScreenState();
 }
 
-class _SettingScreenState extends State<SettingScreen> {
+class _FlipMainScreenState extends State<FlipMainScreen> {
   //TabController tabController;
 
   @override
@@ -45,7 +45,8 @@ class HomePage extends StatelessWidget {
     double height = MediaQuery.of(context).size.height -
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom -
-        130;
+        130 -
+        35;
 
     return SafeArea(
       // This Scaffold is used to display the FlipPane SnackBar. Later,

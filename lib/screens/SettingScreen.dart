@@ -1,4 +1,6 @@
-import 'package:bangladesh_newspapers/widgets/BoxNewsPaper.dart';
+import 'package:bangladesh_newspapers/screens/Dashboard.dart';
+import 'package:bangladesh_newspapers/screens/HomeScreen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/services/DataProvider.dart';
@@ -17,13 +19,7 @@ class _SettingScreenState extends State<SettingScreen>
   List<NewspaperList> newspaperList;
   List<bool> isSelected = List();
   int gridItem;
-  double childAspectItem;
-  double fontSize;
-  double boderWidth;
-  double gridItemSpacing;
-  double heartFontSize;
-  double textImageBetweenPadding;
-  double textImagePadding;
+
   // Color _iconColor = Colors.white;
   // int _page = 0;
   // GlobalKey _bottomNavigationKey = GlobalKey();
@@ -33,41 +29,16 @@ class _SettingScreenState extends State<SettingScreen>
     super.initState();
     newspaperList = List();
     gridItem = 2;
-    changeGrid();
+
     isSelected.add(gridItem == 1);
     isSelected.add(gridItem == 2);
     isSelected.add(gridItem == 3);
     doSomeAsyncStuff();
   }
 
-  void changeGrid() {
-    if (gridItem == 1) {
-      fontSize = 30;
-      childAspectItem = 2;
-      boderWidth = 15;
-      gridItemSpacing = 10;
-      heartFontSize = 30;
-      textImageBetweenPadding = 8;
-      textImagePadding = 8;
-    }
-    if (gridItem == 2) {
-      fontSize = 15;
-      childAspectItem = 1;
-      boderWidth = 7;
-      gridItemSpacing = 10;
-      heartFontSize = 25;
-      textImageBetweenPadding = 8;
-      textImagePadding = 8;
-    }
-    if (gridItem == 3) {
-      fontSize = 11;
-      childAspectItem = 1;
-      boderWidth = 3;
-      gridItemSpacing = 4;
-      heartFontSize = 19;
-      textImageBetweenPadding = 8;
-      textImagePadding = 8;
-    }
+  void _close() {
+    Navigator.pop(context, true);
+    // Navigator.pop(context, gridItem);
   }
 
   Future<void> doSomeAsyncStuff() async {
@@ -85,7 +56,6 @@ class _SettingScreenState extends State<SettingScreen>
       isSelected.add(gridItem == 1);
       isSelected.add(gridItem == 2);
       isSelected.add(gridItem == 3);
-      changeGrid();
     });
 
     //print(newspaperList[0].name);
@@ -94,58 +64,55 @@ class _SettingScreenState extends State<SettingScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          child: Container(
-        child: Column(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                margin: const EdgeInsets.fromLTRB(15, 5, 15, 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Favorite",
-                      overflow: TextOverflow.ellipsis,
-                      style:
-                          TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
-                    ),
-                    ToggleButtons(
-                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                      children: <Widget>[
-                        Icon(FontAwesomeIcons.bars),
-                        Icon(FontAwesomeIcons.gripVertical),
-                        Icon(FontAwesomeIcons.th),
-                      ],
-                      onPressed: (int index) async {
-                        SharedPreferences prefs =
-                            await SharedPreferences.getInstance();
-                        prefs.setInt("gridItem", index + 1);
-                        setState(() {
-                          gridItem = index + 1;
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "Grid",
+                    textAlign: TextAlign.center,
+                  ),
+                  ToggleButtons(
+                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    children: <Widget>[
+                      Icon(FontAwesomeIcons.bars),
+                      Icon(FontAwesomeIcons.gripVertical),
+                      Icon(FontAwesomeIcons.th),
+                    ],
+                    onPressed: (int index) async {
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      prefs.setInt("gridItem", index + 1);
+                      print(index + 1);
 
-                          changeGrid();
-                          for (int buttonIndex = 0;
-                              buttonIndex < isSelected.length;
-                              buttonIndex++) {
-                            if (buttonIndex == index) {
-                              isSelected[buttonIndex] = true;
-                            } else {
-                              isSelected[buttonIndex] = false;
-                            }
+                      setState(() {
+                        gridItem = index + 1;
+
+                        //changeGrid();
+                        for (int buttonIndex = 0;
+                            buttonIndex < isSelected.length;
+                            buttonIndex++) {
+                          if (buttonIndex == index) {
+                            isSelected[buttonIndex] = true;
+                          } else {
+                            isSelected[buttonIndex] = false;
                           }
-                        });
-                      },
-                      isSelected: isSelected,
-                    ),
-                  ],
-                ),
+                        }
+                      });
+                    },
+                    isSelected: isSelected,
+                  ),
+                ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      )),
+      ),
       backgroundColor: kGridPrimaryColor,
     );
   }

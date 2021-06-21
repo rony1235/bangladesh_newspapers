@@ -99,51 +99,6 @@ class _FavoriteScreenState extends State<FavoriteScreen>
         child: Column(
           children: [
             Expanded(
-              flex: 1,
-              child: Container(
-                margin: const EdgeInsets.fromLTRB(15, 5, 15, 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Favorite",
-                      overflow: TextOverflow.ellipsis,
-                      style:
-                          TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
-                    ),
-                    ToggleButtons(
-                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                      children: <Widget>[
-                        Icon(FontAwesomeIcons.bars),
-                        Icon(FontAwesomeIcons.gripVertical),
-                        Icon(FontAwesomeIcons.th),
-                      ],
-                      onPressed: (int index) async {
-                        SharedPreferences prefs =
-                            await SharedPreferences.getInstance();
-                        prefs.setInt("gridItem", index + 1);
-                        setState(() {
-                          gridItem = index + 1;
-
-                          changeGrid();
-                          for (int buttonIndex = 0;
-                              buttonIndex < isSelected.length;
-                              buttonIndex++) {
-                            if (buttonIndex == index) {
-                              isSelected[buttonIndex] = true;
-                            } else {
-                              isSelected[buttonIndex] = false;
-                            }
-                          }
-                        });
-                      },
-                      isSelected: isSelected,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Expanded(
               flex: 10,
               child: GridView.builder(
                   padding: const EdgeInsets.all(10.0),
@@ -193,7 +148,7 @@ class _FavoriteScreenState extends State<FavoriteScreen>
           ],
         ),
       )),
-      backgroundColor: kGridPrimaryColor,
+      backgroundColor: kBackGroundPrimaryColor,
     );
   }
 }

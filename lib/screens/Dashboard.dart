@@ -1,5 +1,6 @@
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/screens/FavoriteScreen.dart';
+import 'package:bangladesh_newspapers/screens/SettingScreen.dart';
 import 'package:bangladesh_newspapers/screens/webInappwebview.dart';
 import 'package:bangladesh_newspapers/utilities/FirstPages.dart';
 import 'package:bangladesh_newspapers/widgets/NavButton.dart';
@@ -8,13 +9,14 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
+import 'package:bangladesh_newspapers/screens/SettingScreen.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import '../main.dart';
 import 'About.dart';
 import 'HomeScreen.dart';
 import 'SearchScreen.dart';
-import 'Setting.dart';
+import 'FlipMain.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   print("onBackgroundMessage: $message");
@@ -151,9 +153,10 @@ class _DashboardState extends State<Dashboard> {
                     size: 26,
                   ),
                   onTap: () {
+                    _pageController.jumpToPage(1);
                     // Update the state of the app.
                     // ...
-                    _pageController.jumpToPage(1);
+
                     //Scaffold.of(context).openEndDrawer();
                   },
                 ),
@@ -168,6 +171,62 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   onTap: () {
                     Navigator.pushNamed(context, TUTORIAL);
+                    // Navigator.of(context)
+                    //     .pushReplacementNamed(TUTORIAL);
+                    // ...
+                  },
+                ),
+                ListTile(
+                  title: Text(
+                    'Setting',
+                    style: TextStyle(fontSize: 17),
+                  ),
+                  leading: Icon(
+                    Icons.settings,
+                    size: 26,
+                  ),
+                  onTap: () {
+                    // Navigator.pushReplacement(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (BuildContext context) =>
+                    //             SettingScreen()));
+
+                    //Page1
+                    Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SettingScreen()))
+                        .then((value) {
+                      print("dsdd");
+                      //setState(() {});
+                      Navigator.pop(context); // pop current page
+                      Navigator.pushNamed(context, HOME_SCREEN); // push
+                      //_pageController.jumpToPage(1);
+                      //_pageController.jumpToPage(2);
+                    });
+                    //Navigator.of(context).pushReplacementNamed(TUTORIAL);
+                    // Navigator.of(context).push(
+                    //   PageRouteBuilder(
+                    //     transitionDuration: Duration(milliseconds: 0),
+                    //     pageBuilder: (BuildContext context,
+                    //         Animation<double> animation,
+                    //         Animation<double> secondaryAnimation) {
+                    //       return SettingScreen();
+                    //     },
+                    //     transitionsBuilder: (BuildContext context,
+                    //         Animation<double> animation,
+                    //         Animation<double> secondaryAnimation,
+                    //         Widget child) {
+                    //       return Align(
+                    //         child: FadeTransition(
+                    //           opacity: animation,
+                    //           child: child,
+                    //         ),
+                    //       );
+                    //     },
+                    //   ),
+                    // );
                     // Navigator.of(context)
                     //     .pushReplacementNamed(TUTORIAL);
                     // ...
@@ -203,7 +262,7 @@ class _DashboardState extends State<Dashboard> {
                       HomeScreen(),
                       SearchScreen(),
                       FavoriteScreen(),
-                      SettingScreen(),
+                      FlipMainScreen(),
                       AboutScreen(),
                     ],
                     onPageChanged: (int index) {
