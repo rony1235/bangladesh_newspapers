@@ -8,6 +8,7 @@ import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:bangladesh_newspapers/screens/SplashScreen.dart';
 import 'package:flutter/services.dart';
 import 'package:bangladesh_newspapers/utilities/FirstPages.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 
@@ -41,6 +42,10 @@ var firstTime = false;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  // await flutterLocalNotificationsPlugin
+  //     .resolvePlatformSpecificImplementation<
+  //         AndroidFlutterLocalNotificationsPlugin>()
+  //     ?.createNotificationChannel(channel);
 
   await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
     alert: true,

@@ -2,8 +2,10 @@ import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/screens/FavoriteScreen.dart';
 import 'package:bangladesh_newspapers/screens/SettingScreen.dart';
 import 'package:bangladesh_newspapers/screens/webInappwebview.dart';
+import 'package:bangladesh_newspapers/utilities/DataSearch.dart';
 import 'package:bangladesh_newspapers/utilities/FirstPages.dart';
 import 'package:bangladesh_newspapers/widgets/NavButton.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 //import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 
@@ -11,6 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:bangladesh_newspapers/screens/SettingScreen.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import '../main.dart';
 import 'About.dart';
@@ -18,9 +22,56 @@ import 'HomeScreen.dart';
 import 'SearchScreen.dart';
 import 'FlipMain.dart';
 
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  print("onBackgroundMessage: $message");
+Future _showNotificationWithDefaultSound(String t, String b, int id) async {
+  var androidPlatformChannelSpecifics = new AndroidNotificationDetails(
+      'your channel id', 'your channel name', 'your channel description',
+      importance: Importance.max, priority: Priority.max);
+  var iOSPlatformChannelSpecifics = new IOSNotificationDetails();
+  var platformChannelSpecifics = new NotificationDetails(
+      android: androidPlatformChannelSpecifics,
+      iOS: iOSPlatformChannelSpecifics);
+  await flutterLocalNotificationsPlugin.show(
+    id,
+    t,
+    b,
+    platformChannelSpecifics,
+    payload: 'Default_Sound',
+  );
 }
+
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  //await Firebase.initializeApp();
+  print('Handling a background message ${message.messageId}');
+  print(message.data);
+  print(message.data.hashCode);
+  print(message.data['title']);
+  print(message.data['body']);
+  print(channel.id);
+  print(channel.name);
+  print(channel.description);
+
+  flutterLocalNotificationsPlugin.show(
+      10,
+      "dfsdsdf",
+      "dfsdsrdfsdfsdf",
+      NotificationDetails(
+        android: AndroidNotificationDetails(
+          channel.id,
+          channel.name,
+          channel.description,
+        ),
+      ));
+}
+
+const AndroidNotificationChannel channel = AndroidNotificationChannel(
+    'high_importance_channel', // id
+    'High Importance Notifications', // title
+    'This channel is used for important notifications.', // description
+    importance: Importance.max,
+    enableLights: true);
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 
 class Dashboard extends StatefulWidget {
   static final String id = 'profile_page';
@@ -43,6 +94,16 @@ class _DashboardState extends State<Dashboard> {
     _pageController = PageController();
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+    // FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    //     FlutterLocalNotificationsPlugin();
+    // var initializationSettingsAndroid = AndroidInitializationSettings(
+    //     '@mipmap/ic_launcher'); // <- default icon name is
+    // //var initiializationSettingsIOS = IOSInitializationSettings(onDidReceiveLocalNotification: onDidReceiveLocalNotification);
+    // var initializationSettings =
+    //     InitializationSettings(android: initializationSettingsAndroid);
+    // flutterLocalNotificationsPlugin.initialize(initializationSettings);
+
     FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
       print("onMessage: $message");
       if (message.data != null) {
@@ -99,6 +160,16 @@ class _DashboardState extends State<Dashboard> {
             "common_assert/logo.png",
             height: 38,
           ),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.black54,
+                ),
+                onPressed: () async {
+                  showSearch(context: context, delegate: DataSearch(context));
+                })
+          ],
           centerTitle: true,
           elevation: 0,
         ),
@@ -294,7 +365,8 @@ class _DashboardState extends State<Dashboard> {
           currentIndex: _page,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.search), label: "Category"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.favorite), label: "Favorite"),
             BottomNavigationBarItem(icon: Icon(Icons.flip), label: "Flip"),

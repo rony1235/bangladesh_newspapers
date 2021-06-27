@@ -97,7 +97,44 @@ class DataProvider {
         }
       });
     });
-
+    print("done");
     return myFavorite;
+  }
+
+  Future<List<NewspaperList>> getAllNewspaperByName(name) async {
+    final response = await rootBundle.loadString("assets/data.json");
+
+    List<DataCategoryModel> myModels;
+
+    List<NewspaperList> myFavorite = List();
+    myModels = (json.decode(response) as List)
+        .map((i) => DataCategoryModel.fromJson(i))
+        .toList();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    var favoriteList = prefs.getStringList("Favorite");
+    // favorite.forEach((element) {
+    //   print("test ---" + element);
+    // });
+    if (favoriteList == null) {
+      favoriteList = List();
+    }
+    myModels.forEach((data) {
+      data.newspaperList.forEach((element) {
+        myFavorite.add(element);
+        if (favoriteList.contains(element.url)) {
+          //print(element);
+          element.isFavorite = true;
+        } else {
+          element.isFavorite = false;
+        }
+      });
+    });
+    print("done sdfsdf");
+    print(name);
+    return myFavorite
+        .where((element) =>
+            element.name.toLowerCase().contains(name.toString().toLowerCase()))
+        .toList();
   }
 }

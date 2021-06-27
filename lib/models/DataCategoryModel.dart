@@ -4,12 +4,15 @@ class DataCategoryModel {
   String categoryFullName;
   List<NewspaperList> newspaperList;
 
+  bool isExpanded;
+
   DataCategoryModel({this.category, this.icon, this.newspaperList});
 
   DataCategoryModel.fromJson(Map<String, dynamic> json) {
     category = json['Category'];
     categoryFullName = json['CategoryFullName'];
     icon = json['Icon'];
+    isExpanded = false;
     if (json['NewspaperList'] != null) {
       newspaperList = new List<NewspaperList>();
       json['NewspaperList'].forEach((v) {
@@ -23,6 +26,7 @@ class DataCategoryModel {
     data['Category'] = this.category;
     data['CategoryFullName'] = this.categoryFullName;
     data['Icon'] = this.icon;
+    data['Icon'] = false;
     if (this.newspaperList != null) {
       data['NewspaperList'] =
           this.newspaperList.map((v) => v.toJson()).toList();

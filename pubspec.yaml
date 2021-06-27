@@ -47,6 +47,8 @@ dependencies:
   firebase_messaging: ^10.0.2
   flutter_local_notifications: ^6.0.0
   get: ^4.1.4
+  bloc: ^7.0.0
+  flutter_bloc: ^7.0.1
 
 
 
