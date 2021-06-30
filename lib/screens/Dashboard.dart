@@ -366,7 +366,7 @@ class _DashboardState extends State<Dashboard> {
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.search), label: "Category"),
+                icon: Icon(Icons.category), label: "Category"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.favorite), label: "Favorite"),
             BottomNavigationBarItem(icon: Icon(Icons.flip), label: "Flip"),
