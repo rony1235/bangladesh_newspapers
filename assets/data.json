@@ -1,8 +1,8 @@
 [
   {
-    "Category": "Bangla",
-    "CategoryFullName": "Bangla Newspaper",
-    "Icon": "prothomalo.png",
+    "Category": "Daily",
+    "CategoryFullName": "Daily Newspaper",
+    "Icon": "daily.png",
     "NewspaperList": [
       {
         "Name": "Daily Prothom alo",
@@ -168,7 +168,7 @@
   {
     "Category": "Online",
     "CategoryFullName": "Online Newspapers",
-    "Icon": "prothomalo.png",
+    "Icon": "online.png",
     "NewspaperList": [
       {
         "Name": "Jago News 24",
@@ -315,7 +315,7 @@
   {
     "Category": "English",
     "CategoryFullName": "English Newspaper",
-    "Icon": "prothomalo.png",
+    "Icon": "english.png",
     "NewspaperList": [
       {
         "Name": "The Daily Star",
@@ -448,7 +448,7 @@
   {
     "Category": "Epaper",
     "CategoryFullName": "E Paper",
-    "Icon": "prothomalo.png",
+    "Icon": "epaper.png",
     "NewspaperList": [
       {
         "Name": "Daily e Prothom Alo",
@@ -642,9 +642,9 @@
     ]
   },
   {
-    "Category": "International",
-    "CategoryFullName": "International",
-    "Icon": "prothomalo.png",
+    "Category": "World",
+    "CategoryFullName": "World Newspaper",
+    "Icon": "world.png",
     "NewspaperList": [
       {
         "Name": "The Gurdian",
@@ -778,7 +778,7 @@
   {
     "Category": "Bangla International ",
     "CategoryFullName": "Bangla International",
-    "Icon": "prothomalo.png",
+    "Icon": "national.png",
     "NewspaperList": [
       {
         "Name": "BBC Bangla",
@@ -811,8 +811,8 @@
   },
   {
     "Category": "TV Channel",
-    "CategoryFullName": "English Newspaper",
-    "Icon": "prothomalo.png",
+    "CategoryFullName": "TV Channel",
+    "Icon": "tv channel.png",
     "NewspaperList": [
       {
         "Name": "Somoynews TV",
@@ -901,9 +901,9 @@
     ]
   },
   {
-    "Category": "Local",
-    "CategoryFullName": "Local Newspapers",
-    "Icon": "prothomalo.png",
+    "Category": "Regional",
+    "CategoryFullName": "Regional Newspapers",
+    "Icon": "rural.png",
     "NewspaperList": [
       {
         "Name": "Chandpur Times",
@@ -1069,9 +1069,9 @@
     ]
   },
   {
-    "Category": "Business",
-    "CategoryFullName": "Business",
-    "Icon": "prothomalo.png",
+    "Category": "Finance",
+    "CategoryFullName": "Finance Newspaper",
+    "Icon": "finance.png",
     "NewspaperList": [
       {
         "Name": "The Business Standard",
@@ -1316,7 +1316,7 @@
   {
     "Category": "Sports",
     "CategoryFullName": "Sports Newspapers",
-    "Icon": "prothomalo.png",
+    "Icon": "sports.png",
     "NewspaperList": [
       {
         "Name": "BBC Sport",
@@ -1449,7 +1449,7 @@
   {
     "Category": "Technology",
     "CategoryFullName": "Technology",
-    "Icon": "prothomalo.png",
+    "Icon": "technology.png",
     "NewspaperList": [
       {
         "Name": "Techtunes",
@@ -1576,7 +1576,7 @@
   {
     "Category": "Magazine",
     "CategoryFullName": "Magazine",
-    "Icon": "prothomalo.png",
+    "Icon": "magazine.png",
     "NewspaperList": [
       {
         "Name": "Shatorupa",
@@ -1692,7 +1692,7 @@
   {
     "Category": "Education",
     "CategoryFullName": "Education",
-    "Icon": "prothomalo.png",
+    "Icon": "education.png",
     "NewspaperList": [
       {
         "Name": "BD news 24",
@@ -1854,7 +1854,7 @@
   },
   {
     "Category": "Blog",
-    "Icon": "prothomalo.png",
+    "Icon": "blog.png",
     "CategoryFullName": "Blog",
     "NewspaperList": [
       {
@@ -1960,7 +1960,7 @@
   },
   {
     "Category": "Indian",
-    "Icon": "prothomalo.png",
+    "Icon": "politics.png",
     "CategoryFullName": "Indian Newspapers",
     "NewspaperList": [
       {

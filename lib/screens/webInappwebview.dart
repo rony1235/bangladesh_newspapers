@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:bangladesh_newspapers/services/DataProvider.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:facebook_audience_network/facebook_audience_network.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:share/share.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -45,7 +47,7 @@ class _webInappwebviewState extends State<webInappwebview> {
   final _key = UniqueKey();
 
   bool showAppBar = false;
-
+  List<NewspaperList> list;
   //bool _isAppbar = true;
 
   InAppWebViewController controller;
@@ -66,14 +68,19 @@ class _webInappwebviewState extends State<webInappwebview> {
     FacebookAudienceNetwork.init(
         //testingId: "37b1da9d-b48c-4103-a393-2e095e734bd6", //optional
         );
-
-    // RewardedVideoAd.instance.listener =
+    getData();
+    // RewaardedVideoAd.instance.listener =
     //     (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
     //   print("RewardedVideoAd event $event");
     //   if (event == RewardedVideoAdEvent.rewarded) {
     //     print("rewardAmount" + rewardAmount.toString());
     //   }
     // };
+  }
+
+  Future<void> getData() async {
+    list = await DataProvider().getAllNewspaper();
+    setState(() {});
   }
 
   Future<void> showAds() async {
@@ -191,23 +198,79 @@ class _webInappwebviewState extends State<webInappwebview> {
             appBar: AppBar(
               toolbarHeight: 35,
               backgroundColor: Colors.white,
-              // leading: Builder(
-              //   builder: (BuildContext context) {
-              //     return IconButton(
-              //         icon: Icon(
-              //           Icons.menu_rounded,
-              //           color: Colors.black54,
-              //           size: 30.0,
-              //         ),
-              //         onPressed: () => Scaffold.of(context).openDrawer());
-              //   },
-              // ),
+              leading: Builder(
+                builder: (BuildContext context) {
+                  return IconButton(
+                      icon: Icon(
+                        Icons.menu_rounded,
+                        color: Colors.black54,
+                        size: 30.0,
+                      ),
+                      onPressed: () => Scaffold.of(context).openDrawer());
+                },
+              ),
               title: Image.asset(
                 "common_assert/logo.png",
                 height: 38,
               ),
               centerTitle: true,
               elevation: 0,
+            ),
+            drawer: Drawer(
+              // Add a ListView to the drawer. This ensures the user can scroll
+              // through the options in the drawer if there isn't enough vertical
+              // space to fit everything.
+              child: SafeArea(
+                  child: FutureBuilder(
+                future: DataProvider().getAllNewspaper(),
+                builder:
+                    (context, AsyncSnapshot<List<NewspaperList>> snapshot) {
+                  print("AsyncSnapshot<List<NewspaperList>> snapshot");
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    print(snapshot.data[0].name);
+                    //logger.d(snapshot.hasData);
+                    return ListView.builder(
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          onTap: () {
+                            controller.loadUrl(url: snapshot.data[index].url);
+                            Scaffold.of(context).openEndDrawer();
+                          },
+                          leading: SizedBox(
+                            height: 35.0,
+                            width: 75.0, // fixed width and height
+                            child: snapshot.data[index].icon.contains("svg")
+                                ? SvgPicture.asset(
+                                    kMainImageLocation +
+                                        snapshot.data[index].icon,
+                                  )
+                                : snapshot.data[index].colorFiltered
+                                    ? ColorFiltered(
+                                        child: Image.asset(
+                                          kMainImageLocation +
+                                              snapshot.data[index].icon,
+                                        ),
+                                        colorFilter: ColorFilter.mode(
+                                            Colors.greenAccent,
+                                            BlendMode.srcIn),
+                                      )
+                                    : Image.asset(
+                                        kMainImageLocation +
+                                            snapshot.data[index].icon,
+                                      ),
+                          ),
+                          title: Text(snapshot.data[index].name),
+                        );
+                      },
+                      itemCount: snapshot.data.length, // data is null
+                    );
+                  } else {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+              )),
             ),
             // appBar: PreferredSize(
             //   preferredSize: Size.fromHeight(kToolbarHeight),
@@ -376,34 +439,34 @@ class _webInappwebviewState extends State<webInappwebview> {
                       // },
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                      child: FacebookBannerAd(
-                        placementId: "306255247337644_375749887054846",
-                        bannerSize: BannerSize.STANDARD,
-                        listener: (result, value) {
-                          print("Error: $result");
-                          print("Error: $value");
-                          switch (result) {
-                            case BannerAdResult.ERROR:
-                              print("Error: $value");
-                              break;
-                            case BannerAdResult.LOADED:
-                              print("Loaded: $value");
-                              break;
-                            case BannerAdResult.CLICKED:
-                              print("Clicked: $value");
-                              break;
-                            case BannerAdResult.LOGGING_IMPRESSION:
-                              print("Logging Impression: $value");
-                              break;
-                          }
-                        },
-                      ),
-                    ),
-                  ),
+                  //       Container(
+                  //         alignment: Alignment.bottomCenter,
+                  //         child: Padding(
+                  //           padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  //           child: FacebookBannerAd(
+                  //             placementId: "306255247337644_375749887054846",
+                  //             bannerSize: BannerSize.STANDARD,
+                  //             listener: (result, value) {
+                  //               print("Error: $result");
+                  //               print("Error: $value");
+                  //               switch (result) {
+                  //                 case BannerAdResult.ERROR:
+                  //                   print("Error: $value");
+                  //                   break;
+                  //                 case BannerAdResult.LOADED:
+                  //                   print("Loaded: $value");
+                  //                   break;
+                  //                 case BannerAdResult.CLICKED:
+                  //                   print("Clicked: $value");
+                  //                   break;
+                  //                 case BannerAdResult.LOGGING_IMPRESSION:
+                  //                   print("Logging Impression: $value");
+                  //                   break;
+                  //               }
+                  //             },
+                  //           ),
+                  //         ),
+                  //       ),
                 ],
               ),
             ),

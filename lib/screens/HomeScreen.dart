@@ -9,6 +9,11 @@ import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
+  final int tab;
+  HomeScreen({this.tab, Key key}) : super(key: key);
+  // const HomeScreen({
+  //   this.tab = 0, // nullable and optional
+  // });
   @override
   _HomeState createState() => new _HomeState();
 }
@@ -26,6 +31,7 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
 
   double textImageBetweenPadding;
   double textImagePadding;
+  int _currentTabIndex = 0;
 
   @override
   void initState() {
@@ -33,7 +39,10 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     gridItem = 2;
     changeGrid();
-    tabController = new TabController(vsync: this, length: myList.length);
+    tabController = TabController(vsync: this, length: myList.length);
+
+    // tabController = new TabController(
+    //     vsync: this, length: myList.length, initialIndex: widget.tab);
 
     isSelected.add(gridItem == 1);
     isSelected.add(gridItem == 2);
@@ -75,10 +84,9 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
     myList = await DataProvider().getAll();
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var number = prefs.getInt("gridItem");
-
+    print("tab" + widget.tab.toString());
     //print(myList[0].category);
     setState(() {
-      tabController = new TabController(vsync: this, length: myList.length);
       //print(number);
       if (number == null || number == 0) {
         gridItem = 2;
@@ -90,7 +98,27 @@ class _HomeState extends State<HomeScreen> with TickerProviderStateMixin {
       isSelected.add(gridItem == 2);
       isSelected.add(gridItem == 3);
       changeGrid();
+      tabController = new TabController(
+          vsync: this, length: myList.length, initialIndex: 0);
+
+      //tabController.addListener(_handleTabChange);
+
+      //DefaultTabController.of(context).animateTo(widget.tab);
+
+      // tabController.animateTo(_currentTabIndex);
+      // _currentTabIndex = widget.tab;
+      //tabController.index = widget.tab;
+      //super.initState();
     });
+    print("before" + widget.tab.toString());
+    if (widget.tab > 0) {
+      tabController.index = 0;
+      await Future.delayed(Duration(milliseconds: 50));
+      tabController.index = widget.tab;
+      //tabController.animateTo(widget.tab);
+      // tabController.index = widget.tab;
+      print("after" + widget.tab.toString());
+    }
   }
 
   @override

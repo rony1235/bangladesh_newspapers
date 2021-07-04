@@ -1,3 +1,4 @@
+import 'package:bangladesh_newspapers/screens/Dashboard.dart';
 import 'package:bangladesh_newspapers/screens/webInappwebview.dart';
 import 'package:bangladesh_newspapers/widgets/BoxNewsPaper.dart';
 import 'package:bangladesh_newspapers/widgets/MainTabBarWidget.dart';
@@ -55,7 +56,7 @@ class _SearchScreenState extends State<SearchScreen>
       fontSize = 15;
       childAspectItem = 1;
       boderWidth = 7;
-      gridItemSpacing = 10;
+      gridItemSpacing = 6;
       heartFontSize = 25;
       textImageBetweenPadding = 5;
       textImagePadding = 8;
@@ -96,135 +97,120 @@ class _SearchScreenState extends State<SearchScreen>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(12.0, 0, 12, 0),
-      child: ListView(
-        shrinkWrap: true,
-        physics: ScrollPhysics(),
-        children: <Widget>[
-          SizedBox(height: 5.0),
-          Container(
-            child: new ListView.builder(
-              shrinkWrap: true,
-              itemCount: myList.length,
-              physics: ScrollPhysics(),
-              itemBuilder: (context, index) {
-                return Column(
-                  children: <Widget>[
-                    Container(
-                      height: 26.0,
-                      color: kPrimaryColor,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(myList[index].categoryFullName,
-                              style: TextStyle(
-                                  fontSize: 20.0, color: Colors.white)),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 100.0,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: myList[index].newspaperList.length,
-                        itemBuilder: (context, childIndex) {
-                          return GestureDetector(
-                            onTap: () {
-                              //showAds();
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //       builder: (context) =>
-                              //           MyWebTestView(widget.newspaper, widget.page)),
-                              // );
+      padding: const EdgeInsets.fromLTRB(10.0, 10, 10, 0),
+      child: Container(
+        child: GridView.builder(
+          itemCount: myList.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: gridItemSpacing,
+            mainAxisSpacing: gridItemSpacing,
+            childAspectRatio: 1,
+          ),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                print("working");
+                print(index);
 
-                              Navigator.of(context).push(
-                                PageRouteBuilder(
-                                  transitionDuration: Duration(milliseconds: 0),
-                                  pageBuilder: (BuildContext context,
-                                      Animation<double> animation,
-                                      Animation<double> secondaryAnimation) {
-                                    return webInappwebview(
-                                        NewspaperList(
-                                            name: "",
-                                            icon: "",
-                                            isFavorite: false,
-                                            url: myList[index]
-                                                .newspaperList[childIndex]
-                                                .url),
-                                        null);
-                                  },
-                                  transitionsBuilder: (BuildContext context,
-                                      Animation<double> animation,
-                                      Animation<double> secondaryAnimation,
-                                      Widget child) {
-                                    return Align(
-                                      child: FadeTransition(
-                                        opacity: animation,
-                                        child: child,
-                                      ),
-                                    );
-                                  },
-                                ),
-                              );
-                            },
-                            child: Stack(children: <Widget>[
-                              Image.asset('common_assert/newspaper.png'),
-                              Container(
-                                height: MediaQuery.of(context).size.width / 4,
-                                width: MediaQuery.of(context).size.width / 4,
-                                alignment: Alignment.center,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: myList[index]
-                                          .newspaperList[childIndex]
-                                          .icon
-                                          .contains("svg")
-                                      ? SvgPicture.asset(
-                                          kMainImageLocation +
-                                              myList[index]
-                                                  .newspaperList[childIndex]
-                                                  .icon,
-                                          height: 55,
-                                        )
-                                      : myList[index]
-                                              .newspaperList[childIndex]
-                                              .colorFiltered
-                                          ? ColorFiltered(
-                                              child: Image.asset(
-                                                kMainImageLocation +
-                                                    myList[index]
-                                                        .newspaperList[
-                                                            childIndex]
-                                                        .icon,
-                                                height: 55,
-                                              ),
-                                              colorFilter: ColorFilter.mode(
-                                                  Colors.greenAccent,
-                                                  BlendMode.srcIn),
-                                            )
-                                          : Image.asset(
-                                              kMainImageLocation +
-                                                  myList[index]
-                                                      .newspaperList[childIndex]
-                                                      .icon,
-                                              height: 55,
-                                            ),
-                                ),
-                              ),
-                            ]),
-                          );
-                        },
-                      ),
-                    ),
-                    SizedBox(height: 5.0),
-                  ],
+                Navigator.of(context).push(
+                  PageRouteBuilder(
+                    transitionDuration: Duration(milliseconds: 0),
+                    pageBuilder: (BuildContext context,
+                        Animation<double> animation,
+                        Animation<double> secondaryAnimation) {
+                      return Dashboard(tab: index);
+                    },
+                    transitionsBuilder: (BuildContext context,
+                        Animation<double> animation,
+                        Animation<double> secondaryAnimation,
+                        Widget child) {
+                      return Align(
+                        child: FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        ),
+                      );
+                    },
+                  ),
                 );
               },
-            ),
-          ),
-        ],
+              child: Stack(children: <Widget>[
+                ShaderMask(
+                  shaderCallback: (rect) {
+                    return LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Colors.black, Colors.transparent],
+                    ).createShader(
+                        Rect.fromLTRB(0, -140, rect.width, rect.height - 20));
+                  },
+                  blendMode: BlendMode.darken,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      // gradient: LinearGradient(
+                      //   colors: [gradientStart, gradientEnd],
+                      //   begin: FractionalOffset(0, 0),
+                      //   end: FractionalOffset(0, 1),
+                      //   stops: [0.0, 1.0],
+                      //   tileMode: TileMode.clamp
+                      // ),
+                      image: DecorationImage(
+                        image:
+                            AssetImage("common_assert/" + myList[index].icon),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RichText(
+                      text: TextSpan(children: <TextSpan>[
+                        TextSpan(
+                            text: ".",
+                            style: TextStyle(
+                                color: kPrimaryColor,
+                                fontSize: 19,
+                                fontWeight: FontWeight.w900)),
+                        TextSpan(
+                            text: myList[index].categoryFullName.toUpperCase(),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 19,
+                                fontWeight: FontWeight.bold)),
+                      ]),
+                    ))
+              ]),
+            );
+
+            Column(
+              children: <Widget>[
+                Container(
+                  color: kPrimaryColor,
+                  child: GestureDetector(
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://placeimg.com/640/480/any"),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Text(myList[index].categoryFullName,
+                            style:
+                                TextStyle(fontSize: 20.0, color: Colors.white)),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

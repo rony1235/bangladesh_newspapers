@@ -75,6 +75,11 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 
 class Dashboard extends StatefulWidget {
   static final String id = 'profile_page';
+  final int tab;
+
+  const Dashboard({
+    this.tab = 0, // nullable and optional
+  });
   @override
   _DashboardState createState() => _DashboardState();
 }
@@ -330,7 +335,9 @@ class _DashboardState extends State<Dashboard> {
                 child: PageView(
                     controller: _pageController,
                     children: <Widget>[
-                      HomeScreen(),
+                      HomeScreen(
+                        tab: widget.tab,
+                      ),
                       SearchScreen(),
                       FavoriteScreen(),
                       FlipMainScreen(),
