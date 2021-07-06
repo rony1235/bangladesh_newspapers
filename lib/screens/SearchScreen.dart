@@ -112,7 +112,7 @@ class _SearchScreenState extends State<SearchScreen>
               onTap: () {
                 print("working");
                 print(index);
-
+                Navigator.of(context).pop();
                 Navigator.of(context).push(
                   PageRouteBuilder(
                     transitionDuration: Duration(milliseconds: 0),
