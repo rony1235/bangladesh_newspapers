@@ -1,4 +1,5 @@
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
+import 'package:bangladesh_newspapers/screens/AboutScreen.dart';
 import 'package:bangladesh_newspapers/screens/FavoriteScreen.dart';
 import 'package:bangladesh_newspapers/screens/SettingScreen.dart';
 import 'package:bangladesh_newspapers/screens/webInappwebview.dart';
@@ -308,6 +309,61 @@ class _DashboardState extends State<Dashboard> {
                     // ...
                   },
                 ),
+                ListTile(
+                  title: Text(
+                    'About',
+                    style: TextStyle(fontSize: 17),
+                  ),
+                  leading: Icon(
+                    Icons.info_outlined,
+                    size: 26,
+                  ),
+                  onTap: () {
+                    // Navigator.pushReplacement(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (BuildContext context) =>
+                    //             SettingScreen()));
+
+                    //Page1
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AboutScreen())).then((value) {
+                      print("dsdd");
+                      //setState(() {});
+                      Navigator.pop(context); // pop current page
+                      Navigator.pushNamed(context, HOME_SCREEN); // push
+                      //_pageController.jumpToPage(1);
+                      //_pageController.jumpToPage(2);
+                    });
+                    //Navigator.of(context).pushReplacementNamed(TUTORIAL);
+                    // Navigator.of(context).push(
+                    //   PageRouteBuilder(
+                    //     transitionDuration: Duration(milliseconds: 0),
+                    //     pageBuilder: (BuildContext context,
+                    //         Animation<double> animation,
+                    //         Animation<double> secondaryAnimation) {
+                    //       return SettingScreen();
+                    //     },
+                    //     transitionsBuilder: (BuildContext context,
+                    //         Animation<double> animation,
+                    //         Animation<double> secondaryAnimation,
+                    //         Widget child) {
+                    //       return Align(
+                    //         child: FadeTransition(
+                    //           opacity: animation,
+                    //           child: child,
+                    //         ),
+                    //       );
+                    //     },
+                    //   ),
+                    // );
+                    // Navigator.of(context)
+                    //     .pushReplacementNamed(TUTORIAL);
+                    // ...
+                  },
+                ),
               ],
             ),
           ),
@@ -341,7 +397,7 @@ class _DashboardState extends State<Dashboard> {
                       SearchScreen(),
                       FavoriteScreen(),
                       FlipMainScreen(),
-                      AboutScreen(),
+                      ScrollScreen(),
                     ],
                     onPageChanged: (int index) {
                       setState(() {

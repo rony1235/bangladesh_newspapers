@@ -49,6 +49,7 @@ dependencies:
   get: ^4.1.4
   bloc: ^7.0.0
   flutter_bloc: ^7.0.1
+  url_launcher: ^6.0.9
 
 
 
