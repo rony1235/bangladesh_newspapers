@@ -8,12 +8,12 @@ import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:http/http.dart' as http;
 
-class AboutScreen extends StatefulWidget {
+class ScrollScreen extends StatefulWidget {
   @override
-  _AboutScreenState createState() => new _AboutScreenState();
+  _ScrollScreenState createState() => new _ScrollScreenState();
 }
 
-class _AboutScreenState extends State<AboutScreen> {
+class _ScrollScreenState extends State<ScrollScreen> {
   //TabController tabController;
   List<Article> articles = List();
 
