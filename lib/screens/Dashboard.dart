@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/screens/AboutScreen.dart';
 import 'package:bangladesh_newspapers/screens/FavoriteScreen.dart';
@@ -23,56 +24,79 @@ import 'HomeScreen.dart';
 import 'SearchScreen.dart';
 import 'FlipMain.dart';
 
-Future _showNotificationWithDefaultSound(String t, String b, int id) async {
-  var androidPlatformChannelSpecifics = new AndroidNotificationDetails(
-      'your channel id', 'your channel name', 'your channel description',
-      importance: Importance.max, priority: Priority.max);
-  var iOSPlatformChannelSpecifics = new IOSNotificationDetails();
-  var platformChannelSpecifics = new NotificationDetails(
-      android: androidPlatformChannelSpecifics,
-      iOS: iOSPlatformChannelSpecifics);
-  await flutterLocalNotificationsPlugin.show(
-    id,
-    t,
-    b,
-    platformChannelSpecifics,
-    payload: 'Default_Sound',
-  );
-}
-
+final flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  //await Firebase.initializeApp();
-  print('Handling a background message ${message.messageId}');
-  print(message.data);
-  print(message.data.hashCode);
-  print(message.data['title']);
-  print(message.data['body']);
-  print(channel.id);
-  print(channel.name);
-  print(channel.description);
+  await Firebase.initializeApp();
 
-  flutterLocalNotificationsPlugin.show(
-      10,
-      "dfsdsdf",
-      "dfsdsrdfsdfsdf",
-      NotificationDetails(
-        android: AndroidNotificationDetails(
-          channel.id,
-          channel.name,
-          channel.description,
-        ),
-      ));
+  print("Handling a background message: ${message.messageId}");
+
+  // Use this method to automatically convert the push data, in case you gonna use our data standard
+  AwesomeNotifications().createNotificationFromJsonData(message.data);
+
+  //await Firebase.initializeApp();
+  // print('Handling a background message ${message.messageId}');
+  // //print(message.);
+  // print(message.data.hashCode);
+  // print(message.data['title']);
+  // print(message.data['body']);
+  //
+  // FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+  //     new FlutterLocalNotificationsPlugin();
+  // // var androidPlatformChannelSpecifics = AndroidNotificationDetails(
+  // //     '1687497218170948721x8',
+  // //     'New Trips Notification ',
+  // //     'Notification Channel for vendor. All the new trips notifications will arrive here.',
+  // //     //style: AndroidNotificationStyle.BigText,
+  // //     icon: "app_icon",
+  // //     importance: Importance.max,
+  // //     priority: Priority.high,
+  // //     styleInformation: BigTextStyleInformation(
+  // //         "hanji hogya?", //  'Locations: <b>${locations.replaceAll("\$", " to ")}</b><br>Vehicle: <b>$vehicle</b><br>Trip Type: <b>$tripType</b><br>Pick-Up Date: <b>$pickUpDate</b><br>Pick-Up Time: <b>$pickUpTime</b>',
+  // //         htmlFormatBigText: true,
+  // //         contentTitle: 'Amount:- <b>Rs 22000000</b>',
+  // //         htmlFormatContentTitle: true,
+  // //         summaryText: 'Trip Details',
+  // //         htmlFormatSummaryText: true));
+  //
+  const AndroidNotificationDetails androidPlatformChannelSpecifics =
+      AndroidNotificationDetails(
+          'your channel id', 'your channel name', 'your channel description',
+          icon: "app_icon",
+          importance: Importance.max,
+          priority: Priority.high,
+          showWhen: false);
+  const NotificationDetails platformChannelSpecifics =
+      NotificationDetails(android: androidPlatformChannelSpecifics);
+  await flutterLocalNotificationsPlugin.show(12345, message.notification.title,
+      message.notification.body, platformChannelSpecifics,
+      payload: message.data['url']);
+  await Future.delayed(Duration(seconds: 7));
+
+  await flutterLocalNotificationsPlugin.cancel(12345);
+
+  // flutterLocalNotificationsPlugin.show(
+  //     10,
+  //     "dfsdsdf",
+  //     "dfsdsrdfsdfsdf",
+  //     NotificationDetails(
+  //       android: AndroidNotificationDetails(
+  //           channel.id, channel.name, channel.description,
+  //           icon: "app_icon",
+  //           importance: Importance.max,
+  //           priority: Priority.high,
+  //           showWhen: false),
+  //     ));
 }
 
-const AndroidNotificationChannel channel = AndroidNotificationChannel(
-    'high_importance_channel', // id
-    'High Importance Notifications', // title
-    'This channel is used for important notifications.', // description
-    importance: Importance.max,
-    enableLights: true);
+// const AndroidNotificationChannel channel = AndroidNotificationChannel(
+//     'high_importance_channel', // id
+//     'High Importance Notifications', // title
+//     'This channel is used for important notifications.', // description
+//     importance: Importance.max,
+//     enableLights: true);
 
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-    FlutterLocalNotificationsPlugin();
+// final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+//     FlutterLocalNotificationsPlugin();
 
 class Dashboard extends StatefulWidget {
   static final String id = 'profile_page';
@@ -93,6 +117,17 @@ class _DashboardState extends State<Dashboard> {
   int _page = 0;
   GlobalKey _bottomNavigationKey = GlobalKey();
 
+  Future selectNotification(String payload) async {
+    print('notification payload: $payload');
+    if (payload != null) {
+      debugPrint('notification payload: $payload');
+    }
+    navigatorKey.currentState.push(MaterialPageRoute(
+        builder: (context) => webInappwebview(
+            NewspaperList(name: "", icon: "", isFavorite: false, url: payload),
+            null)));
+  }
+
   @override
   void initState() {
     super.initState();
@@ -100,6 +135,15 @@ class _DashboardState extends State<Dashboard> {
     _pageController = PageController();
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+// initialise the plugin. app_icon needs to be a added as a drawable resource to the Android head project
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('app_icon');
+
+    final InitializationSettings initializationSettings =
+        InitializationSettings(android: initializationSettingsAndroid);
+    flutterLocalNotificationsPlugin.initialize(initializationSettings,
+        onSelectNotification: selectNotification);
 
     // FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     //     FlutterLocalNotificationsPlugin();
