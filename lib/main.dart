@@ -1,4 +1,3 @@
-import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:bangladesh_newspapers/models/DataCategoryModel.dart';
 import 'package:bangladesh_newspapers/screens/Dashboard.dart';
 import 'package:bangladesh_newspapers/screens/webInappwebview.dart';
@@ -10,6 +9,7 @@ import 'package:bangladesh_newspapers/screens/SplashScreen.dart';
 import 'package:flutter/services.dart';
 import 'package:bangladesh_newspapers/utilities/FirstPages.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 
@@ -40,19 +40,27 @@ final GlobalKey<NavigatorState> navigatorKey =
 //   print("Handling a backgrossgnbnbund message: ${message.messageId}");
 // }
 var firstTime = false;
+Future<void> _deleteCacheDir() async {
+  final cacheDir = await getTemporaryDirectory();
+
+  if (cacheDir.existsSync()) {
+    cacheDir.deleteSync(recursive: true);
+  }
+}
+
+Future<void> _deleteAppDir() async {
+  final appDir = await getApplicationSupportDirectory();
+
+  if (appDir.existsSync()) {
+    appDir.deleteSync(recursive: true);
+  }
+}
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  AwesomeNotifications().initialize('resource://drawable/app_icon', [
-    // Your notification channels go here
-    NotificationChannel(
-        channelKey: 'basic_channel',
-        channelName: 'Basic notifications',
-        channelDescription: 'Notification channel for basic tests',
-        defaultColor: Color(0xFF9D50DD),
-        ledColor: Colors.white)
-  ]);
-
+  _deleteCacheDir();
+  //_deleteAppDir();
   // await flutterLocalNotificationsPlugin
   //     .resolvePlatformSpecificImplementation<
   //         AndroidFlutterLocalNotificationsPlugin>()

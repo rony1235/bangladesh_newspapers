@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 import 'package:bangladesh_newspapers/services/DataProvider.dart';
 import 'package:bangladesh_newspapers/utilities/constant.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
@@ -48,6 +49,19 @@ class _webInappwebviewState extends State<webInappwebview> {
 
   bool showAppBar = false;
   List<NewspaperList> list;
+
+  List<String> placementId = [
+    "306255247337644_409115817051586",
+    "306255247337644_409116020384899",
+    "306255247337644_409116240384877",
+    "306255247337644_409116613718173",
+    "306255247337644_409116883718146",
+    "306255247337644_409117090384792",
+    "306255247337644_409117573718077",
+    "306255247337644_409117747051393",
+    "306255247337644_409118057051362",
+    "306255247337644_409118233718011"
+  ];
   //bool _isAppbar = true;
 
   InAppWebViewController controller;
@@ -139,6 +153,12 @@ class _webInappwebviewState extends State<webInappwebview> {
 
   @override
   Widget build(BuildContext context) {
+    Random rnd;
+    int min = 0;
+    int max = placementId.length - 1;
+    rnd = new Random();
+    var r = min + rnd.nextInt(max - min);
+    var mainPlacementId = placementId[r];
     //controllerGlobal = _controller;
     // myBanner
     //   // typically this happens well before the ad is shown
@@ -439,34 +459,35 @@ class _webInappwebviewState extends State<webInappwebview> {
                       // },
                     ),
                   ),
-                  //       Container(
-                  //         alignment: Alignment.bottomCenter,
-                  //         child: Padding(
-                  //           padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                  //           child: FacebookBannerAd(
-                  //             placementId: "306255247337644_375749887054846",
-                  //             bannerSize: BannerSize.STANDARD,
-                  //             listener: (result, value) {
-                  //               print("Error: $result");
-                  //               print("Error: $value");
-                  //               switch (result) {
-                  //                 case BannerAdResult.ERROR:
-                  //                   print("Error: $value");
-                  //                   break;
-                  //                 case BannerAdResult.LOADED:
-                  //                   print("Loaded: $value");
-                  //                   break;
-                  //                 case BannerAdResult.CLICKED:
-                  //                   print("Clicked: $value");
-                  //                   break;
-                  //                 case BannerAdResult.LOGGING_IMPRESSION:
-                  //                   print("Logging Impression: $value");
-                  //                   break;
-                  //               }
-                  //             },
-                  //           ),
-                  //         ),
-                  //       ),
+                  Container(
+                    height: 60,
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                      child: FacebookBannerAd(
+                        placementId: mainPlacementId,
+                        bannerSize: BannerSize.STANDARD,
+                        listener: (result, value) {
+                          print("Error: $result");
+                          print("Error: $value");
+                          switch (result) {
+                            case BannerAdResult.ERROR:
+                              print("Error: $value");
+                              break;
+                            case BannerAdResult.LOADED:
+                              print("Loaded: $value");
+                              break;
+                            case BannerAdResult.CLICKED:
+                              print("Clicked: $value");
+                              break;
+                            case BannerAdResult.LOGGING_IMPRESSION:
+                              print("Logging Impression: $value");
+                              break;
+                          }
+                        },
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -474,30 +495,33 @@ class _webInappwebviewState extends State<webInappwebview> {
               children: <Widget>[
                 Align(
                   alignment: Alignment.bottomRight,
-                  child: FloatingActionButton(
-                    backgroundColor: kPrimaryColor,
-                    onPressed: () async {
-                      var status = await controller.canGoBack();
-                      print("status" + status.toString());
-                      if (status) {
-                        controller.goBack();
-                      } else {
-                        Navigator.pop(context, true);
-                      }
-                    },
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 0, 10, 40),
+                    child: FloatingActionButton(
+                      backgroundColor: kPrimaryColor,
+                      onPressed: () async {
+                        var status = await controller.canGoBack();
+                        print("status" + status.toString());
+                        if (status) {
+                          controller.goBack();
+                        } else {
+                          Navigator.pop(context, true);
+                        }
+                      },
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      ),
+                      heroTag: null,
                     ),
-                    heroTag: null,
                   ),
                 ),
                 Align(
                   alignment: Alignment.bottomRight,
                   child: FabCircularMenu(
-                      fabSize: 35,
+                      fabSize: 55,
                       alignment: Alignment.bottomRight,
-                      fabColor: kPrimaryDarkColor,
+                      fabColor: kPrimaryColor,
                       fabOpenIcon: Icon(
                         Icons.menu,
                         color: Colors.white,
@@ -506,7 +530,7 @@ class _webInappwebviewState extends State<webInappwebview> {
                         Icons.close,
                         color: Colors.white,
                       ),
-                      fabMargin: EdgeInsets.fromLTRB(0, 0, 30, 90),
+                      fabMargin: EdgeInsets.fromLTRB(0, 0, 28, 122),
                       ringDiameter: 250,
                       children: <Widget>[
                         IconButton(
